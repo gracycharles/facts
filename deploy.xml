@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  GitHub Pages & GitHub Actions Deployment Configuration Descriptor
+  Project: Facts Scotland Prompt Engine
+  Target: GitHub Pages (gh-pages)
+-->
+<deployment>
+  <application>
+    <name>Facts Scotland Prompt Engine</name>
+    <version>1.0.0</version>
+    <description>100% verified, nostalgic, and comical facts about Glasgow, Edinburgh, and Scotland with Hollywood-grade video prompts, content-adaptive voice direction, and text overlays.</description>
+    <framework>React 19 + Vite + TypeScript</framework>
+    <outputDirectory>dist</outputDirectory>
+    <spaFallback>dist/404.html</spaFallback>
+    <basePath>./</basePath>
+  </application>
+  <githubActions>
+    <workflowFile>.github/workflows/deploy.yml</workflowFile>
+    <triggers>
+      <branch>main</branch>
+      <branch>master</branch>
+      <manual>workflow_dispatch</manual>
+    </triggers>
+    <permissions>
+      <permission name="contents">read</permission>
+      <permission name="pages">write</permission>
+      <permission name="id-token">write</permission>
+    </permissions>
+    <buildSteps>
+      <step name="Install Dependencies">npm install || yarn install</step>
+      <step name="Compile">npm run build</step>
+      <step name="SPAFallback">cp dist/index.html dist/404.html</step>
+    </buildSteps>
+    <targetEnvironment>github-pages</targetEnvironment>
+  </githubActions>
+</deployment>

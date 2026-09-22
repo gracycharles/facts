@@ -1,0 +1,8 @@
+{
+  "name": "Facts",
+  "description": "100% verified, nostalgic, and comical facts about Glasgow, Edinburgh, and Scotland with Hollywood-grade video prompts, British young female voice audio narration, and text overlays.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
