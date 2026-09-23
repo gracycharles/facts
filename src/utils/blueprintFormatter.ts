@@ -34,17 +34,35 @@ export function formatVideoGenerationOnlyText(b: ShortsBlueprint, voiceId: Voice
   const line2Fact = b.subtitles?.line2Fact || b.factText;
   const line3Location = b.subtitles?.line3Location || b.location;
   const voiceDir = buildCharacterVoiceDirection(b, voiceId);
+  const audioScript = b.audioScript10s || b.audioScript || voiceDir.audioNarrationScript;
 
   return `🎬 HOLLYWOOD CREATION RANGE MASTER PROMPT (FACT #${b.id}: ${b.title})
 City: ${b.city}, Scotland | Category: ${b.category} | Era: ${b.historicalEra}
 Format: 9:16 Vertical Portrait (1080x1920) | Target Duration: 10.0s Strictly Calibrated
 
-[COMPULSORY TRI-OUTPUT MANDATE FOR EXTERNAL VIDEO GENERATION (10s ZERO CUT-OFF)]:
-1. VIDEO: Hollywood-range cinematic visuals in 9:16 vertical format. 35mm film texture, photorealistic lighting, dynamic cinematic camera move (crane/steadicam/dolly), zero uncanny CGI glitching.
-2. AUDIO (10-SEC STRICT DURATION): Voiced in ${voiceDir.timing.wordCount} words (~${voiceDir.timing.estimatedDurationSec}s) by "${voiceDir.archetypeName}". Finishes cleanly before the 10s mark with zero mid-sentence cutoff.
-3. TEXT OVERLAY: Rich factual details, key figures, and location anchors displayed in the safe zone (y=450-850), allowing the viewer to absorb deep historical context while listening to the punchy 10s voiceover.
+================================================================================
+🔴 COMPULSORY MANDATE 1: BURNED-IN ON-SCREEN TEXT OVERLAY (DO NOT OMIT)
+================================================================================
+Mandate: Render the following exact 3-line text overlay directly burned into the video frames in the upper-center safe zone (Y: 450-850px).
+CRITICAL STYLING RULE: NO BLACK BACKGROUND BOX. The text must float cleanly over the video visuals with a subtle drop-shadow only.
+• Line 1 (Hook Header - Bold Golden-Amber): "${line1Hook}"
+• Line 2 (Core Fact - Crisp Off-White): "${line2Fact}"
+• Line 3 (Location Badge - Vibrant Cyan): "${line3Location}"
+${b.overlayExtraContext ? `• Extra Context Line: "${b.overlayExtraContext}"\n` : ''}Safe Zone: Y=450px to Y=850px | Left/Right Clearance: 160px | Bottom Clearance: 400px (100% clear of native UI)
 
-[MASTER AI VIDEO GENERATION PROMPT - PASTE INTO RUNWAY GEN-3 / KLING / SORA / LUMA]:
+================================================================================
+🔴 COMPULSORY MANDATE 2: AUDIO NARRATION (READ EVERY SINGLE WORD VERBATIM)
+================================================================================
+Mandate: The voiceover generator MUST speak every single word listed below in exact order. ZERO dropped words, ZERO omissions, ZERO paraphrasing.
+Voice Profile: ${voiceDir.archetypeName} (${voiceDir.voiceProfile})
+Spoken Duration: ${voiceDir.timing.wordCount} words (~${voiceDir.timing.estimatedDurationSec}s) — Must finish cleanly within 8.5 seconds before the 10s video mark.
+Phonetics Guide: ${b.audioPhonetics || 'Native Scottish & British place names'}
+EXACT SPOKEN SCRIPT (Read Every Word Verbatim):
+"${audioScript}"
+
+================================================================================
+🎬 MASTER AI VIDEO GENERATION PROMPT (RUNWAY GEN-3 / KLING / SORA / LUMA / HAILUO):
+================================================================================
 ${b.videoPrompt}
 
 [CHARACTER & CINEMATIC CASTING]:
@@ -53,20 +71,7 @@ ${b.videoPrompt}
 ${b.supportingCharacters && b.supportingCharacters.length > 0 ? `- Supporting Cast:\n  ${b.supportingCharacters.map(sc => `* ${sc.name} (${sc.role}): ${sc.appearance} | Comedic Gag: ${sc.comedicInteraction}`).join('\n  ')}\n` : ''}- Iconic Objects & Scenes: ${b.objectsScenes}
 - Comical & Nostalgic Local Element: ${b.comicalElement}
 - Grounded Authentic Location: ${b.location}
-
-[AUDIO & VOICEOVER DIRECTIVE - 10-SECOND TIMING ENFORCED]:
-- Voice Persona: ${voiceDir.archetypeName} (${voiceDir.voiceProfile})
-- Spoken Duration: ${voiceDir.timing.wordCount} words • ~${voiceDir.timing.estimatedDurationSec} seconds (Guaranteed 10s Video Safe)
-- Phonetics Guide: ${b.audioPhonetics || 'Native Scottish & British place names'}
-- Exact Spoken Script (Read Verbatim):
-  "${b.audioScript || voiceDir.audioNarrationScript}"
-- Background Soundscape: ${b.backgroundAudio}
-
-[SAFE-ZONE SUBTITLE & TEXT OVERLAY LAYOUT (1080x1920)]:
-- Line 1 (Hook Header): "${line1Hook}"
-- Line 2 (Core Fact & Context): "${line2Fact}"
-- Line 3 (Location & Legend): "${line3Location}"
-${b.overlayExtraContext ? `- Extra Context Overlay Note: "${b.overlayExtraContext}"\n` : ''}- Safe Zone: Center Y: 450-850px • Margin Clearance: 160px left/right (zero native YouTube/TikTok UI obstruction)`;
+- Atmospheric Background Soundscape: ${b.backgroundAudio}`;
 }
 
 /**
@@ -128,21 +133,38 @@ export function formatSubtitlesOnlyText(b: ShortsBlueprint): string {
   const line2Fact = b.subtitles?.line2Fact || b.factText;
   const line3Location = b.subtitles?.line3Location || b.location;
 
-  return `📝 TEXT OVERLAY & SUBTITLE SPECIFICATIONS (1080x1920):
-- Line 1 (Hook Header): "${line1Hook}"
-- Line 2 (Core Fact): "${line2Fact}"
-- Line 3 (Location): "${line3Location}"
-- Vertical Position: Center safe band (Y: 450 - 850px)
-- Margin Clearance: 120px left/right, 350px bottom (zero native UI obstruction)
-- Font: Heavy Sans-Serif Upper (Hook) + Serif/Sans Body (Fact)
-- Contrast: High-contrast white/amber with deep black drop-shadow (2px 4px 12px rgba(0,0,0,0.95))`;
+  return `📝 MANDATORY BURNED-IN TEXT OVERLAY SPECIFICATIONS (1080x1920):
+[STRICT MANDATE: Must be rendered visibly on screen - NO BLACK BACKGROUND BOX]
+• Line 1 (Hook Header - Bold Golden-Amber): "${line1Hook}"
+• Line 2 (Core Fact - Crisp Off-White): "${line2Fact}"
+• Line 3 (Location Badge - Vibrant Cyan): "${line3Location}"
+${b.overlayExtraContext ? `• Extra Context: "${b.overlayExtraContext}"\n` : ''}• Styling: Pure floating typography with subtle drop-shadow only. Zero solid background boxes.
+• Vertical Position: Center safe band (Y: 450 - 850px)
+• Margin Clearance: 160px left/right, 400px bottom (100% clear of native YouTube/TikTok UI)
+• Font Stack: Heavy Sans-Serif Upper (Hook) + Serif/Sans Body (Fact) + Monospace (Location)`;
 }
 
 /**
- * 2) Video Prompt Only
+ * 2) Video Prompt Only - With Embedded Burned-In Text & Audio Mandates
  */
 export function formatVideoPromptOnlyText(b: ShortsBlueprint): string {
-  return b.videoPrompt;
+  const line1Hook = b.subtitles?.line1Hook || b.title;
+  const line2Fact = b.subtitles?.line2Fact || b.factText;
+  const line3Location = b.subtitles?.line3Location || b.location;
+  const audioScript = b.audioScript10s || b.audioScript || b.factText;
+
+  return `[VIDEO GENERATION PROMPT - 9:16 VERTICAL PORTRAIT (1080x1920)]:
+${b.videoPrompt}
+
+[BURNED-IN TEXT OVERLAY MANDATE - RENDER ON SCREEN - NO BLACK BOX]:
+Burned-in floating text in safe zone (Y: 450-850px):
+Line 1: "${line1Hook}" (Golden Amber)
+Line 2: "${line2Fact}" (White)
+Line 3: "${line3Location}" (Cyan)
+(Render as clean floating text with subtle drop-shadow over the live action, no black rectangle)
+
+[AUDIO VOICEOVER MANDATE - READ EVERY SINGLE WORD VERBATIM]:
+"${audioScript}"`;
 }
 
 /**

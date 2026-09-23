@@ -213,17 +213,18 @@ export function buildCharacterVoiceDirection(
   const audioNarrationScript = b.audioScript10s || b.audioScript || `${b.title}! Did you know: ${b.factText}`;
   const timing = calculateAudioTiming(audioNarrationScript);
 
-  const voiceProfileDirective = `[VOICE SELECTION - ${activeArchetype.name.toUpperCase()}]: Narrated in ${activeArchetype.accent} (${activeArchetype.ageRange}). Delivery: ${activeArchetype.cadence}. Strict 10s Timing: ${timing.wordCount} words (~${timing.estimatedDurationSec}s duration).`;
+  const voiceProfileDirective = `[VOICE SELECTION - ${activeArchetype.name.toUpperCase()}]: Narrated in ${activeArchetype.accent} (${activeArchetype.ageRange}). Delivery: ${activeArchetype.cadence}. Strict 10s Timing: ${timing.wordCount} words (~${timing.estimatedDurationSec}s duration). MANDATE: Read every single word verbatim with zero word omissions.`;
 
-  const elevenLabsPrompt = `[VOICE PROFILE: ${activeArchetype.name.toUpperCase()}]
+  const elevenLabsPrompt = `[VOICE PROFILE & NARRATION MANDATE: ${activeArchetype.name.toUpperCase()}]
 • Voice Persona: ${activeArchetype.name} (${activeArchetype.accent})
 • Age Range: ${activeArchetype.ageRange} | Gender: ${activeArchetype.gender}
 • 10-Second Timing Constraint: ${timing.wordCount} words / ~${timing.estimatedDurationSec}s spoken duration (Leaves 1.5s visual outro buffer)
+• STRICT NARRATION MANDATE: Read EVERY SINGLE WORD verbatim from first to last word. ZERO omissions, ZERO dropped words, ZERO truncations.
 • Delivery Pace & Tone: ${activeArchetype.cadence}
 • Acting Style: ${activeArchetype.description}
 • Local Phonetics Guide: ${phonetics || 'Standard Scottish and British local place names'}
 • Ambience / Soundscape: ${location} • ${b.backgroundAudio || 'Authentic ambient soundscape'}
-• EXACT SPOKEN SCRIPT (Read Verbatim in 7.5 - 8.5 seconds):
+• EXACT SPOKEN SCRIPT (Read Every Word Verbatim in 7.5 - 8.5 seconds):
 "${audioNarrationScript}"`;
 
   return {
