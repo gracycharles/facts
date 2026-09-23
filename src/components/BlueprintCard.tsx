@@ -553,7 +553,7 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
                 </div>
                 <div className="flex items-center gap-2 flex-wrap">
                   <h3 className="text-xs sm:text-sm font-bold text-stone-100 tracking-wide uppercase font-mono">
-                    🎙 Audio Narration Studio
+                    🎙 Native Audio & Contextual Voice (10s Confined)
                   </h3>
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-bold">
                     {activeArchetype.name}
@@ -581,16 +581,16 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
             {isAudioOpen && (
               <div className="p-4 pt-0 border-t border-stone-800/80 space-y-4 text-xs text-stone-300">
                 
-                {/* 10-Second Timing & Verbatim Guarantee Banner */}
+                {/* 10-Second Timing & Native Audio Generation Banner */}
                 <div className="bg-emerald-950/40 border border-emerald-500/30 rounded-lg p-3 text-xs space-y-1">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                     <span className="text-[11px] font-mono text-emerald-300 font-semibold">
-                      10-Second Video Timing: {voiceDir.timing.wordCount} words (~{voiceDir.timing.estimatedDurationSec}s duration), leaving a 1.5s visual outro buffer before cutoff.
+                      Exact 10.0s Confined Limit: {voiceDir.timing.wordCount} words (~${voiceDir.timing.estimatedDurationSec}s spoken audio), finishing before the 10.0s mark.
                     </span>
                   </div>
                   <div className="text-[10px] text-amber-300 font-mono pl-4">
-                    ⚠️ STRICT MANDATE ENFORCED: Voice generator must read every single word verbatim from start to finish without skipping or dropping words.
+                    🎬 NATIVE AUDIO BY VIDEO GENERATOR: The AI video tool generates the scene soundscape and casts the contextual voice organically based on the visual action and historical setting.
                   </div>
                 </div>
 

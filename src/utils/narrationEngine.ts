@@ -213,18 +213,18 @@ export function buildCharacterVoiceDirection(
   const audioNarrationScript = b.audioScript10s || b.audioScript || `${b.title}! Did you know: ${b.factText}`;
   const timing = calculateAudioTiming(audioNarrationScript);
 
-  const voiceProfileDirective = `[VOICE SELECTION - ${activeArchetype.name.toUpperCase()}]: Narrated in ${activeArchetype.accent} (${activeArchetype.ageRange}). Delivery: ${activeArchetype.cadence}. Strict 10s Timing: ${timing.wordCount} words (~${timing.estimatedDurationSec}s duration). MANDATE: Read every single word verbatim with zero word omissions.`;
+  const voiceProfileDirective = `[NATIVE AUDIO & VOICE DIRECTIVE (EXACT 10.0s CONFINED)]: Audio generated natively by video tool based on content context & visualization (${activeArchetype.name}, ${activeArchetype.accent}). Spoken Timing: ${timing.wordCount} words (~${timing.estimatedDurationSec}s). Spoken script finishes before the 10.0s mark.`;
 
-  const elevenLabsPrompt = `[VOICE PROFILE & NARRATION MANDATE: ${activeArchetype.name.toUpperCase()}]
-• Voice Persona: ${activeArchetype.name} (${activeArchetype.accent})
+  const elevenLabsPrompt = `[NATIVE VIDEO GENERATOR AUDIO & VOICE DIRECTIVE (EXACT 10.0s CONFINED)]
+• Audio Strategy: Native generation by AI Video Tool based on content context & scene visualization
+• Contextual Voice Persona: ${activeArchetype.name} (${activeArchetype.accent})
 • Age Range: ${activeArchetype.ageRange} | Gender: ${activeArchetype.gender}
-• 10-Second Timing Constraint: ${timing.wordCount} words / ~${timing.estimatedDurationSec}s spoken duration (Leaves 1.5s visual outro buffer)
-• STRICT NARRATION MANDATE: Read EVERY SINGLE WORD verbatim from first to last word. ZERO omissions, ZERO dropped words, ZERO truncations.
+• Exact Duration Limit: STRICT ≤10.0 SECONDS CONFINED (${timing.wordCount} words / ~${timing.estimatedDurationSec}s spoken audio)
 • Delivery Pace & Tone: ${activeArchetype.cadence}
 • Acting Style: ${activeArchetype.description}
 • Local Phonetics Guide: ${phonetics || 'Standard Scottish and British local place names'}
 • Ambience / Soundscape: ${location} • ${b.backgroundAudio || 'Authentic ambient soundscape'}
-• EXACT SPOKEN SCRIPT (Read Every Word Verbatim in 7.5 - 8.5 seconds):
+• EXACT SPOKEN SCRIPT (Read Every Word Verbatim):
 "${audioNarrationScript}"`;
 
   return {
