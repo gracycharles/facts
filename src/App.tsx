@@ -18,6 +18,7 @@ import {
   Search,
   Sparkles,
   ArrowRight,
+  ArrowUp,
   Video,
   Mic,
   Check,
@@ -436,6 +437,15 @@ export default function App() {
               title="Next Prompt (→ Right Arrow)"
             >
               <ChevronRight className="w-4 h-4" />
+            </button>
+
+            {/* Scroll to Top Button */}
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="p-1.5 rounded-full bg-stone-850 hover:bg-stone-750 text-amber-400 transition-all ml-1"
+              title="Scroll to Top"
+            >
+              <ArrowUp className="w-4 h-4" />
             </button>
 
           </div>

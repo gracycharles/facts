@@ -27,7 +27,8 @@ import {
   Radio,
   Layers,
   Eye,
-  EyeOff
+  EyeOff,
+  ArrowUp
 } from 'lucide-react';
 import { ShortsBlueprint } from '../types';
 import { 
@@ -211,14 +212,14 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
           </div>
         </div>
 
-        {/* Row 3: COMPLETE TOP ACTION BUTTONS SUITE */}
+        {/* Row 3: ESSENTIAL TOP ACTION BUTTONS (VIDEO PROMPT, TITLE, DESCRIPTION, TAGS + MOVE TO TOP) */}
         <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-stone-850">
           
-          {/* 1. Master Video Prompt Only (Primary Amber Action) */}
+          {/* 1. Video Prompt */}
           <button
             onClick={() => copyToClipboard(formatVideoGenerationOnlyText(blueprint, selectedVoiceId), 'top-video-only')}
             className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/50 text-amber-300 text-xs font-bold shadow-md transition-all group"
-            title="Copy 9:16 vertical video prompt with burned-in text overlay and verbatim audio mandates"
+            title="Copy 9:16 master video generation prompt"
           >
             {copiedSection === 'top-video-only' ? (
               <>
@@ -228,141 +229,97 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
             ) : (
               <>
                 <Video className="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform" />
-                <span>Copy Video Prompt</span>
+                <span>Video Prompt</span>
               </>
             )}
           </button>
 
-          {/* 2. Audio Script (10s Verbatim) */}
+          {/* 2. Copy YouTube Title */}
           <button
-            onClick={() => copyToClipboard(formatAudioOnlyText(blueprint, selectedVoiceId), 'top-audio')}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 text-xs font-bold shadow-sm transition-all"
-            title="Copy exact 10s audio script with British/Scottish voice profile & verbatim mandate"
-          >
-            {copiedSection === 'top-audio' ? (
-              <>
-                <Check className="w-4 h-4 text-emerald-400" />
-                <span className="text-emerald-400">Copied Audio!</span>
-              </>
-            ) : (
-              <>
-                <Mic className="w-4 h-4 text-emerald-400" />
-                <span>Copy Audio Script ({voiceDir.timing.wordCount}w)</span>
-              </>
-            )}
-          </button>
-
-          {/* 3. Text Overlay Specs */}
-          <button
-            onClick={() => copyToClipboard(formatSubtitlesOnlyText(blueprint), 'top-subs')}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-teal-500/15 hover:bg-teal-500/25 border border-teal-500/40 text-teal-300 text-xs font-bold shadow-sm transition-all"
-            title="Copy 3-line burned-in overlay specs (No black box)"
-          >
-            {copiedSection === 'top-subs' ? (
-              <>
-                <Check className="w-4 h-4 text-teal-400" />
-                <span className="text-teal-400">Copied Overlay!</span>
-              </>
-            ) : (
-              <>
-                <Subtitles className="w-4 h-4 text-teal-400" />
-                <span>Copy Overlay Specs</span>
-              </>
-            )}
-          </button>
-
-          {/* 4. Download Alpha PNG */}
-          <button
-            onClick={handleDownloadAlphaPng}
-            disabled={isGeneratingPng}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-stone-850 hover:bg-stone-800 border border-amber-500/30 text-amber-200 text-xs font-semibold shadow-sm transition-all disabled:opacity-50"
-            title="Download 1080x1920 clean transparent alpha overlay PNG (No black box)"
-          >
-            <Download className="w-4 h-4 text-amber-400" />
-            <span>{isGeneratingPng ? 'Generating...' : 'Alpha PNG'}</span>
-          </button>
-
-          {/* 5. In-Browser Interactive Voice Player */}
-          <button
-            onClick={handleToggleVoicePlayback}
-            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg border text-xs font-bold shadow-sm transition-all ${
-              isPlayingAudio 
-                ? 'bg-rose-600 hover:bg-rose-500 text-white border-rose-500 animate-pulse'
-                : 'bg-stone-800 hover:bg-stone-700 text-emerald-300 border-emerald-500/40'
-            }`}
-            title={`Listen to spoken narration using ${activeArchetype.name}`}
-          >
-            {isPlayingAudio ? (
-              <>
-                <Square className="w-4 h-4" />
-                <span>Stop Audio</span>
-              </>
-            ) : (
-              <>
-                <Play className="w-4 h-4 text-emerald-400" />
-                <span>Listen ({activeArchetype.shortLabel})</span>
-              </>
-            )}
-          </button>
-
-          {/* 6. Copy Title */}
-          <button
-            onClick={() => copyToClipboard(factTitle, 'top-title')}
-            className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-stone-900 hover:bg-stone-850 border border-stone-700 text-stone-300 text-xs font-medium transition-all"
-            title={`Copy Title: "${factTitle}"`}
+            onClick={() => copyToClipboard(blueprint.seo?.title || blueprint.title, 'top-title')}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-stone-900 hover:bg-stone-850 border border-stone-700 text-stone-200 text-xs font-semibold shadow-sm transition-all"
+            title="Copy YouTube Title"
           >
             {copiedSection === 'top-title' ? (
               <>
                 <Check className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="text-emerald-400">Copied!</span>
+                <span className="text-emerald-400">Copied Title!</span>
               </>
             ) : (
               <>
                 <Copy className="w-3.5 h-3.5 text-stone-400" />
-                <span>Title</span>
+                <span>Copy YouTube Title</span>
               </>
             )}
           </button>
 
-          {/* 7. Copy All */}
+          {/* 3. Copy YouTube Description */}
           <button
-            onClick={() => copyToClipboard(fullBlueprintText, 'top-all')}
-            className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-stone-900 hover:bg-stone-850 border border-stone-700 text-stone-300 text-xs font-medium transition-all"
-            title="Copy complete production blueprint package"
+            onClick={() => copyToClipboard(blueprint.seo?.description || '', 'top-desc')}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-stone-900 hover:bg-stone-850 border border-stone-700 text-stone-200 text-xs font-semibold shadow-sm transition-all"
+            title="Copy YouTube Description"
           >
-            {copiedSection === 'top-all' ? (
+            {copiedSection === 'top-desc' ? (
               <>
                 <Check className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="text-emerald-400">Copied All!</span>
+                <span className="text-emerald-400">Copied Description!</span>
               </>
             ) : (
               <>
                 <Copy className="w-3.5 h-3.5 text-stone-400" />
-                <span>Copy All</span>
+                <span>Copy YouTube Description</span>
               </>
             )}
           </button>
 
-          {/* 8. Master Expand/Collapse Toggle Button */}
+          {/* 4. Copy YouTube Tags */}
+          <button
+            onClick={() => copyToClipboard(blueprint.seo?.tags?.join(', ') || '', 'top-tags')}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-stone-900 hover:bg-stone-850 border border-purple-500/30 text-purple-200 text-xs font-semibold shadow-sm transition-all"
+            title="Copy YouTube Tags (Comma-Separated)"
+          >
+            {copiedSection === 'top-tags' ? (
+              <>
+                <Check className="w-3.5 h-3.5 text-emerald-400" />
+                <span className="text-emerald-400">Copied Tags!</span>
+              </>
+            ) : (
+              <>
+                <Hash className="w-3.5 h-3.5 text-purple-400" />
+                <span>Copy YouTube Tags</span>
+              </>
+            )}
+          </button>
+
+          {/* 5. Move to Top Icon Button */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="p-2.5 rounded-lg bg-stone-900 hover:bg-stone-800 border border-stone-700 text-amber-400 hover:text-amber-300 transition-all shadow-sm flex items-center justify-center shrink-0"
+            title="Scroll to top of page"
+          >
+            <ArrowUp className="w-4 h-4" />
+          </button>
+
+          {/* 6. Expand / Collapse Toggle Button */}
           <button
             onClick={() => setIsContentExpanded(!isContentExpanded)}
-            className={`ml-auto flex items-center gap-1.5 px-3.5 py-2 rounded-lg border text-xs font-bold transition-all shadow-sm ${
+            className={`ml-auto flex items-center gap-1.5 px-3 py-2 rounded-lg border text-xs font-bold transition-all shadow-sm ${
               isContentExpanded
                 ? 'bg-amber-500/20 border-amber-500/50 text-amber-300'
                 : 'bg-stone-900 hover:bg-stone-800 border-stone-700 text-stone-300 hover:text-white'
             }`}
-            title={isContentExpanded ? 'Collapse all prompt details' : 'Expand all prompt details'}
+            title={isContentExpanded ? 'Collapse prompt details' : 'Expand prompt details'}
           >
             {isContentExpanded ? (
               <>
                 <EyeOff className="w-4 h-4 text-amber-400" />
-                <span>Collapse Details</span>
+                <span className="hidden sm:inline">Collapse Details</span>
                 <ChevronUp className="w-4 h-4 text-amber-400 ml-0.5" />
               </>
             ) : (
               <>
                 <Eye className="w-4 h-4 text-stone-400" />
-                <span>Expand Details (7 Modules)</span>
+                <span className="hidden sm:inline">Expand Details</span>
                 <ChevronDown className="w-4 h-4 text-stone-400 ml-0.5" />
               </>
             )}
