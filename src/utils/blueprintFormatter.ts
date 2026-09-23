@@ -1,6 +1,7 @@
 import { ShortsBlueprint } from '../types';
 import { computeOverlayTypography } from './overlayTypographyEngine';
 import { buildCharacterVoiceDirection, getRecommendedVoiceForFact, VoiceArchetypeId } from './narrationEngine';
+import { sanitizeOverlayText } from './overlaySanitizer';
 
 /**
  * Formats a ShortsBlueprint into the exact full production blueprint
@@ -30,25 +31,29 @@ export function formatMidjourneyPrompt(b: ShortsBlueprint): string {
  * with video visuals, content-tailored voice audio, and safe-zone burned-in text overlays.
  */
 export function formatVideoGenerationOnlyText(b: ShortsBlueprint, voiceId: VoiceArchetypeId = 'auto'): string {
-  const line1Hook = b.subtitles?.line1Hook || b.title;
-  const line2Fact = b.subtitles?.line2Fact || b.factText;
-  const line3Location = b.subtitles?.line3Location || b.location;
+  const line1Hook = sanitizeOverlayText(b.subtitles?.line1Hook || b.title);
+  const line2Fact = sanitizeOverlayText(b.subtitles?.line2Fact || b.factText);
+  const line3Location = sanitizeOverlayText(b.subtitles?.line3Location || b.location);
+  const extraContext = b.overlayExtraContext ? sanitizeOverlayText(b.overlayExtraContext) : '';
   const voiceDir = buildCharacterVoiceDirection(b, voiceId);
   const audioScript = b.audioScript10s || b.audioScript || voiceDir.audioNarrationScript;
 
-  return `🎬 HOLLYWOOD CREATION RANGE MASTER PROMPT (FACT #${b.id}: ${b.title})
+  return `🎬 HOLLYWOOD CREATION RANGE MASTER PROMPT (FACT #${b.id}: ${sanitizeOverlayText(b.title)})
 City: ${b.city}, Scotland | Category: ${b.category} | Era: ${b.historicalEra}
-Format: 9:16 Vertical Portrait (1080x1920) | Target Duration: EXACT 10.0 SECONDS CONFINED (Strict ≤10.0s Limit)
+Master Resolution: 1080x1920 Full HD (Upscaled Master for YouTube Shorts / TikTok) | Aspect Ratio: 9:16 Vertical
+Target Duration: EXACT 10.0 SECONDS CONFINED (Strict ≤10.0s Limit) | Output Standard: Broadcast-Safe (Emoji-Free)
 
 ================================================================================
-🔴 COMPULSORY MANDATE 1: BURNED-IN ON-SCREEN TEXT OVERLAY (DO NOT OMIT)
+🔴 COMPULSORY MANDATE 1: BURNED-IN ON-SCREEN TEXT OVERLAY (PLAIN TEXT ONLY)
 ================================================================================
-Mandate: Render the following exact 3-line text overlay directly burned into the video frames in the upper-center safe zone (Y: 450-850px).
-CRITICAL STYLING RULE: NO BLACK BACKGROUND BOX. The text must float cleanly over the video visuals with a subtle drop-shadow only.
+Mandate: Render the following exact 3-line text overlay directly burned into the video frames in the upper-center safe zone (Y: 450-850px at 1080x1920).
+CRITICAL STYLING RULES:
+1. PURE CLEAN TEXT ONLY: Absolutely DO NOT render emojis, unicode symbols, or bullet dots (no missing glyph box [ ], no 📍, no •).
+2. NO BLACK BACKGROUND BOX: The text must float cleanly over the video visuals with a subtle drop-shadow only.
 • Line 1 (Hook Header - Bold Golden-Amber): "${line1Hook}"
 • Line 2 (Core Fact - Crisp Off-White): "${line2Fact}"
 • Line 3 (Location Badge - Vibrant Cyan): "${line3Location}"
-${b.overlayExtraContext ? `• Extra Context Line: "${b.overlayExtraContext}"\n` : ''}Safe Zone: Y=450px to Y=850px | Left/Right Clearance: 160px | Bottom Clearance: 400px (100% clear of native UI)
+${extraContext ? `• Extra Context Line: "${extraContext}"\n` : ''}Safe Zone: Y=450px to Y=850px | Left/Right Clearance: 160px | Bottom Clearance: 400px (100% clear of native UI)
 
 ================================================================================
 🔴 COMPULSORY MANDATE 2: INTEGRATED AUDIO & CONTEXTUAL VOICE (BY VIDEO GENERATOR)
@@ -60,6 +65,13 @@ Mandate: Audio and voice narration are generated natively by the video generatio
 • EXACT SPOKEN SCRIPT (Read Every Word Verbatim):
 "${audioScript}"
 • Environmental Soundscape & SFX: ${b.backgroundAudio}
+
+================================================================================
+🔴 COMPULSORY MANDATE 3: MANDATORY 1080x1920 UPSCALED EXPORT SPECIFICATIONS
+================================================================================
+• Delivery Format: 1080x1920 (9:16 Vertical Portrait) High Bitrate (≥25 Mbps H.264 / ProRes)
+• Quality Mandate: Always export the upscaled 1080x1920 version directly for upload to YouTube Shorts and TikTok to prevent compression artifacts.
+• Broadcast Safety: Clean typography with zero emoji glyphs or bullet points.
 
 ================================================================================
 🎬 MASTER AI VIDEO GENERATION PROMPT (RUNWAY GEN-3 / KLING / SORA / LUMA / HAILUO / VEO):
@@ -130,16 +142,17 @@ COMPILATION CONCLUSION & SOUND DESIGN:
  * Formats the Subtitle / Text Overlay layout alone
  */
 export function formatSubtitlesOnlyText(b: ShortsBlueprint): string {
-  const line1Hook = b.subtitles?.line1Hook || b.title;
-  const line2Fact = b.subtitles?.line2Fact || b.factText;
-  const line3Location = b.subtitles?.line3Location || b.location;
+  const line1Hook = sanitizeOverlayText(b.subtitles?.line1Hook || b.title);
+  const line2Fact = sanitizeOverlayText(b.subtitles?.line2Fact || b.factText);
+  const line3Location = sanitizeOverlayText(b.subtitles?.line3Location || b.location);
+  const extraContext = b.overlayExtraContext ? sanitizeOverlayText(b.overlayExtraContext) : '';
 
   return `📝 MANDATORY BURNED-IN TEXT OVERLAY SPECIFICATIONS (1080x1920):
-[STRICT MANDATE: Must be rendered visibly on screen - NO BLACK BACKGROUND BOX]
+[STRICT MANDATE: Clean Plain Text Only - NO EMOJIS, NO BULLET DOTS, NO BLACK BACKGROUND BOX]
 • Line 1 (Hook Header - Bold Golden-Amber): "${line1Hook}"
 • Line 2 (Core Fact - Crisp Off-White): "${line2Fact}"
 • Line 3 (Location Badge - Vibrant Cyan): "${line3Location}"
-${b.overlayExtraContext ? `• Extra Context: "${b.overlayExtraContext}"\n` : ''}• Styling: Pure floating typography with subtle drop-shadow only. Zero solid background boxes.
+${extraContext ? `• Extra Context: "${extraContext}"\n` : ''}• Styling: Pure floating typography with subtle drop-shadow only. Zero solid background boxes.
 • Vertical Position: Center safe band (Y: 450 - 850px)
 • Margin Clearance: 160px left/right, 400px bottom (100% clear of native YouTube/TikTok UI)
 • Font Stack: Heavy Sans-Serif Upper (Hook) + Serif/Sans Body (Fact) + Monospace (Location)`;
@@ -149,24 +162,26 @@ ${b.overlayExtraContext ? `• Extra Context: "${b.overlayExtraContext}"\n` : ''
  * 2) Video Prompt Only - With Embedded Burned-In Text & Audio Mandates
  */
 export function formatVideoPromptOnlyText(b: ShortsBlueprint): string {
-  const line1Hook = b.subtitles?.line1Hook || b.title;
-  const line2Fact = b.subtitles?.line2Fact || b.factText;
-  const line3Location = b.subtitles?.line3Location || b.location;
+  const line1Hook = sanitizeOverlayText(b.subtitles?.line1Hook || b.title);
+  const line2Fact = sanitizeOverlayText(b.subtitles?.line2Fact || b.factText);
+  const line3Location = sanitizeOverlayText(b.subtitles?.line3Location || b.location);
   const audioScript = b.audioScript10s || b.audioScript || b.factText;
 
-  return `[VIDEO GENERATION PROMPT - 9:16 VERTICAL (1080x1920) | DURATION: EXACT 10.0s CONFINED]:
+  return `[VIDEO GENERATION PROMPT - 9:16 VERTICAL (1080x1920 FHD UPSCALED MASTER) | DURATION: EXACT 10.0s CONFINED]:
 ${b.videoPrompt}
 
-[BURNED-IN TEXT OVERLAY MANDATE - RENDER ON SCREEN - NO BLACK BOX]:
-Burned-in floating text in safe zone (Y: 450-850px):
+[BURNED-IN TEXT OVERLAY MANDATE - CLEAN PLAIN TEXT ONLY - NO EMOJIS, NO BULLET DOTS, NO BLACK BOX]:
+Burned-in floating text in safe zone (Y: 450-850px at 1080x1920):
 Line 1: "${line1Hook}" (Golden Amber)
 Line 2: "${line2Fact}" (White)
 Line 3: "${line3Location}" (Cyan)
-(Render as clean floating text with subtle drop-shadow over the live action, no black rectangle)
+(Render as clean floating text with subtle drop-shadow over the live action, no black rectangle, no emoji glyphs)
 
 [INTEGRATED AUDIO & NARRATION - BY VIDEO GENERATOR - EXACT 10.0s PACING]:
 Native voice audio and soundscape generated by the video tool matching the visual scene and era. Spoken script must finish cleanly before the 10.0s limit:
-"${audioScript}"`;
+"${audioScript}"
+
+[EXPORT SPECIFICATION]: Always export in 1080x1920 Full HD (≥25 Mbps H.264 / ProRes) for direct upload to YouTube Shorts and TikTok.`;
 }
 
 /**

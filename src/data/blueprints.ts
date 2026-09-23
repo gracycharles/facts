@@ -1,6 +1,7 @@
 import { ShortsBlueprint } from '../types';
 import { ALL_50_SCOTLAND_FACTS } from './scotlandFacts';
 import { TEN_SECOND_OPTIMIZATIONS } from '../utils/tenSecondScriptOptimizer';
+import { sanitizeOverlayText } from '../utils/overlaySanitizer';
 
 const TARGET_ALGORITHM_TAGS = [
   'ScotlandFacts',
@@ -30,11 +31,11 @@ function enrichScotlandBlueprint(raw: ShortsBlueprint): ShortsBlueprint {
   const originalAudioScript = raw.audioScript || text;
   const tenSecScript = (opt && opt.tenSecAudioScript) ? opt.tenSecAudioScript : originalAudioScript;
 
-  // Optimized 3-line overlay safe-zone text
-  const line1Hook = (opt && opt.overlayHook) ? opt.overlayHook : (raw.subtitles?.line1Hook || title);
-  const line2Fact = (opt && opt.overlayCoreFact) ? opt.overlayCoreFact : (raw.subtitles?.line2Fact || text);
-  const line3Loc = (opt && opt.overlayLocationBadge) ? opt.overlayLocationBadge : (raw.subtitles?.line3Location || ref);
-  const extraContext = (opt && opt.extraImportantContext) ? opt.extraImportantContext : (raw.comicalElement || '');
+  // Optimized 3-line overlay safe-zone text (100% sanitized plain text)
+  const line1Hook = sanitizeOverlayText((opt && opt.overlayHook) ? opt.overlayHook : (raw.subtitles?.line1Hook || title));
+  const line2Fact = sanitizeOverlayText((opt && opt.overlayCoreFact) ? opt.overlayCoreFact : (raw.subtitles?.line2Fact || text));
+  const line3Loc = sanitizeOverlayText((opt && opt.overlayLocationBadge) ? opt.overlayLocationBadge : (raw.subtitles?.line3Location || ref));
+  const extraContext = sanitizeOverlayText((opt && opt.extraImportantContext) ? opt.extraImportantContext : (raw.comicalElement || ''));
 
   return {
     ...raw,

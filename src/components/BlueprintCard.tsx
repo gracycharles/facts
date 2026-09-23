@@ -51,6 +51,8 @@ import {
   VOICE_ARCHETYPES, 
   VoiceArchetypeId 
 } from '../utils/narrationEngine';
+import { getOptimizedOverlayData } from '../utils/tenSecondScriptOptimizer';
+import { sanitizeOverlayText } from '../utils/overlaySanitizer';
 
 interface BlueprintCardProps {
   blueprint: ShortsBlueprint;
@@ -145,9 +147,10 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
   const voiceDir = useMemo(() => buildCharacterVoiceDirection(blueprint, selectedVoiceId), [blueprint, selectedVoiceId]);
   const audioScript = blueprint.audioScript10s || blueprint.audioScript || voiceDir.audioNarrationScript;
 
-  const line1Hook = blueprint.subtitles?.line1Hook || blueprint.title || '';
-  const line2Fact = blueprint.subtitles?.line2Fact || blueprint.factText || '';
-  const line3Location = blueprint.subtitles?.line3Location || blueprint.location || '';
+  const optOverlay = useMemo(() => getOptimizedOverlayData(blueprint), [blueprint]);
+  const line1Hook = optOverlay.hook;
+  const line2Fact = optOverlay.coreFact;
+  const line3Location = optOverlay.locationBadge;
 
   const cityColor = useMemo(() => {
     switch (blueprint.city) {
