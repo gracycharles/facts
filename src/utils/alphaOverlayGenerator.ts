@@ -1,32 +1,34 @@
 import { ShortsBlueprint } from '../types';
 import { computeOverlayTypography, cleanScriptureRef, isDuplicateOrOverlappingScripture } from './overlayTypographyEngine';
+import { getOptimizedOverlayData } from './tenSecondScriptOptimizer';
 
 /**
  * Generates a true 1080x1920 alpha text overlay PNG with exact typography,
- * golden-amber styling, drop shadow, and centered safe-zone layout for English Christian Affirmations.
+ * golden-amber styling, drop shadow, and centered safe-zone layout for Scotland Facts Shorts.
  */
 export async function generateAlphaOverlayBlob(blueprint: ShortsBlueprint): Promise<Blob> {
   // Ensure fonts like Cinzel & Plus Jakarta Sans are fully loaded before rendering
   try {
-    if (document && document.fonts) {
+    if (typeof document !== 'undefined' && document.fonts) {
       await document.fonts.ready;
     }
   } catch {
     // Fallback if fonts.ready API is unsupported
   }
 
-  const line1Affirmation = (blueprint.subtitles.line1Affirmation || blueprint.affirmationText || blueprint.englishText || blueprint.affirmationTitle || '').trim();
-  const rawLine2 = (blueprint.subtitles.line2Scripture || blueprint.scriptureVerse || blueprint.nkjvText || '').replace(/^["']|["']$/g, '').trim();
-  const rawLine3 = (blueprint.subtitles.line3Ref || blueprint.scriptureRef || blueprint.englishRef || '').trim();
+  const optData = getOptimizedOverlayData(blueprint);
+  const line1Hook = (optData.hook || blueprint.subtitles?.line1Hook || blueprint.title || '').trim();
+  const rawLine2 = (optData.coreFact || blueprint.subtitles?.line2Fact || blueprint.factText || '').replace(/^["']|["']$/g, '').trim();
+  const rawLine3 = (optData.locationBadge || blueprint.subtitles?.line3Location || blueprint.location || `${blueprint.city}, Scotland`).trim();
   const cleanRef = cleanScriptureRef(rawLine3);
 
   // Check duplicate/overlapping line 2 vs line 1
-  const hasDistinctLine2 = !isDuplicateOrOverlappingScripture(line1Affirmation, rawLine2);
-  const line2Scripture = hasDistinctLine2 ? rawLine2 : '';
+  const hasDistinctLine2 = !isDuplicateOrOverlappingScripture(line1Hook, rawLine2);
+  const line2Fact = hasDistinctLine2 ? rawLine2 : '';
 
   const typo = computeOverlayTypography(
-    line1Affirmation,
-    line2Scripture,
+    line1Hook,
+    line2Fact,
     cleanRef
   );
 
@@ -72,63 +74,63 @@ export async function generateAlphaOverlayBlob(blueprint: ShortsBlueprint): Prom
   const maxWidth = 760; // Strict YouTube Shorts safe width (160px padding on left & right to prevent UI overlay/edge clipping)
   const centerY = 650;  // Center-Upper Safe Band (y=450 to y=850, y=650 center) safe from bottom 600px Shorts UI occlusion
 
-  // 2px shadow (0,0,0,180) for high legibility over animation
-  ctx.shadowColor = 'rgba(0, 0, 0, 0.706)';
-  ctx.shadowBlur = 3;
+  // 2px shadow for high legibility over video
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
+  ctx.shadowBlur = 4;
   ctx.shadowOffsetX = 0;
-  ctx.shadowOffsetY = 2;
+  ctx.shadowOffsetY = 3;
 
-  const affirmationFontStack = `"Plus Jakarta Sans", "Cinzel", "Arial", sans-serif`;
-  const scriptureFontStack = `"Cinzel", "Georgia", "Times New Roman", serif`;
+  const hookFontStack = `"Plus Jakarta Sans", "Cinzel", "Arial", sans-serif`;
+  const factFontStack = `"Plus Jakarta Sans", "Georgia", "Arial", sans-serif`;
   const refFontStack = `"Plus Jakarta Sans", "Courier New", monospace, sans-serif`;
 
   // Measure fonts
-  ctx.font = `bold ${typo.affirmationPx}px ${affirmationFontStack}`;
-  const affirmationLines = wrapText(line1Affirmation, maxWidth);
+  ctx.font = `bold ${typo.affirmationPx}px ${hookFontStack}`;
+  const hookLines = wrapText(line1Hook, maxWidth);
 
-  ctx.font = `italic ${typo.scripturePx}px ${scriptureFontStack}`;
-  const scriptureLines = hasDistinctLine2 ? wrapText(line2Scripture, maxWidth) : [];
+  ctx.font = `600 ${typo.scripturePx}px ${factFontStack}`;
+  const factLines = hasDistinctLine2 ? wrapText(line2Fact, maxWidth) : [];
 
   // Calculate vertical layout & spacing
-  const affirmationLineHeight = typo.affirmationPx * 1.32;
-  const scriptureLineHeight = typo.scripturePx * 1.35;
-  const gap1 = hasDistinctLine2 ? 28 : 24; // gap between Affirmation and Scripture/Ref
-  const gap2 = 22; // gap between Scripture and Ref
+  const hookLineHeight = typo.affirmationPx * 1.32;
+  const factLineHeight = typo.scripturePx * 1.35;
+  const gap1 = hasDistinctLine2 ? 28 : 24;
+  const gap2 = 22;
 
-  const totalAffirmationH = affirmationLines.length * affirmationLineHeight;
-  const totalScriptureH = scriptureLines.length * scriptureLineHeight;
+  const totalHookH = hookLines.length * hookLineHeight;
+  const totalFactH = factLines.length * factLineHeight;
   const totalRefH = typo.refPx;
 
   const totalBlockH = hasDistinctLine2
-    ? totalAffirmationH + gap1 + totalScriptureH + gap2 + totalRefH
-    : totalAffirmationH + gap1 + totalRefH;
+    ? totalHookH + gap1 + totalFactH + gap2 + totalRefH
+    : totalHookH + gap1 + totalRefH;
 
   let startY = centerY - (totalBlockH / 2);
 
-  // 1. Render Affirmation lines (Golden-Amber)
+  // 1. Render Hook lines (Golden-Amber)
   ctx.fillStyle = '#FFC107';
-  ctx.font = `bold ${typo.affirmationPx}px ${affirmationFontStack}`;
-  for (const line of affirmationLines) {
-    ctx.fillText(line, 540, startY + (affirmationLineHeight / 2));
-    startY += affirmationLineHeight;
+  ctx.font = `bold ${typo.affirmationPx}px ${hookFontStack}`;
+  for (const line of hookLines) {
+    ctx.fillText(line, 540, startY + (hookLineHeight / 2));
+    startY += hookLineHeight;
   }
 
   startY += gap1;
 
-  // 2. Render Scripture lines (Off-White Serif) if distinct
+  // 2. Render Fact lines (Off-White) if distinct
   if (hasDistinctLine2) {
     ctx.fillStyle = '#F8F9FA';
-    ctx.font = `italic ${typo.scripturePx}px ${scriptureFontStack}`;
-    for (const line of scriptureLines) {
-      ctx.fillText(line, 540, startY + (scriptureLineHeight / 2));
-      startY += scriptureLineHeight;
+    ctx.font = `600 ${typo.scripturePx}px ${factFontStack}`;
+    for (const line of factLines) {
+      ctx.fillText(line, 540, startY + (factLineHeight / 2));
+      startY += factLineHeight;
     }
     startY += gap2;
   }
 
-  // 3. Render Ref (Muted Stone)
-  ctx.fillStyle = '#D6D3D1';
-  ctx.font = `600 ${typo.refPx}px ${refFontStack}`;
+  // 3. Render Location Badge (Muted Cyan / Stone)
+  ctx.fillStyle = '#67E8F9';
+  ctx.font = `bold ${typo.refPx}px ${refFontStack}`;
   ctx.fillText(cleanRef, 540, startY + (totalRefH / 2));
 
   return new Promise((resolve, reject) => {
@@ -147,7 +149,7 @@ export async function downloadAlphaOverlayPng(blueprint: ShortsBlueprint): Promi
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
-  link.download = `affirmation_short_${blueprint.id}_alpha_overlay_1080x1920.png`;
+  link.download = `scotland_fact_${blueprint.id}_alpha_overlay_1080x1920.png`;
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

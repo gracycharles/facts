@@ -1,5 +1,6 @@
 import { ShortsBlueprint } from '../types';
 import { ALL_50_SCOTLAND_FACTS } from './scotlandFacts';
+import { TEN_SECOND_OPTIMIZATIONS } from '../utils/tenSecondScriptOptimizer';
 
 const TARGET_ALGORITHM_TAGS = [
   'ScotlandFacts',
@@ -18,14 +19,22 @@ function enrichScotlandBlueprint(raw: ShortsBlueprint): ShortsBlueprint {
   const existingTags = (raw.seo?.tags || []).map(t => t.replace(/^#/, '').trim());
   const mergedTags = Array.from(new Set([...existingTags, ...TARGET_ALGORITHM_TAGS]));
 
+  const opt = TEN_SECOND_OPTIMIZATIONS[raw.id];
+
   const title = raw.title || raw.affirmationTitle || `Scotland Fact #${raw.id}`;
   const text = raw.factText || raw.affirmationText || title;
   const verse = raw.verification?.verdict || raw.scriptureVerse || '100% HISTORICALLY VERIFIED';
   const ref = raw.location || raw.scriptureRef || `${raw.city}, Scotland`;
 
-  const line1Hook = raw.subtitles?.line1Hook || raw.subtitles?.line1Affirmation || title;
-  const line2Fact = raw.subtitles?.line2Fact || raw.subtitles?.line2Scripture || text;
-  const line3Loc = raw.subtitles?.line3Location || raw.subtitles?.line3Ref || ref;
+  // 10s strictly calibrated audio script vs extended story script
+  const originalAudioScript = raw.audioScript || text;
+  const tenSecScript = (opt && opt.tenSecAudioScript) ? opt.tenSecAudioScript : originalAudioScript;
+
+  // Optimized 3-line overlay safe-zone text
+  const line1Hook = (opt && opt.overlayHook) ? opt.overlayHook : (raw.subtitles?.line1Hook || title);
+  const line2Fact = (opt && opt.overlayCoreFact) ? opt.overlayCoreFact : (raw.subtitles?.line2Fact || text);
+  const line3Loc = (opt && opt.overlayLocationBadge) ? opt.overlayLocationBadge : (raw.subtitles?.line3Location || ref);
+  const extraContext = (opt && opt.extraImportantContext) ? opt.extraImportantContext : (raw.comicalElement || '');
 
   return {
     ...raw,
@@ -37,6 +46,10 @@ function enrichScotlandBlueprint(raw: ShortsBlueprint): ShortsBlueprint {
     scriptureRef: ref,
     englishText: text,
     englishRef: ref,
+    audioScript: tenSecScript, // Default to 10s-safe calibrated audio script
+    audioScript10s: tenSecScript,
+    audioScriptExtended: originalAudioScript,
+    overlayExtraContext: extraContext,
     subtitles: {
       line1Hook,
       line2Fact,

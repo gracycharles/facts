@@ -435,7 +435,7 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
           </div>
         </section>
 
-        {/* 🎙 Audio Narration Engine - CONTENT-ADAPTIVE VOICE SELECTION */}
+        {/* 🎙 Audio Narration Engine - CONTENT-ADAPTIVE VOICE SELECTION & 10s DURATION ENFORCEMENT */}
         <section className="bg-stone-950/80 rounded-xl border border-emerald-500/30 overflow-hidden transition-all shadow-md">
           <div className="flex flex-wrap items-center justify-between gap-2 p-3.5 sm:p-4 hover:bg-stone-900/40 transition-colors">
             <button
@@ -452,8 +452,8 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-bold">
                   {activeArchetype.name}
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-stone-900 border border-stone-800 text-stone-400 font-normal">
-                  {isAudioOpen ? 'Hide' : 'Show Player & Script'}
+                <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full border font-bold ${voiceDir.timing.statusColor}`}>
+                  ⏱️ {voiceDir.timing.statusLabel}
                 </span>
               </div>
               {isAudioOpen ? (
@@ -498,8 +498,18 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
           {isAudioOpen && (
             <div className="p-4 pt-0 border-t border-stone-800/80 space-y-4 text-xs text-stone-300">
               
+              {/* 10-Second Timing Guarantee Banner */}
+              <div className="bg-emerald-950/40 border border-emerald-500/30 rounded-lg p-3 text-xs flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span className="text-[11px] font-mono text-emerald-300 font-semibold">
+                    10-Second Video Safe: Script is calibrated to finish in ~{voiceDir.timing.estimatedDurationSec}s ({voiceDir.timing.wordCount} words), leaving a 1.5s visual outro buffer before cutoff. Extra deep facts are kept in the on-screen Text Overlay!
+                  </span>
+                </div>
+              </div>
+
               {/* Interactive Voice Archetype Switcher */}
-              <div className="pt-2 space-y-2">
+              <div className="pt-1 space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono uppercase text-emerald-400 font-bold flex items-center gap-1">
                     <Radio className="w-3 h-3 text-emerald-400" />
@@ -570,13 +580,13 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
               <div className="p-3.5 rounded-xl bg-stone-900/90 border border-emerald-500/30 space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-emerald-400 font-mono uppercase text-[10px] block font-bold">
-                    Exact Spoken Narration Script (10-12s):
+                    Strict 10-Second Spoken Narration Script ({voiceDir.timing.wordCount} words • ~{voiceDir.timing.estimatedDurationSec}s):
                   </span>
                   <button
                     onClick={() => copyToClipboard(blueprint.audioScript || '', 'spoken-script')}
                     className="text-[10px] font-mono text-stone-400 hover:text-emerald-300 flex items-center gap-1"
                   >
-                    {copiedSection === 'spoken-script' ? 'Copied!' : 'Copy Script'}
+                    {copiedSection === 'spoken-script' ? 'Copied!' : 'Copy 10s Script'}
                   </button>
                 </div>
                 <p className="font-serif text-sm sm:text-base text-stone-100 italic bg-black/50 p-3 rounded border border-stone-800 leading-relaxed">
@@ -601,6 +611,9 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
                 <span>📝 Text Overlay & Subtitle Safe Zone (1080x1920)</span>
                 <span className="text-[10px] px-2 py-0.5 rounded-full bg-teal-950/80 border border-teal-500/40 text-teal-300 font-mono font-semibold">
                   Zero Edge Clipping
+                </span>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-950/80 border border-amber-500/40 text-amber-300 font-mono font-semibold">
+                  Preserves Extra Key Figures & Dates
                 </span>
               </h3>
             </div>
@@ -643,10 +656,21 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
               <div className="text-white font-serif text-xs sm:text-sm leading-relaxed drop-shadow-md max-w-xl mx-auto">
                 "{line2Fact}"
               </div>
-              <div className="text-stone-400 font-mono text-[11px] tracking-wide drop-shadow-md">
-                📍 {line3Location}
+              <div className="text-cyan-300 font-mono text-[11px] font-bold tracking-wide drop-shadow-md">
+                {line3Location}
               </div>
             </div>
+
+            {blueprint.overlayExtraContext && (
+              <div className="bg-stone-900/80 p-3 rounded-lg border border-stone-800 flex items-start gap-2 text-xs">
+                <span className="text-amber-400 font-bold uppercase text-[10px] font-mono tracking-wider shrink-0 mt-0.5">
+                  Extra Context Overlay:
+                </span>
+                <span className="text-stone-300 leading-relaxed">
+                  {blueprint.overlayExtraContext}
+                </span>
+              </div>
+            )}
           </div>
         </section>
 

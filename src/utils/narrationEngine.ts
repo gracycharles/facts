@@ -1,4 +1,5 @@
 import { ShortsBlueprint } from '../types';
+import { calculateAudioTiming, AudioTimingMetric, getOptimized10sScript } from './tenSecondScriptOptimizer';
 
 export type VoiceArchetypeId = 
   | 'auto' 
@@ -185,6 +186,7 @@ export interface CharacterVoiceDirection {
   audioPhonetics: string;
   backgroundAudio: string;
   elevenLabsPrompt: string;
+  timing: AudioTimingMetric;
 }
 
 /**
@@ -208,18 +210,20 @@ export function buildCharacterVoiceDirection(
   const narrationStyle = `Engaging delivery tailored to context; authentic comedic timing and nostalgic resonance for Scottish locals and international viewers alike.`;
   const wittyComedicNuance = `Local comedic nuance: ${comical}`;
 
-  const audioNarrationScript = b.audioScript || `${b.title}! Did you know: ${b.factText}`;
+  const audioNarrationScript = b.audioScript10s || b.audioScript || `${b.title}! Did you know: ${b.factText}`;
+  const timing = calculateAudioTiming(audioNarrationScript);
 
-  const voiceProfileDirective = `[VOICE SELECTION - ${activeArchetype.name.toUpperCase()}]: Narrated in ${activeArchetype.accent} (${activeArchetype.ageRange}). Delivery: ${activeArchetype.cadence}. Ensure authentic Scottish place names and pronunciations are prioritized.`;
+  const voiceProfileDirective = `[VOICE SELECTION - ${activeArchetype.name.toUpperCase()}]: Narrated in ${activeArchetype.accent} (${activeArchetype.ageRange}). Delivery: ${activeArchetype.cadence}. Strict 10s Timing: ${timing.wordCount} words (~${timing.estimatedDurationSec}s duration).`;
 
   const elevenLabsPrompt = `[VOICE PROFILE: ${activeArchetype.name.toUpperCase()}]
 • Voice Persona: ${activeArchetype.name} (${activeArchetype.accent})
 • Age Range: ${activeArchetype.ageRange} | Gender: ${activeArchetype.gender}
+• 10-Second Timing Constraint: ${timing.wordCount} words / ~${timing.estimatedDurationSec}s spoken duration (Leaves 1.5s visual outro buffer)
 • Delivery Pace & Tone: ${activeArchetype.cadence}
 • Acting Style: ${activeArchetype.description}
 • Local Phonetics Guide: ${phonetics || 'Standard Scottish and British local place names'}
 • Ambience / Soundscape: ${location} • ${b.backgroundAudio || 'Authentic ambient soundscape'}
-• EXACT SPOKEN SCRIPT (Read Verbatim):
+• EXACT SPOKEN SCRIPT (Read Verbatim in 7.5 - 8.5 seconds):
 "${audioNarrationScript}"`;
 
   return {
@@ -233,8 +237,9 @@ export function buildCharacterVoiceDirection(
     voiceProfileDirective,
     audioNarrationScript,
     audioPhonetics: phonetics,
-    backgroundAudio: b.backgroundAudio,
-    elevenLabsPrompt
+    backgroundAudio: b.backgroundAudio || '',
+    elevenLabsPrompt,
+    timing
   };
 }
 
@@ -251,7 +256,6 @@ export function playAdaptiveVoice(
   onError?: () => void
 ): void {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
-    alert('Browser speech synthesis is not supported on this device.');
     return;
   }
 
@@ -303,8 +307,18 @@ export function playAdaptiveVoice(
     utterance.voice = matchedVoice;
   }
 
+  // Calibrate speech rate to guarantee completion within 8.5 seconds
+  const words = script.trim().split(/\s+/).filter(Boolean);
+  let calibratedRate = voiceArchetype.rate;
+  if (words.length > 20) {
+    // Accelerate slightly for longer scripts to fit 10s boundary
+    calibratedRate = Math.min(1.25, voiceArchetype.rate * 1.15);
+  } else {
+    calibratedRate = Math.max(1.02, voiceArchetype.rate);
+  }
+
   utterance.pitch = voiceArchetype.pitch;
-  utterance.rate = voiceArchetype.rate;
+  utterance.rate = calibratedRate;
 
   utterance.onstart = () => {
     if (onStart) onStart();

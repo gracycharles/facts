@@ -54,8 +54,11 @@ export interface ShortsBlueprint {
   midjourneyPrompt?: string;
   voiceProfile?: string;
   audioScript?: string;
+  audioScript10s?: string;
+  audioScriptExtended?: string;
   audioPhonetics?: string;
   backgroundAudio?: string;
+  overlayExtraContext?: string;
   subtitles?: {
     line1Hook?: string;
     line2Fact?: string;
