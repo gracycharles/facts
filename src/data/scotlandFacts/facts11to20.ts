@@ -323,12 +323,12 @@ export const FACTS_11_TO_20: ShortsBlueprint[] = [
   },
   {
     id: 16,
-    title: "The Deep-Fried Mars Bar: Born in Stonehaven",
+    title: "The Famous Deep-Fried Chocolate Bar: Born in Stonehaven",
     city: "Scotland",
     category: "Scottish Banter & Life",
     historicalEra: "1995 – Present",
-    factText: "In the summer of 1995, a schoolboy walked into the Haven Chip Bar (now The Carron) in Stonehaven near Aberdeen and asked fryer John MacLeod if he could batter and deep-fry a Mars chocolate bar. John dipped the chilled candy into fresh golden fish-and-chip batter, lowered it into bubbling hot fat for 45 seconds, and tasted perfection: a crispy golden shell with molten nougat and caramel inside! The Daily Record reported it, the BBC covered it, and it turned into an immortal symbol of Scottish culinary audacity, praised by Michelin-starred chefs and adventurous tourists worldwide!",
-    character: "John the Chipper Fryer in white paper hat and striped apron, using a metal wire frying basket to lift a steaming, golden-battered Mars Bar out of bubbling oil like a precious gold bullion",
+    factText: "In the summer of 1995, a schoolboy walked into the Haven Chip Bar (now The Carron) in Stonehaven near Aberdeen and asked fryer John MacLeod if he could batter and deep-fry a caramel chocolate bar. John dipped the chilled candy into fresh golden fish-and-chip batter, lowered it into bubbling hot fat for 45 seconds, and tasted perfection: a crispy golden shell with molten nougat and caramel inside! The Daily Record reported it, the BBC covered it, and it turned into an immortal symbol of Scottish culinary audacity, praised by Michelin-starred chefs and adventurous tourists worldwide!",
+    character: "John the Chipper Fryer in white paper hat and striped apron, using a metal wire frying basket to lift a steaming, golden-battered chocolate bar out of bubbling oil like a precious gold bullion",
     characterName: "John the Master Fryer",
     characterStyle: "High-Energy Kinetic Fast Food Comedy with ultra-crisp sizzling sound design",
     supportingCharacters: [
@@ -346,34 +346,34 @@ export const FACTS_11_TO_20: ShortsBlueprint[] = [
       }
     ],
     objectsScenes: "Bubbling stainless steel deep-fat fryer, golden crispy battered chocolate bar dusted with icing sugar on greaseproof paper, salt and vinegar shaker, Scottish coastal harbour",
-    comicalElement: "Mars Chocolates actually released a formal legal statement clarifying that deep frying is not authorized or endorsed by Mars because it goes against their healthy living guidelines—which only made Scots love it more!",
+    comicalElement: "Major confectionery corporations actually released formal statements clarifying that deep frying is not endorsed by them, which only made Scots love it more!",
     location: "The Carron Fish Bar (formerly Haven), Cameron Street, Stonehaven, Scotland",
     hdImage: {
       url: "https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=1200&q=80",
-      caption: "Golden sizzling batter evocative of Scotland's legendary deep-fried Mars Bar creation",
+      caption: "Golden sizzling batter evocative of Scotland's legendary deep-fried chocolate bar creation",
       credit: "Scottish Chipper Culture Landmark",
-      historicalContext: "First concocted in August 1995 at the Haven Chip Bar in Stonehaven. Over 100 deep-fried Mars bars are still sold there every week."
+      historicalContext: "First concocted in August 1995 at the Haven Chip Bar in Stonehaven. Over 100 deep-fried chocolate bars are still sold there every week."
     },
-    videoPrompt: "Vertical 9:16 ultra-appetizing cinematic food reveal. Inside a glowing Scottish chip shop at night. Sizzling golden oil bubbles frantically. A chocolate bar dipped in smooth batter is lowered on a wire basket. Slow-motion bubbles wrap around the batter as it turns crunchy golden brown. Cut to a close-up knife slicing the crispy cylinder in half: warm, molten melted caramel and dark chocolate ooze luxuriously out with a wisp of steam. High contrast, warm amber glow, irresistible food cinematography.",
-    midjourneyPrompt: "Macro vertical food photography of a Scottish deep-fried Mars bar sliced in half on greaseproof paper, crispy golden batter exterior, warm molten caramel and chocolate oozing out, Scottish chip shop background, 8k --ar 9:16 --v 6.1 --style raw",
+    videoPrompt: "Vertical 9:16 ultra-appetizing cinematic food reveal. Inside a glowing Scottish chip shop at night. Sizzling golden oil bubbles frantically. A chocolate bar dipped in smooth batter is lowered on a wire basket. Slow-motion bubbles wrap around the batter as it turns crunchy golden brown. Cut to a close-up knife slicing the crispy cylinder in half: warm, molten melted caramel and rich chocolate ooze luxuriously out with a wisp of steam. High contrast, warm amber glow, irresistible food cinematography, zero commercial brand logos.",
+    midjourneyPrompt: "Macro vertical food photography of a Scottish deep-fried chocolate bar sliced in half on greaseproof paper, crispy golden batter exterior, warm molten caramel and chocolate oozing out, Scottish chip shop background, 8k --ar 9:16 --v 6.1 --style raw",
     voiceProfile: "British young female voice (20s), enthusiastic, cheeky, playful, rapid-fire comedic warmth",
-    audioScript: "Only in Scotland! In 1995, a schoolboy dared a chip shop in Stonehaven to batter a Mars Bar. 45 seconds in the fryer, and boom—a crispy golden shell with molten melted caramel inside! Mars corporate even sent a letter, but Scots made it a worldwide legend!",
+    audioScript: "In 1995, a Scottish chip shop dipped a caramel chocolate bar into fish batter and fried it—creating Scotland's most legendary treat!",
     audioPhonetics: "Stonehaven [STOHN-hay-ven], Carron [KAH-ron]",
     backgroundAudio: "Loud bubbling deep fryer sizzle, crisp crunch of hot batter breaking, cash register bell ding, cheerful Scottish coastal laughter",
     subtitles: {
-      line1Hook: "DEEP-FRIED MARS BAR: 1995 LEGEND 🍫",
+      line1Hook: "SCOTLAND'S DEEP-FRIED CHOCOLATE BAR",
       line2Fact: "Born from a Stonehaven dare—crispy batter with molten caramel!",
-      line3Location: "The Carron Fish Bar • Stonehaven, Scotland",
-      line1Affirmation: "DEEP-FRIED MARS BAR: 1995 LEGEND 🍫",
+      line3Location: "The Carron Fish Bar | Stonehaven, Scotland",
+      line1Affirmation: "SCOTLAND'S DEEP-FRIED CHOCOLATE BAR",
       line2Scripture: "Born from a Stonehaven dare—crispy batter with molten caramel!",
-      line3Ref: "The Carron Fish Bar • Stonehaven, Scotland"
+      line3Ref: "The Carron Fish Bar | Stonehaven, Scotland"
     },
     tenMinuteSegmentPrompt: "Scene 16 (03:00 - 03:12): Sizzle of the chip shop fades into the grand neo-Baroque stone archways of Kelvingrove Museum in Glasgow.",
     seo: {
-      title: "The True Story of the Deep-Fried Mars Bar in Scotland! 🍫🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-      description: "Did you know the Deep-Fried Mars Bar was invented in 1995 in Stonehaven, Scotland when a schoolboy dared the chip shop owner to fry it? Discover how a seaside chipper created an international culinary phenomenon!",
-      tags: ["DeepFriedMarsBar", "Stonehaven", "ScottishFood", "ScottishChipper", "ScottishFacts", "Aberdeenshire", "VisitScotland"],
-      hashtags: ["#ScottishFood", "#DeepFriedMarsBar", "#Stonehaven", "#Scotland", "#Shorts"]
+      title: "The True Story of Scotland's Deep-Fried Chocolate Bar! 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      description: "Did you know Scotland's famous deep-fried chocolate bar was invented in 1995 in Stonehaven when a schoolboy dared the chip shop owner to fry it? Discover how a seaside chipper created an international culinary phenomenon!",
+      tags: ["DeepFriedChocolate", "Stonehaven", "ScottishFood", "ScottishChipper", "ScottishFacts", "Aberdeenshire", "VisitScotland"],
+      hashtags: ["#ScottishFood", "#Stonehaven", "#Scotland", "#Shorts"]
     },
     verification: {
       verifiedSource: "Aberdeenshire Council Heritage, BBC News 1995 Archive, Daily Record August 1995 Report",

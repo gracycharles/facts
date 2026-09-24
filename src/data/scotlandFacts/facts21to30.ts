@@ -195,18 +195,18 @@ export const FACTS_21_TO_30: ShortsBlueprint[] = [
   },
   {
     id: 24,
-    title: "Edinburgh: The Real-Life Diagon Alley & Hogwarts",
+    title: "Edinburgh's Magical Curved Street & Literary Legends",
     city: "Edinburgh",
     category: "Nostalgic Heritage",
     historicalEra: "1990s – Present",
-    factText: "Edinburgh is widely celebrated as the birthplace of Harry Potter! In the 1990s, J.K. Rowling penned the early chapters in city cafes like The Elephant House and Nicolson's. The winding, colourful two-tiered curve of Victoria Street in the Old Town directly inspired Diagon Alley, complete with quirky joke shops and wand emporiums. Wandering through Greyfriars Kirkyard, you can find the actual headstones of 'Thomas Riddell' (Voldemort), William McGonagall (the famously terrible poet), and Elizabeth Moodie! Meanwhile, the turreted 1628 George Heriot's School sits right nearby with its four houses and castle towers!",
+    factText: "Edinburgh is widely celebrated as the birthplace of modern fantasy literature! In the 1990s, world-famous fantasy authors penned early novel chapters in historic city cafes. The winding, colourful two-tiered curve of Victoria Street in the Old Town directly inspired legendary wizarding shopping streets, complete with quirky joke shops and artisanal emporiums. Wandering through Greyfriars Kirkyard, visitors discover the actual 19th-century headstones of 'Thomas Riddell', William McGonagall, and Elizabeth Moodie! Meanwhile, the turreted 1628 George Heriot's School sits right nearby with its four houses and castle towers!",
     character: "1990s author in a cosy woollen scarf sitting at a wooden cafe table with a steaming mug of tea, writing with a fountain pen while looking out at Edinburgh Castle",
     characterName: "The Cafe Dreamer",
     characterStyle: "Enchanting Cinematic Magical Realism with warm amber cafe lighting",
     supportingCharacters: [
       {
         name: "Thomas Riddell's Headstone",
-        role: "The Spooky Gravestone",
+        role: "The Historic Gravestone",
         appearance: "Weathered 1806 sandstone cemetery monument with moss growing over the carved name 'Thomas Riddell, Esq.'",
         comedicInteraction: "A sudden magical swirl of green autumn leaves sweeps across the carving"
       },
@@ -214,11 +214,11 @@ export const FACTS_21_TO_30: ShortsBlueprint[] = [
         name: "The Victoria Street Bookseller",
         role: "Old Town Merchant",
         appearance: "Velvet waistcoat, round spectacles, stepping out from a bright turquoise curved shopfront",
-        comedicInteraction: "Tips his hat to passing tourists who are comparing the curved street directly to Diagon Alley"
+        comedicInteraction: "Tips his hat to passing tourists admiring the rainbow architecture"
       }
     ],
-    objectsScenes: "Winding cobblestones of Victoria Street with colorful pastel facades, Greyfriars Kirkyard cemetery headstones, Hogwarts-like four-towered George Heriot's School, cup of tea with notebook",
-    comicalElement: "George Heriot's School literally has four student houses, four coloured castle towers, and fees paid for impoverished children—Edinburgh was Hogwarts all along!",
+    objectsScenes: "Winding cobblestones of Victoria Street with colorful pastel facades, Greyfriars Kirkyard cemetery headstones, four-towered George Heriot's School, cup of tea with notebook",
+    comicalElement: "George Heriot's School literally has four student houses, four coloured castle towers, and fees paid for impoverished children—Edinburgh was the magical school all along!",
     location: "Victoria Street & Greyfriars Kirkyard, Old Town, Edinburgh",
     hdImage: {
       url: "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80",
@@ -226,26 +226,26 @@ export const FACTS_21_TO_30: ShortsBlueprint[] = [
       credit: "Edinburgh Literary Heritage Landmark",
       historicalContext: "Victoria Street was built between 1829 and 1834. Thomas Riddell died in 1806 and is buried in Greyfriars Kirkyard."
     },
-    videoPrompt: "Vertical 9:16 magical cinematic tracking shot. Start inside a cozy Edinburgh cafe looking out rainy glass at Edinburgh Castle. Pan smoothly down to a handwritten notebook page where ink spells form. The camera flies right through the window onto the wet cobblestones of Victoria Street, sweeping down its winding curve past vibrant painted storefronts (Diagon Alley). Seamless cut into the atmospheric mist of Greyfriars Kirkyard to reveal the carved stone headstone of Thomas Riddell. Pure cinematic enchantment.",
+    videoPrompt: "Vertical 9:16 magical cinematic tracking shot. Start inside a cozy Edinburgh cafe looking out rainy glass at Edinburgh Castle. Pan smoothly down to a handwritten notebook page where imaginative fantasy stories are penned. The camera flies right through the window onto the wet cobblestones of Victoria Street, sweeping down its winding curve past vibrant painted storefronts. Seamless cut into the atmospheric mist of Greyfriars Kirkyard to reveal the carved historical 1806 stone headstone of Thomas Riddell. Pure cinematic enchantment, zero commercial logos.",
     midjourneyPrompt: "Enchanting vertical photograph of Edinburgh's Victoria Street at twilight, colorful curved facades of quirky shops, wet cobblestones reflecting glowing warm shop windows, Edinburgh Castle visible above, 35mm film photography, 8k --ar 9:16 --v 6.1 --style raw",
     voiceProfile: "British young female voice (20s), enchanting, magical, whisper of mystery and warm British charm",
-    audioScript: "Step into the real Diagon Alley! Edinburgh's curved, colourful Victoria Street inspired the wizarding shopping street. And right in Greyfriars Kirkyard, you can visit the real grave of Thomas Riddell! Edinburgh is basically Hogwarts in real life!",
+    audioScript: "Edinburgh inspired the world's most famous wizard books! Victoria Street became the magical wizard alley, and real character names hide in the kirkyard!",
     audioPhonetics: "Victoria [vik-TOH-ree-ah], Heriot's [HEH-ree-uts], Riddell [RID-dul]",
     backgroundAudio: "Gentle magical celesta music box arpeggio, soft cafe clink of porcelain tea cup, whistling Old Town wind",
     subtitles: {
-      line1Hook: "EDINBURGH: THE REAL DIAGON ALLEY ⚡",
-      line2Fact: "Victoria Street + real Thomas Riddell grave in Greyfriars!",
-      line3Location: "Victoria Street & Greyfriars • Edinburgh",
-      line1Affirmation: "EDINBURGH: THE REAL DIAGON ALLEY ⚡",
-      line2Scripture: "Victoria Street + real Thomas Riddell grave in Greyfriars!",
-      line3Ref: "Victoria Street & Greyfriars • Edinburgh"
+      line1Hook: "EDINBURGH'S MAGICAL WIZARD ALLEY",
+      line2Fact: "Victoria Street inspired the magical wizard alley; secret character names hide in Greyfriars!",
+      line3Location: "Victoria Street | Old Town, Edinburgh",
+      line1Affirmation: "EDINBURGH'S MAGICAL WIZARD ALLEY",
+      line2Scripture: "Victoria Street inspired the magical wizard alley; secret character names hide in Greyfriars!",
+      line3Ref: "Victoria Street | Old Town, Edinburgh"
     },
     tenMinuteSegmentPrompt: "Scene 24 (04:36 - 04:48): Magical sparks dissolve into the flickers of John Logie Baird's vintage 1927 mechanical television screen in Glasgow.",
     seo: {
-      title: "The Real-Life Diagon Alley and Hogwarts in Edinburgh! ⚡🧙‍♂️🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-      description: "Did you know Edinburgh is the real-life inspiration for Harry Potter? From colorful Victoria Street inspiring Diagon Alley to Thomas Riddell's actual grave in Greyfriars Kirkyard, explore Edinburgh's magical literary locations!",
-      tags: ["DiagonAlleyEdinburgh", "VictoriaStreet", "HarryPotterEdinburgh", "GreyfriarsKirkyard", "ThomasRiddellGrave", "VisitEdinburgh", "EdinburghLiterary"],
-      hashtags: ["#Edinburgh", "#DiagonAlley", "#HarryPotter", "#VictoriaStreet", "#Shorts"]
+      title: "Victoria Street & Edinburgh's Magical Wizard Alley! 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      description: "Discover how Edinburgh's colorful Victoria Street and historic Greyfriars Kirkyard inspired the world's greatest fantasy novels and wizarding worlds!",
+      tags: ["VictoriaStreet", "EdinburghHistory", "LiteraryEdinburgh", "GreyfriarsKirkyard", "VisitEdinburgh", "ScotlandFacts"],
+      hashtags: ["#Edinburgh", "#VictoriaStreet", "#Scotland", "#LiteraryHistory", "#Shorts"]
     },
     verification: {
       verifiedSource: "City of Edinburgh UNESCO City of Literature, Greyfriars Kirk Burial Records, Edinburgh World Heritage",

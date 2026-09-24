@@ -290,19 +290,19 @@ export const FACTS_41_TO_50: ShortsBlueprint[] = [
       credit: "University of Glasgow Heritage Collection",
       historicalContext: "Founded in 1451. Relocated to Gilmorehill in 1870. The cloisters were designed by Sir George Gilbert Scott and completed by his son John Oldrid Scott."
     },
-    videoPrompt: "Vertical 9:16 breathtaking cinematic architectural glide. Golden morning light streams between the fluted stone pillars of the University of Glasgow Cloisters. The camera glides forward through the dramatic, endless symmetrical ribbed Gothic vaults in one unbroken continuous tracking shot. Dust motes dance in shafts of sunlight. The camera tips upward to admire the intricate carved stone bosses on the ceiling, then pans out to the soaring 278-foot Gilbert Scott tower rising into the blue Glasgow sky. Majestic, scholarly, awe-inspiring.",
+    videoPrompt: "Vertical 9:16 breathtaking cinematic architectural glide. Golden morning light streams between the fluted stone pillars of the University of Glasgow Cloisters. The camera glides forward through the dramatic, endless symmetrical ribbed Gothic vaults in one unbroken continuous tracking shot. Dust motes dance in shafts of sunlight. The camera tips upward to admire the intricate carved stone bosses on the ceiling, then pans out to the soaring 278-foot Gilbert Scott tower rising into the blue Glasgow sky. Majestic, scholarly, awe-inspiring, zero commercial logos.",
     midjourneyPrompt: "Cinematic vertical photograph of the grand Gothic cloisters at the University of Glasgow, endless perspective of ribbed stone arches with golden morning sunlight streaming across stone flagstones, dark academia atmosphere, 35mm film, 8k --ar 9:16 --v 6.1 --style raw",
     voiceProfile: "British young female voice (20s), cultured, articulate, majestic, warm British-Scottish scholarly admiration",
-    audioScript: "Founded in 1451, Glasgow University has the most magical campus in Britain! These 1870 Gothic Cloisters are so stunning that Hollywood uses them to film everything from 'The Batman' to 'Outlander'! It's real-life dark academia, right in Glasgow's West End!",
+    audioScript: "Glasgow University's 1870 Gothic Cloisters are so stunning that Hollywood uses them to film major superhero and fantasy blockbusters!",
     audioPhonetics: "Gilmorehill [GIL-mor-hill], Cloisters [KLOY-sterz], Gilbert Scott [GIL-bert SKOT]",
     backgroundAudio: "Soaring classical choral hymn, footsteps echoing rhythmically on stone flagstones, distant university tower clock chime",
     subtitles: {
-      line1Hook: "GLASGOW'S MAGICAL GOTHIC CLOISTERS 🏛️",
-      line2Fact: "Founded 1451! Hollywood filming spot for The Batman & Outlander.",
-      line3Location: "University of Glasgow • Gilmorehill, West End",
-      line1Affirmation: "GLASGOW'S MAGICAL GOTHIC CLOISTERS 🏛️",
-      line2Scripture: "Founded 1451! Hollywood filming spot for The Batman & Outlander.",
-      line3Ref: "University of Glasgow • Gilmorehill, West End"
+      line1Hook: "GLASGOW'S MAGICAL GOTHIC CLOISTERS",
+      line2Fact: "Founded 1451! Hollywood filming spot for superhero epics and fantasy films.",
+      line3Location: "University of Glasgow | Gilmorehill, Glasgow",
+      line1Affirmation: "GLASGOW'S MAGICAL GOTHIC CLOISTERS",
+      line2Scripture: "Founded 1451! Hollywood filming spot for superhero epics and fantasy films.",
+      line3Ref: "University of Glasgow | Gilmorehill, Glasgow"
     },
     tenMinuteSegmentPrompt: "Scene 45 (08:48 - 09:00): Sunlight streaming through Glasgow's Gothic arches illuminates the majestic golden horn of the Scottish royal unicorn.",
     seo: {

@@ -77,21 +77,21 @@ export const TEN_SECOND_OPTIMIZATIONS: Record<number, TenSecondScriptOptimizatio
   },
   8: {
     id: 8,
-    tenSecAudioScript: "Scotland is one of the only countries on Earth where Coca-Cola isn't number one—beaten by bright orange Irn-Bru!",
-    audioPhoneticsGuide: "Irn-Bru [IRON-BREW], Cumbernauld [kum-ber-NAWLD]",
-    overlayHook: "IRN-BRU: SCOTLAND'S SECRET NECTAR",
-    overlayCoreFact: "Brewed since 1901 - Scotland is one of few nations where Coca-Cola is not #1!",
-    overlayLocationBadge: "AG Barr | Cumbernauld, Scotland",
-    extraImportantContext: "Brewed to a secret recipe containing 32 ingredients known to only three people in the world."
+    tenSecAudioScript: "Scotland is one of the only countries on Earth where cola isn't number one—beaten by our famous bright orange soda! Made since 1901!",
+    audioPhoneticsGuide: "Falkirk [FALL-kirk], Cumbernauld [kum-ber-NAWLD]",
+    overlayHook: "SCOTLAND'S FAMOUS ORANGE NECTAR",
+    overlayCoreFact: "Brewed since 1901 - Scotland is one of few nations where cola is not #1!",
+    overlayLocationBadge: "Falkirk and Cumbernauld | Scotland",
+    extraImportantContext: "Brewed to a legendary secret recipe containing 32 ingredients known to only three people in the world."
   },
   9: {
     id: 9,
-    tenSecAudioScript: "Glasgow's Victorian Necropolis holds fifty thousand souls—and its dark gothic monuments inspired Batman's Gotham City!",
+    tenSecAudioScript: "Glasgow's Victorian Necropolis holds fifty thousand souls—and its dark gothic monuments inspired the moody skylines of Hollywood blockbusters!",
     audioPhoneticsGuide: "Necropolis [neh-KROP-oh-lis], Cathedral [kuh-THEE-drul]",
     overlayHook: "GLASGOW'S VICTORIAN NECROPOLIS",
-    overlayCoreFact: "50,000 souls buried on the hill - inspired the dark gothic architecture of Batman's Gotham!",
+    overlayCoreFact: "50,000 souls buried on the hill - inspired the gothic cityscapes of Hollywood blockbusters!",
     overlayLocationBadge: "Glasgow Necropolis | Beside Glasgow Cathedral",
-    extraImportantContext: "Modeled after Paris's Père Lachaise cemetery. Filming location for Hollywood blockbusters including The Batman."
+    extraImportantContext: "Modeled after Paris's Père Lachaise cemetery. Filming location for Hollywood superhero and gothic blockbusters."
   },
   10: {
     id: 10,
@@ -109,7 +109,7 @@ export const TEN_SECOND_OPTIMIZATIONS: Record<number, TenSecondScriptOptimizatio
     overlayHook: "CHICKEN TIKKA MASALA: BORN IN GLASGOW",
     overlayCoreFact: "Invented in 1971 at the Shish Mahal when a customer asked for gravy on dry tikka!",
     overlayLocationBadge: "Shish Mahal | Gibson Street, Glasgow",
-    extraImportantContext: "Chef Ali Ahmed Aslam whipped up a sauce with Campbell's condensed tomato soup, yogurt, and spices."
+    extraImportantContext: "Chef Ali Ahmed Aslam whipped up a sauce with condensed creamy tomato soup, yogurt, and spices."
   },
   12: {
     id: 12,
@@ -149,12 +149,12 @@ export const TEN_SECOND_OPTIMIZATIONS: Record<number, TenSecondScriptOptimizatio
   },
   16: {
     id: 16,
-    tenSecAudioScript: "The world-famous Deep-Fried Mars Bar was created in 1995 at a chip shop in Stonehaven, Scotland!",
+    tenSecAudioScript: "In 1995, a Scottish chip shop dipped a caramel chocolate bar into fish batter and fried it—creating Scotland's most legendary treat!",
     audioPhoneticsGuide: "Stonehaven [stone-HAY-ven], Aberdeenshire [ab-er-DEEN-sheer]",
-    overlayHook: "THE DEEP-FRIED MARS BAR",
+    overlayHook: "SCOTLAND'S DEEP-FRIED CHOCOLATE BAR",
     overlayCoreFact: "Invented in 1995 at The Carron Fish Bar - dipped in fish batter and fried in beef dripping!",
     overlayLocationBadge: "The Carron Fish Bar | Stonehaven, Aberdeenshire",
-    extraImportantContext: "Over 150 deep-fried Mars bars sold weekly to travelers from across the globe."
+    extraImportantContext: "Over 150 deep-fried chocolate bars sold weekly to travelers from across the globe."
   },
   17: {
     id: 17,
@@ -221,12 +221,12 @@ export const TEN_SECOND_OPTIMIZATIONS: Record<number, TenSecondScriptOptimizatio
   },
   24: {
     id: 24,
-    tenSecAudioScript: "Edinburgh inspired Harry Potter! Victoria Street became Diagon Alley, and Tom Riddle's real grave sits in Greyfriars Kirkyard!",
-    audioPhoneticsGuide: "Diagon [DY-uh-gon], Heriot's [HAIR-ee-uts], McGonagall [muh-GON-uh-gull]",
-    overlayHook: "EDINBURGH: REAL DIAGON ALLEY",
-    overlayCoreFact: "Victoria Street inspired Diagon Alley; Tom Riddle's grave is in Greyfriars Kirkyard!",
+    tenSecAudioScript: "Edinburgh inspired the world's most famous wizard books! Victoria Street became the magical wizard alley, and real character names hide in the kirkyard!",
+    audioPhoneticsGuide: "Victoria [vik-TOR-ee-uh], Kirkyard [KIRK-yard], Greyfriars [GRAY-fry-erz]",
+    overlayHook: "EDINBURGH'S MAGICAL WIZARD ALLEY",
+    overlayCoreFact: "Victoria Street inspired the magical wizard alley; secret character names hide in Greyfriars!",
     overlayLocationBadge: "Victoria Street | Old Town, Edinburgh",
-    extraImportantContext: "JK Rowling wrote the early chapters in Edinburgh cafes. George Heriot's School inspired the 4 houses of Hogwarts."
+    extraImportantContext: "Written in Edinburgh cafes. Victoria Street's colourful curved facade inspired the famous cobblestone wizard alley."
   },
   25: {
     id: 25,
@@ -410,10 +410,10 @@ export const TEN_SECOND_OPTIMIZATIONS: Record<number, TenSecondScriptOptimizatio
   },
   45: {
     id: 45,
-    tenSecAudioScript: "Glasgow University's 1870 Gothic Cloisters are so stunning that Hollywood uses them to film blockbusters like The Batman and Outlander!",
+    tenSecAudioScript: "Glasgow University's 1870 Gothic Cloisters are so stunning that Hollywood uses them to film major superhero and fantasy blockbusters!",
     audioPhoneticsGuide: "Gilmorehill [GIL-mor-hill], Cloisters [KLOY-sterz]",
     overlayHook: "GLASGOW'S MAGICAL GOTHIC CLOISTERS",
-    overlayCoreFact: "Founded 1451! Hollywood filming spot for The Batman, Outlander and Cloud Atlas.",
+    overlayCoreFact: "Founded 1451! Hollywood filming spot for superhero epics, time-travel dramas, and fantasy films.",
     overlayLocationBadge: "University of Glasgow | Gilmorehill, Glasgow",
     extraImportantContext: "Fourth-oldest university in the English-speaking world. Designed by Sir George Gilbert Scott."
   },

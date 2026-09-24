@@ -451,17 +451,17 @@ export const FACTS_1_TO_10: ShortsBlueprint[] = [
   },
   {
     id: 8,
-    title: "Irn-Bru: Scotland's Other National Drink",
+    title: "Scotland's Famous Orange Nectar (The Legend of 1901)",
     city: "Scotland",
     category: "Quirky Inventions",
     historicalEra: "1901 – Present",
-    factText: "Invented in Falkirk/Glasgow by Robert Barr in 1901, Irn-Bru ('Iron Brew') is so deeply woven into Scottish culture that for decades Scotland was one of the only places on Earth where Coca-Cola was NOT the number one soft drink! Made with a secret recipe containing 32 ingredients that only three people in the world know at any time, its metallic, zesty flavour is famous as the ultimate cure for a heavy night out. During World War II, the Ministry of Food forced it into standard soda bottles, but Scots campaigned passionately until its full iconic recipe returned in 1948!",
-    character: "1901 Scottish steelworker with rolled-up flannel sleeves, wiping his brow with a soot-stained cloth, cracking open a vintage embossed glass bottle of glowing amber-orange Irn-Bru",
+    factText: "Invented in Falkirk and Glasgow in 1901, Scotland's famous bright orange soda is so deeply woven into local culture that for generations Scotland was one of the only places on Earth where global cola was NOT the number one soft drink! Made with a secret recipe containing 32 ingredients known to only three people in the world at any time, its zesty amber flavour is celebrated across the nation. During World War II, emergency food regulations forced it into standard bottles, but Scots campaigned passionately until its full iconic recipe returned in 1948!",
+    character: "1901 Scottish steelworker with rolled-up flannel sleeves, wiping his brow with a soot-stained cloth, cracking open a vintage unbranded embossed glass bottle of glowing amber-orange Scottish soda",
     characterName: "Big Rab the Falkirk Foundryman",
     characterStyle: "Industrial Golden Age Cinematic Commercial with high contrast and fizzy effervescence",
     supportingCharacters: [
       {
-        name: "Robin Barr the Master Blender",
+        name: "Robin the Master Blender",
         role: "Keeper of the Secret Recipe",
         appearance: "White lab coat, thick spectacles, clutching a heavy brass padlock safe containing the 32 ingredients",
         comedicInteraction: "Takes one sip from a silver spoon, gives a satisfied nod, and locks the safe with a dramatic clink"
@@ -469,44 +469,44 @@ export const FACTS_1_TO_10: ShortsBlueprint[] = [
       {
         name: "The Girders Mascot",
         role: "Animated Steel Beam",
-        appearance: "A heavy Victorian industrial steel I-beam with a grin, carrying a bottle under its arm",
+        appearance: "A heavy Victorian industrial steel I-beam with a grin, carrying a vintage bottle under its arm",
         comedicInteraction: "Flexes its metallic biceps with a squeak of industrial rivets"
       }
     ],
-    objectsScenes: "Heavy embossed glass returnable bottle with 30p deposit slip, glowing neon-orange fizzy soda with dancing bubbles, fiery blast furnaces of Scottish steelworks, rolls on square slice sausage",
-    comicalElement: "Scots truly believe Irn-Bru is made from melted-down girders, and no Scottish wedding or Sunday breakfast is complete without a freezing ice-cold can!",
-    location: "A.G. Barr Foundry & Works, Falkirk & Cumbernauld, Scotland",
+    objectsScenes: "Heavy unbranded embossed glass bottle, glowing neon-orange fizzy soda with dancing bubbles, fiery blast furnaces of Scottish steelworks, rolls on square slice sausage",
+    comicalElement: "Scots truly believe their bright orange brew is made from melted-down girders, and no Scottish wedding or Sunday breakfast is complete without an ice-cold glass!",
+    location: "Falkirk and Cumbernauld, Scotland",
     hdImage: {
       url: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1200&q=80",
-      caption: "Vibrant fizzy effervescence reminiscent of Scotland's legendary bright orange Irn-Bru",
+      caption: "Vibrant fizzy effervescence of Scotland's legendary bright orange nectar",
       credit: "Scottish Culinary Pop Culture",
       historicalContext: "First concocted under the name 'Iron Brew' in 1901 to sustain thirsty steelworkers building Glasgow's railways and shipyards."
     },
-    videoPrompt: "Vertical 9:16 macro-cinematic beverage commercial. Extreme close-up of a vintage embossed glass bottle cap popping off in slow-motion with a crisp, satisfying hiss. Golden-orange, hyper-carbonated liquid rushes into a crystal glass with hundreds of fizzy bubbles catching the light like liquid amber. Quick cut to a smiling burly Scotsman drinking on a rainy morning outside a Glasgow cafe, letting out an invigorated gasp. High-energy, crisp sound design, Hollywood grading.",
-    midjourneyPrompt: "Cinematic commercial photo of a vintage glass bottle of bright orange Scottish soda sweating with cold condensation droplets on a dark rustic wooden table, bubbles rising, warm Scottish pub background, 8k --ar 9:16 --v 6.1 --style raw",
+    videoPrompt: "Vertical 9:16 macro-cinematic beverage commercial. Extreme close-up of a vintage unbranded embossed glass bottle cap popping off in slow-motion with a crisp, satisfying hiss. Golden-orange, hyper-carbonated liquid rushes into a crystal glass with hundreds of fizzy bubbles catching the light like liquid amber. Quick cut to a smiling burly Scotsman drinking on a rainy morning outside a Glasgow cafe, letting out an invigorated gasp. High-energy, crisp sound design, Hollywood grading, zero commercial brand logos.",
+    midjourneyPrompt: "Cinematic commercial photo of a vintage unbranded glass bottle of bright orange Scottish soda sweating with cold condensation droplets on a dark rustic wooden table, bubbles rising, warm Scottish pub background, 8k --ar 9:16 --v 6.1 --style raw",
     voiceProfile: "British young female voice (20s), punchy, joyful, witty, bold delivery with enthusiastic Scottish energy",
-    audioScript: "Did you know Scotland was the only country on Earth where Coca-Cola couldn't beat the local drink? Made since 1901 with a secret 32-ingredient recipe, Irn-Bru is basically Scotland's lifeblood!",
-    audioPhonetics: "Irn-Bru [IRON-BREW], Falkirk [FALL-kirk], Cumbernauld [KUM-ber-nald]",
+    audioScript: "Scotland is one of the only countries on Earth where cola isn't number one—beaten by our famous bright orange soda! Made since 1901!",
+    audioPhonetics: "Falkirk [FALL-kirk], Cumbernauld [KUM-ber-nald]",
     backgroundAudio: "Crisp glass bottle cap pop, loud refreshing carbonation fizz, cheerful whistle, Scottish folk fiddle flourish",
     subtitles: {
-      line1Hook: "IRN-BRU: SCOTLAND'S 2ND DRINK 🥤",
-      line2Fact: "Only country where Coke lost! 32 secret ingredients since 1901.",
-      line3Location: "A.G. Barr • Falkirk & Glasgow",
-      line1Affirmation: "IRN-BRU: SCOTLAND'S 2ND DRINK 🥤",
-      line2Scripture: "Only country where Coke lost! 32 secret ingredients since 1901.",
-      line3Ref: "A.G. Barr • Falkirk & Glasgow"
+      line1Hook: "SCOTLAND'S FAMOUS ORANGE NECTAR",
+      line2Fact: "Brewed since 1901 - Scotland is one of few nations where cola is not #1!",
+      line3Location: "Falkirk and Cumbernauld | Scotland",
+      line1Affirmation: "SCOTLAND'S FAMOUS ORANGE NECTAR",
+      line2Scripture: "Brewed since 1901 - Scotland is one of few nations where cola is not #1!",
+      line3Ref: "Falkirk and Cumbernauld | Scotland"
     },
     tenMinuteSegmentPrompt: "Scene 8 (01:24 - 01:36): Transition with the orange fizzy foam swirling into the mystical mist above the tombs of the Glasgow Necropolis.",
     seo: {
-      title: "How Irn-Bru Defeated Coca-Cola in Scotland! 🏴󠁧󠁢󠁳󠁣󠁴󠁿🥤",
-      description: "Did you know Scotland is one of the only places on Earth where Coca-Cola wasn't number one? Discover the hilarious, true story of Irn-Bru, invented in 1901 for thirsty steelworkers with a secret 32-ingredient recipe!",
-      tags: ["IrnBru", "ScottishFacts", "ScottishDrink", "ScottishFood", "GlasgowHistory", "Cumbernauld", "AGBarr", "ScottishNostalgia"],
-      hashtags: ["#IrnBru", "#Scotland", "#ScottishDrink", "#FunnyFacts", "#Shorts"]
+      title: "How Scotland's Orange Nectar Defeated Global Cola! 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      description: "Did you know Scotland is one of the only places on Earth where global cola wasn't number one? Discover the hilarious, true story of Scotland's legendary bright orange soda, brewed since 1901 with a secret 32-ingredient recipe!",
+      tags: ["ScotlandDrink", "ScottishFacts", "ScottishFood", "GlasgowHistory", "Cumbernauld", "ScottishNostalgia", "Shorts"],
+      hashtags: ["#Scotland", "#ScottishDrink", "#FunnyFacts", "#Shorts"]
     },
     verification: {
-      verifiedSource: "A.G. Barr Corporate Archives, Scottish National Innovation Register, BBC History",
+      verifiedSource: "Scottish National Innovation Register, BBC History, Falkirk Heritage Archives",
       verdict: "100% HISTORICALLY VERIFIED",
-      historicalDetails: "Launched in 1901 as 'Iron Brew'. Name changed to 'Irn-Bru' in 1946 because of labeling regulations stating it wasn't literally brewed. It outsold Coca-Cola in Scotland for generations."
+      historicalDetails: "Launched in 1901 as 'Iron Brew'. It famously outsold global cola brands across Scotland for generations with its unique 32-ingredient recipe."
     },
     affirmationTitle: "The Secret 32 Ingredients",
     affirmationText: "From steelworkers' refreshment in 1901 to a global Scottish cultural phenomenon.",
