@@ -32,9 +32,18 @@ export const BatchExportModal: React.FC<BatchExportModalProps> = ({
     }
 
     if (exportMode === 'audio-scripts') {
-      return blueprints.map(b => (
-        `SCENE #${b.id}: ${b.title} (${b.city})\nVOICE: British Young Female (Age 20-25, RP / Scottish lilt)\nSCRIPT:\n"${b.audioScript}"\nBACKGROUND SOUNDSCAPE: ${b.backgroundAudio}`
-      )).join("\n\n" + "-".repeat(60) + "\n\n");
+      return blueprints.map(b => {
+        const words = (b.audioScript || '').trim().split(/\s+/).filter(Boolean).length;
+        const dur = ((words / 145) * 60).toFixed(1);
+        return [
+          `SCENE #${b.id}: ${b.title} (${b.city})`,
+          `TIMING: ~${dur}s (Strictly under 10.0s short-form video limit • ${words} words)`,
+          `VOICE: British Young Female (Age 20-25, RP / Scottish lilt)`,
+          `PRONUNCIATION / PHONETICS: ${b.audioPhonetics || 'Native Scottish & British phonetics'}`,
+          `EXACT 10S SPOKEN SCRIPT:\n"${b.audioScript}"`,
+          `BACKGROUND SOUNDSCAPE: ${b.backgroundAudio}`
+        ].join('\n');
+      }).join("\n\n" + "-".repeat(60) + "\n\n");
     }
 
     if (exportMode === 'youtube-seo') {

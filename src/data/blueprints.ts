@@ -106,6 +106,7 @@ function enrichScotlandBlueprint(raw: ShortsBlueprint): ShortsBlueprint {
     audioScript: tenSecScript, // Default to 10s-safe calibrated audio script
     audioScript10s: tenSecScript,
     audioScriptExtended: originalAudioScript,
+    audioPhonetics: (opt && opt.audioPhoneticsGuide) ? opt.audioPhoneticsGuide : (raw.audioPhonetics || ''),
     overlayExtraContext: extraContext,
     subtitles: {
       line1Hook,
@@ -130,6 +131,6 @@ function enrichScotlandBlueprint(raw: ShortsBlueprint): ShortsBlueprint {
 
 export const INITIAL_BLUEPRINTS: ShortsBlueprint[] = ALL_50_SCOTLAND_FACTS.map(enrichScotlandBlueprint);
 
-export const TOTAL_PRAISES_TARGET = 100;
-export const TOTAL_FACTS_TARGET = 100;
+export const TOTAL_PRAISES_TARGET = 150;
+export const TOTAL_FACTS_TARGET = 150;
 export const CURRENT_VERIFIED_COUNT = INITIAL_BLUEPRINTS.length;

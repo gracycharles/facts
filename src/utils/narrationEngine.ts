@@ -308,14 +308,17 @@ export function playAdaptiveVoice(
     utterance.voice = matchedVoice;
   }
 
-  // Calibrate speech rate to guarantee completion within 8.5 seconds
+  // Calibrate speech rate to guarantee clear pronunciation and finish cleanly under 10.0s
   const words = script.trim().split(/\s+/).filter(Boolean);
   let calibratedRate = voiceArchetype.rate;
-  if (words.length > 20) {
-    // Accelerate slightly for longer scripts to fit 10s boundary
-    calibratedRate = Math.min(1.25, voiceArchetype.rate * 1.15);
+  if (words.length > 21) {
+    // Gentle acceleration for 22-23 word scripts to finish safely at ~9.0s with crystal clear pronunciation
+    calibratedRate = Math.min(1.12, voiceArchetype.rate * 1.08);
+  } else if (words.length <= 18) {
+    // Steady natural pace for shorter scripts
+    calibratedRate = Math.max(0.98, voiceArchetype.rate);
   } else {
-    calibratedRate = Math.max(1.02, voiceArchetype.rate);
+    calibratedRate = Math.max(1.0, voiceArchetype.rate);
   }
 
   utterance.pitch = voiceArchetype.pitch;

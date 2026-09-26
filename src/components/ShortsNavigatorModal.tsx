@@ -103,7 +103,7 @@ export const ShortsNavigatorModal: React.FC<ShortsNavigatorModalProps> = ({
               type="number"
               min="1"
               max={blueprints.length}
-              placeholder="# (1-50)"
+              placeholder={`# (1-${blueprints.length})`}
               value={jumpInput}
               onChange={(e) => setJumpInput(e.target.value)}
               className="w-20 bg-stone-900 border border-stone-700/80 rounded-xl px-2 py-2 text-xs text-stone-200 text-center font-mono focus:outline-none focus:border-amber-500"

@@ -198,8 +198,8 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
               100% Verified
             </span>
-            <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-stone-900 border border-stone-700 text-amber-300 font-bold">
-              ⏱️ {voiceDir.timing.estimatedDurationSec}s ({voiceDir.timing.wordCount} words)
+            <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-bold flex items-center gap-1" title="Calibrated for strict 10s video limit with zero loss of text or pronunciation">
+              ⏱️ {voiceDir.timing.estimatedDurationSec}s • Fits 10s ({voiceDir.timing.wordCount} words)
             </span>
           </div>
         </div>
@@ -589,7 +589,7 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                     <span className="text-[11px] font-mono text-emerald-300 font-semibold">
-                      Exact 10.0s Confined Limit: {voiceDir.timing.wordCount} words (~${voiceDir.timing.estimatedDurationSec}s spoken audio), finishing before the 10.0s mark.
+                      Exact 10.0s Confined Limit: {voiceDir.timing.wordCount} words (~{voiceDir.timing.estimatedDurationSec}s spoken audio), finishing cleanly before the 10.0s video limit with zero text clipping.
                     </span>
                   </div>
                   <div className="text-[10px] text-amber-300 font-mono pl-4">

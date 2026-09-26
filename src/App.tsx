@@ -124,6 +124,18 @@ export default function App() {
     return INITIAL_BLUEPRINTS.find(b => b.id === selectedBlueprint.id + 1) || null;
   }, [selectedBlueprint.id]);
 
+  const cityCounts = useMemo(() => {
+    const glasgow = INITIAL_BLUEPRINTS.filter(b => b.city === 'Glasgow').length;
+    const edinburgh = INITIAL_BLUEPRINTS.filter(b => b.city === 'Edinburgh').length;
+    const other = INITIAL_BLUEPRINTS.length - glasgow - edinburgh;
+    return {
+      All: INITIAL_BLUEPRINTS.length,
+      Glasgow: glasgow,
+      Edinburgh: edinburgh,
+      Other: other
+    };
+  }, []);
+
   const filteredStripBlueprints = useMemo(() => {
     if (cityFilter === 'All') return INITIAL_BLUEPRINTS;
     if (cityFilter === 'Glasgow') return INITIAL_BLUEPRINTS.filter(b => b.city === 'Glasgow');
@@ -165,7 +177,7 @@ export default function App() {
         {activeTab === 'studio' && (
           <div className="space-y-4 sm:space-y-5">
             
-            {/* 🚀 QUICK PROMPT FAST-NAVIGATOR CAROUSEL STRIP (#1 - #50) */}
+            {/* 🚀 QUICK PROMPT FAST-NAVIGATOR CAROUSEL STRIP (#1 - #150) */}
             <div className="bg-stone-900 border border-stone-800 rounded-2xl p-3 sm:p-4 shadow-lg space-y-3">
               
               {/* Top Strip Bar: City Filter & Direct Jump */}
@@ -186,7 +198,7 @@ export default function App() {
                           : 'bg-stone-950 text-stone-400 hover:text-stone-200 border border-stone-800 hover:bg-stone-850'
                       }`}
                     >
-                      {city === 'All' ? 'All (50)' : city === 'Other' ? 'Highlands/Coast (10)' : `${city} (20)`}
+                      {city === 'All' ? `All (${cityCounts.All})` : city === 'Other' ? `Highlands / UK (${cityCounts.Other})` : `${city} (${cityCounts[city]})`}
                     </button>
                   ))}
                 </div>
@@ -203,7 +215,7 @@ export default function App() {
                   </button>
 
                   <form onSubmit={handleDirectNumberJump} className="flex items-center gap-1">
-                    <div className="relative w-16">
+                    <div className="relative w-20">
                       <span className="absolute left-2 top-1/2 -translate-y-1/2 text-xs font-mono text-stone-500">#</span>
                       <input
                         type="number"
@@ -211,7 +223,7 @@ export default function App() {
                         max={INITIAL_BLUEPRINTS.length}
                         value={jumpInputVal}
                         onChange={(e) => setJumpInputVal(e.target.value)}
-                        placeholder="1-50"
+                        placeholder={`1-${INITIAL_BLUEPRINTS.length}`}
                         className="w-full bg-stone-950 border border-stone-800 rounded-lg pl-5 pr-1 py-1 text-xs font-mono text-amber-300 placeholder-stone-600 focus:outline-none focus:border-amber-500"
                       />
                     </div>
@@ -225,7 +237,7 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Horizontal Scrollable Prompt Number Strip (#1 to #50) */}
+              {/* Horizontal Scrollable Prompt Number Strip (#1 to #150) */}
               <div 
                 ref={numberStripRef}
                 className="flex items-center gap-1.5 overflow-x-auto pb-1.5 pt-0.5 scrollbar-thin scrollbar-thumb-stone-700 scrollbar-track-stone-900 scroll-smooth"
