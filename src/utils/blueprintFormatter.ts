@@ -2,6 +2,7 @@ import { ShortsBlueprint } from '../types';
 import { computeOverlayTypography } from './overlayTypographyEngine';
 import { buildCharacterVoiceDirection, getRecommendedVoiceForFact, VoiceArchetypeId } from './narrationEngine';
 import { sanitizeOverlayText } from './overlaySanitizer';
+import { buildFullYouTubeDescription } from './descriptionFormatter';
 
 /**
  * Formats a ShortsBlueprint into the exact full production blueprint
@@ -98,13 +99,18 @@ ${b.supportingCharacters && b.supportingCharacters.length > 0 ? `- Supporting Ca
  */
 export function formatTenMinuteCompilationPrompt(blueprints: ShortsBlueprint[]): string {
   const totalScenes = blueprints.length;
-  const header = `🏴󠁧󠁢󠁳󠁣󠁴󠁿 THE ULTIMATE 10-MINUTE SCOTLAND FACTS COMPILATION (50 DISTINCT HOLLYWOOD CINEMATIC SCENES)
-Total Duration: 10:00 (600 Seconds) | 50 Continuous Chapters (12 Seconds per Fact Scene)
+  const totalSeconds = totalScenes * 12;
+  const totalMinutes = Math.floor(totalSeconds / 60);
+  const remSeconds = (totalSeconds % 60).toString().padStart(2, '0');
+  const durationLabel = `${totalMinutes.toString().padStart(2, '0')}:${remSeconds} (${totalSeconds} Seconds)`;
+
+  const header = `🏴󠁧󠁢󠁳󠁣󠁴󠁿 THE ULTIMATE SCOTLAND FACTS COMPILATION (${totalScenes} DISTINCT HOLLYWOOD CINEMATIC SCENES)
+Total Duration: ${durationLabel} | ${totalScenes} Continuous Chapters (12 Seconds per Fact Scene)
 Format: 16:9 Widescreen / 9:16 Vertical Compilation Master Prompt
 Audio: Continuous narration with content-adaptive Scottish voices (Glaswegian street wits, Edinburgh scholars, and Highland bards matched to each scene), seamless musical transitions between Scottish folk strings, bodhrán drums, and ambient atmospheres.
 
 [EXECUTIVE CINEMATIC VISION]:
-An epic, fast-paced, nostalgic, and hilarious 10-minute cinematic tour across Glasgow, Edinburgh, and the Scottish Highlands. Every scene is distinct in its historical era, colorful characters, Hollywood-grade comical interactions, and iconic Scottish landmarks. 100% verified facts that make locals nod with pride and nostalgia while captivating global audiences.
+An epic, fast-paced, nostalgic, and hilarious cinematic tour across Glasgow, Edinburgh, and the Scottish Highlands. Every scene is distinct in its historical era, colorful characters, Hollywood-grade comical interactions, and iconic Scottish landmarks. 100% verified facts that make locals nod with pride and nostalgia while captivating global audiences.
 
 ================================================================================
 CHAPTER-BY-CHAPTER TIMELINE BREAKDOWN:
@@ -139,7 +145,7 @@ CHAPTER-BY-CHAPTER TIMELINE BREAKDOWN:
 ================================================================================
 COMPILATION CONCLUSION & SOUND DESIGN:
 ================================================================================
-(09:48 - 10:00): Grand aerial montage sweeping over Edinburgh Castle, Glasgow's Clyde Arc, and Loch Ness at sunset. The narrator delivers the closing punchline: "50 unbelievable Scottish facts—and every single one of them is true! Slàinte mhath, Scotland!" Triumphant swell of Scottish fiddles, bodhrán drums, and warm applause.`;
+Grand aerial montage sweeping over Edinburgh Castle, Glasgow's Clyde Arc, and Loch Ness at sunset. The narrator delivers the closing punchline: "${totalScenes} unbelievable Scottish facts—and every single one of them is true! Slàinte mhath, Scotland!" Triumphant swell of Scottish fiddles, bodhrán drums, and warm applause.`;
 
   return header + chapters + footer;
 }
@@ -205,14 +211,20 @@ export function formatAudioOnlyText(b: ShortsBlueprint, voiceId: VoiceArchetypeI
  * 4) YouTube SEO Alone
  */
 export function formatYouTubeOnlyText(b: ShortsBlueprint): string {
-  const hashtags = b.seo?.hashtags ? b.seo.hashtags.join(' ') : '#Scotland #Glasgow #Edinburgh #ScottishHistory';
-  const tags = b.seo?.tags ? b.seo.tags.join(', ') : 'scotland, glasgow, edinburgh';
+  const hashtags = b.seo?.hashtags && b.seo.hashtags.length > 0
+    ? b.seo.hashtags.join(' ')
+    : '#Glasgow #Scotland #UnitedKingdom #UK #GlasgowScotland #Edinburgh #Shorts #ScottishHistory';
+  const tags = b.seo?.tags && b.seo.tags.length > 0
+    ? b.seo.tags.join(', ')
+    : 'Glasgow, Scotland, United Kingdom, UK, Glasgow Scotland, United Kingdom UK, Edinburgh, Scotland Facts, Shorts';
+
+  const description = b.seo?.description || buildFullYouTubeDescription(b);
 
   return `🏷 YOUTUBE SEO METADATA (FACT #${b.id}: ${b.title})
 Title: ${b.seo?.title || b.title}
 
 Description:
-${b.seo?.description || b.factText}
+${description}
 
 Tags (Comma-Separated for YouTube Studio):
 ${tags}
@@ -232,7 +244,7 @@ export function getEnglishTitleOnly(b: ShortsBlueprint): string {
  * Helper to get formatted YouTube description
  */
 export function getFormattedYouTubeDescription(b: ShortsBlueprint): string {
-  return b.seo?.description || b.factText;
+  return b.seo?.description || buildFullYouTubeDescription(b);
 }
 
 /**

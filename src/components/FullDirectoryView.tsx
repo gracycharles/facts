@@ -35,7 +35,8 @@ export const FullDirectoryView: React.FC<FullDirectoryViewProps> = ({
       (item.location && item.location.toLowerCase().includes(q)) ||
       (item.character && item.character.toLowerCase().includes(q)) ||
       (item.comicalElement && item.comicalElement.toLowerCase().includes(q)) ||
-      (item.city && item.city.toLowerCase().includes(q))
+      (item.city && item.city.toLowerCase().includes(q)) ||
+      (item.seo?.tags && item.seo.tags.some(t => t.toLowerCase().includes(q)))
     );
   });
 
@@ -53,7 +54,7 @@ export const FullDirectoryView: React.FC<FullDirectoryViewProps> = ({
               Scotland Facts Prompts Directory ({filteredItems.length} Prompts)
             </h2>
             <p className="text-xs text-stone-400 font-mono">
-              Direct access to all 50 verified video generation prompts & British female voice scripts
+              Direct access to all {verifiedBlueprints.length} verified video generation prompts & British female voice scripts
             </p>
           </div>
         </div>
@@ -161,6 +162,24 @@ export const FullDirectoryView: React.FC<FullDirectoryViewProps> = ({
                     <>
                       <Volume2 className="w-3 h-3 text-emerald-400" />
                       <span>Copy Audio</span>
+                    </>
+                  )}
+                </button>
+
+                <button
+                  onClick={(e) => copyItemText(e, item.seo?.description || '', `desc-${item.id}`)}
+                  className="px-2 py-1 rounded-md bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-purple-300 text-[11px] font-semibold transition-colors flex items-center gap-1"
+                  title="Copy Full YouTube Description"
+                >
+                  {copiedKey === `desc-${item.id}` ? (
+                    <>
+                      <Check className="w-3 h-3 text-emerald-400" />
+                      <span className="text-emerald-400">Copied</span>
+                    </>
+                  ) : (
+                    <>
+                      <Hash className="w-3 h-3 text-purple-400" />
+                      <span>Copy Desc</span>
                     </>
                   )}
                 </button>

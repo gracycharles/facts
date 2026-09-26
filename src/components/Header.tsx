@@ -92,10 +92,10 @@ export const Header: React.FC<HeaderProps> = ({
                   ? 'bg-amber-600 text-stone-950 shadow-sm'
                   : 'text-stone-400 hover:text-stone-200'
               }`}
-              title="All 50 Prompts Directory"
+              title="All 100 Prompts Directory"
             >
               <BookOpen className="w-3.5 h-3.5" />
-              <span>All 50 Prompts</span>
+              <span>All 100 Prompts</span>
             </button>
           </nav>
         </div>
@@ -126,7 +126,7 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onOpenExport}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 font-semibold text-xs shadow-sm transition-all"
-            title="Batch Export All 50 Video & Audio Prompts"
+            title="Batch Export All 100 Video & Audio Prompts"
           >
             <Download className="w-3.5 h-3.5 text-amber-400" />
             <span className="hidden sm:inline">Export Prompts</span>

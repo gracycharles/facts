@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Copy, Check, Download, FileText, Video, Film, Volume2 } from 'lucide-react';
+import { X, Copy, Check, Download, FileText, Video, Film, Volume2, Hash } from 'lucide-react';
 import { ShortsBlueprint } from '../types';
 import { 
   formatBlueprintAsText, 
@@ -19,7 +19,7 @@ export const BatchExportModal: React.FC<BatchExportModalProps> = ({
   onClose,
   blueprints
 }) => {
-  const [exportMode, setExportMode] = useState<'10min-master' | 'video-only' | 'all' | 'audio-scripts' | 'json'>('10min-master');
+  const [exportMode, setExportMode] = useState<'10min-master' | 'video-only' | 'all' | 'audio-scripts' | 'youtube-seo' | 'json'>('10min-master');
   const [copied, setCopied] = useState(false);
 
   const generateExportText = (): string => {
@@ -35,6 +35,10 @@ export const BatchExportModal: React.FC<BatchExportModalProps> = ({
       return blueprints.map(b => (
         `SCENE #${b.id}: ${b.title} (${b.city})\nVOICE: British Young Female (Age 20-25, RP / Scottish lilt)\nSCRIPT:\n"${b.audioScript}"\nBACKGROUND SOUNDSCAPE: ${b.backgroundAudio}`
       )).join("\n\n" + "-".repeat(60) + "\n\n");
+    }
+
+    if (exportMode === 'youtube-seo') {
+      return blueprints.map(b => formatYouTubeOnlyText(b)).join("\n\n" + "=".repeat(80) + "\n\n");
     }
 
     const separator = "\n\n" + "=".repeat(80) + "\n\n";
@@ -81,10 +85,10 @@ export const BatchExportModal: React.FC<BatchExportModalProps> = ({
             </div>
             <div>
               <h2 className="text-base font-bold text-stone-100 font-serif">
-                Batch Export All 50 Prompts
+                Batch Export All {blueprints.length} Prompts
               </h2>
               <p className="text-xs text-stone-400 font-mono">
-                Export 50 video prompts, British female voice scripts, or the continuous 10-minute master prompt
+                Export {blueprints.length} video prompts, British female voice scripts, or the continuous compilation master prompt
               </p>
             </div>
           </div>
@@ -108,7 +112,7 @@ export const BatchExportModal: React.FC<BatchExportModalProps> = ({
               }`}
             >
               <Film className="w-3.5 h-3.5" />
-              <span>10-Minute Master Video Prompt</span>
+              <span>Compilation Master Video Prompt</span>
             </button>
 
             <button
@@ -120,7 +124,7 @@ export const BatchExportModal: React.FC<BatchExportModalProps> = ({
               }`}
             >
               <Video className="w-3.5 h-3.5" />
-              <span>50 Video Prompts Only</span>
+              <span>{blueprints.length} Video Prompts Only</span>
             </button>
 
             <button
@@ -132,7 +136,19 @@ export const BatchExportModal: React.FC<BatchExportModalProps> = ({
               }`}
             >
               <Volume2 className="w-3.5 h-3.5" />
-              <span>50 Spoken Audio Scripts</span>
+              <span>{blueprints.length} Spoken Audio Scripts</span>
+            </button>
+
+            <button
+              onClick={() => setExportMode('youtube-seo')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
+                exportMode === 'youtube-seo'
+                  ? 'bg-purple-600 text-white shadow-sm'
+                  : 'bg-stone-800 text-stone-300 hover:bg-stone-700'
+              }`}
+            >
+              <Hash className="w-3.5 h-3.5" />
+              <span>{blueprints.length} YouTube SEO & Descriptions</span>
             </button>
 
             <button

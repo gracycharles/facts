@@ -48,7 +48,8 @@ export const ShortsNavigatorModal: React.FC<ShortsNavigatorModalProps> = ({
       (b.factText && b.factText.toLowerCase().includes(q)) ||
       (b.location && b.location.toLowerCase().includes(q)) ||
       (b.city && b.city.toLowerCase().includes(q)) ||
-      (b.comicalElement && b.comicalElement.toLowerCase().includes(q))
+      (b.comicalElement && b.comicalElement.toLowerCase().includes(q)) ||
+      (b.seo?.tags && b.seo.tags.some(t => t.toLowerCase().includes(q)))
     ));
   }, [blueprints, query]);
 

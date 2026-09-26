@@ -842,12 +842,33 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
 
                 {/* Description */}
                 <div className="p-3 rounded-lg bg-stone-900/50 border border-stone-800/80 space-y-1.5">
-                  <span className="text-stone-400 font-mono text-[10px] uppercase font-bold tracking-wider block">
-                    YouTube Description:
-                  </span>
-                  <p className="text-stone-300 leading-relaxed whitespace-pre-line text-xs font-sans bg-stone-950 p-2.5 rounded border border-stone-800/60">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="text-stone-400 font-mono text-[10px] uppercase font-bold tracking-wider block">
+                        YouTube Description (Full Publication-Ready):
+                      </span>
+                      <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-950/80 border border-emerald-500/30 text-emerald-300">
+                        100% Verified
+                      </span>
+                    </div>
+                    <button
+                      onClick={() => copyToClipboard(blueprint.seo?.description || '', 'desc-box')}
+                      className="text-[11px] font-medium text-purple-400 hover:text-purple-300 flex items-center gap-1"
+                    >
+                      {copiedSection === 'desc-box' ? (
+                        <span className="text-emerald-400 flex items-center gap-1">
+                          <Check className="w-3 h-3" /> Copied Description!
+                        </span>
+                      ) : (
+                        <span className="flex items-center gap-1">
+                          <Copy className="w-3 h-3" /> Copy Description
+                        </span>
+                      )}
+                    </button>
+                  </div>
+                  <div className="text-stone-300 leading-relaxed whitespace-pre-line text-xs font-sans bg-stone-950 p-3 rounded border border-stone-800/60 max-h-80 overflow-y-auto select-all">
                     {blueprint.seo?.description}
-                  </p>
+                  </div>
                 </div>
 
                 {/* Tags */}

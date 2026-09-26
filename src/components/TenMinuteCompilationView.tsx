@@ -61,7 +61,7 @@ export const TenMinuteCompilationView: React.FC<TenMinuteCompilationViewProps> =
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-stone-300 font-sans max-w-3xl leading-relaxed">
-              50 distinct Hollywood-range comical and historical scenes concatenated into one seamless, fast-paced 10-minute master video prompt. Voiced continuously by a British young female narrator with witty Scottish lilt and authentic background soundscapes.
+              {blueprints.length} distinct Hollywood-range comical and historical scenes concatenated into one seamless, fast-paced compilation master video prompt. Voiced continuously by a British young female narrator with witty Scottish lilt and authentic background soundscapes.
             </p>
           </div>
 
@@ -69,17 +69,17 @@ export const TenMinuteCompilationView: React.FC<TenMinuteCompilationViewProps> =
             <button
               onClick={() => copyToClipboard(full10MinPrompt, 'full-10min')}
               className="flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg transition-all"
-              title="Copy the complete 10-minute video generator prompt"
+              title="Copy the complete compilation video generator prompt"
             >
               {copiedType === 'full-10min' ? (
                 <>
                   <Check className="w-4 h-4 text-emerald-300" />
-                  <span>Copied 10-Min Master Prompt!</span>
+                  <span>Copied Master Prompt!</span>
                 </>
               ) : (
                 <>
                   <Copy className="w-4 h-4" />
-                  <span>Copy 10-Min Master Prompt</span>
+                  <span>Copy Master Prompt</span>
                 </>
               )}
             </button>
@@ -87,7 +87,7 @@ export const TenMinuteCompilationView: React.FC<TenMinuteCompilationViewProps> =
             <button
               onClick={handleDownloadTxt}
               className="flex items-center gap-2 px-3 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700 text-xs font-semibold transition-all"
-              title="Download text file with all 50 scenes and 10-minute timeline breakdown"
+              title={`Download text file with all ${blueprints.length} scenes and timeline breakdown`}
             >
               <Download className="w-4 h-4 text-amber-400" />
               <span>Download .TXT</span>
@@ -99,11 +99,13 @@ export const TenMinuteCompilationView: React.FC<TenMinuteCompilationViewProps> =
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 text-xs font-mono border-t border-stone-800/80">
           <div className="bg-black/40 p-2.5 rounded-lg border border-stone-800">
             <span className="text-[10px] text-stone-400 block">TOTAL DURATION</span>
-            <span className="text-amber-300 font-bold text-sm">10:00 (600s)</span>
+            <span className="text-amber-300 font-bold text-sm">
+              {Math.floor((blueprints.length * 12) / 60)}:00 ({blueprints.length * 12}s)
+            </span>
           </div>
           <div className="bg-black/40 p-2.5 rounded-lg border border-stone-800">
             <span className="text-[10px] text-stone-400 block">TOTAL SCENES</span>
-            <span className="text-emerald-300 font-bold text-sm">50 Distinct Chapters</span>
+            <span className="text-emerald-300 font-bold text-sm">{blueprints.length} Distinct Chapters</span>
           </div>
           <div className="bg-black/40 p-2.5 rounded-lg border border-stone-800">
             <span className="text-[10px] text-stone-400 block">NARRATION VOICE</span>
@@ -119,12 +121,12 @@ export const TenMinuteCompilationView: React.FC<TenMinuteCompilationViewProps> =
       {/* Two Column Layout: Timeline Navigator (Left) & Active Scene Deep Dive (Right) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         
-        {/* Left: 50 Scene Chapters Timeline List (5 cols) */}
+        {/* Left: Scene Chapters Timeline List (5 cols) */}
         <div className="lg:col-span-5 bg-stone-900 border border-stone-800 rounded-2xl p-4 space-y-3 max-h-[750px] overflow-y-auto">
           <div className="flex items-center justify-between border-b border-stone-800 pb-2">
             <span className="text-xs font-mono uppercase font-bold text-stone-300 flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-amber-400" />
-              50 Scene Timeline (12s per scene)
+              {blueprints.length} Scene Timeline (12s per scene)
             </span>
           </div>
 
@@ -174,7 +176,7 @@ export const TenMinuteCompilationView: React.FC<TenMinuteCompilationViewProps> =
             <div>
               <div className="flex items-center gap-2">
                 <span className="px-2.5 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono text-xs font-bold border border-purple-500/40">
-                  Scene #{activeBlueprint.id} of 50
+                  Scene #{activeBlueprint.id} of {blueprints.length}
                 </span>
                 <span className="text-xs text-stone-400 font-mono">
                   {Math.floor(((activeBlueprint.id - 1) * 12) / 60).toString().padStart(2, '0')}:{(((activeBlueprint.id - 1) * 12) % 60).toString().padStart(2, '0')} - {Math.floor((activeBlueprint.id * 12) / 60).toString().padStart(2, '0')}:{((activeBlueprint.id * 12) % 60).toString().padStart(2, '0')}

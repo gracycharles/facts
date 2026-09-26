@@ -19,11 +19,17 @@ export const OFFICIAL_CHANNEL_ABOUT = `Welcome to Facts Scotland (@FactsScotland
 • 100% Historical Fact Verification: Every single fact is verified with the National Records of Scotland, Historic Environment Scotland, Mitchell Library, and City of Edinburgh Archives. Zero false lore or AI hallucinations!
 • Authentic Local Nostalgia: Crafted specifically to give locals that warm, proud nod and chuckling banter about orange traffic cones, the Barras market, deep-fried treats, and historic Scottish innovations!
 • British Young Female Narration: Articulate British young female voice (age 20-25) with a witty Scottish / RP lilt, authentic comedic timing, and razor-sharp local phonetics.
-• 10-Minute Video Master Prompt: Full continuous 600-second 50-chapter compilation prompt engineered for external AI video generators (Runway Gen-3, Sora, Kling, Hailuo, Luma) with burned-in subtitle safe zones.
+• Continuous Compilation Master Prompt: Full multi-chapter compilation prompt engineered for external AI video generators (Runway Gen-3, Sora, Kling, Hailuo, Luma) with burned-in subtitle safe zones.
 
 Slàinte mhath! Subscribe and discover the magical, hilarious, and true stories of Scotland! 🏴󠁧󠁢󠁳󠁣󠁴󠁿✨`;
 
 export const CHANNEL_TAGS = [
+  "Glasgow",
+  "Scotland",
+  "United Kingdom",
+  "UK",
+  "Glasgow Scotland",
+  "United Kingdom UK",
   "Facts Scotland",
   "Glasgow Facts",
   "Edinburgh Facts",

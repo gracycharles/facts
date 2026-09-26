@@ -2,23 +2,63 @@ import { ShortsBlueprint } from '../types';
 import { ALL_50_SCOTLAND_FACTS } from './scotlandFacts';
 import { TEN_SECOND_OPTIMIZATIONS } from '../utils/tenSecondScriptOptimizer';
 import { sanitizeOverlayText } from '../utils/overlaySanitizer';
+import { buildFullYouTubeDescription } from '../utils/descriptionFormatter';
 
-const TARGET_ALGORITHM_TAGS = [
+const DEFAULT_GLOBAL_TAGS = [
+  'Glasgow',
+  'Scotland',
+  'United Kingdom',
+  'UK',
+  'Glasgow Scotland',
+  'United Kingdom UK',
+  'Edinburgh',
+  'Edinburgh Scotland',
+  'Scotland Facts',
+  'Glasgow History',
+  'Edinburgh Facts',
+  'Visit Scotland',
+  'Scottish Humour',
+  'Scottish Nostalgia',
+  'Scottish History',
+  'Highlands Scotland',
+  'Scottish Folklore',
+  'Shorts',
   'ScotlandFacts',
   'GlasgowHistory',
-  'EdinburghFacts',
+  'UnitedKingdom',
   'VisitScotland',
-  'ScottishHumour',
-  'ScottishNostalgia',
-  'ScottishHistory',
-  'HighlandsScotland',
-  'ScottishFolklore',
-  'Shorts'
+  'ScottishHistory'
+];
+
+const DEFAULT_GLOBAL_HASHTAGS = [
+  '#Glasgow',
+  '#Scotland',
+  '#UnitedKingdom',
+  '#UK',
+  '#GlasgowScotland',
+  '#Edinburgh',
+  '#Shorts',
+  '#ScottishHistory'
 ];
 
 function enrichScotlandBlueprint(raw: ShortsBlueprint): ShortsBlueprint {
   const existingTags = (raw.seo?.tags || []).map(t => t.replace(/^#/, '').trim());
-  const mergedTags = Array.from(new Set([...existingTags, ...TARGET_ALGORITHM_TAGS]));
+  const mergedTags = Array.from(new Set([
+    'Glasgow',
+    'Scotland',
+    'United Kingdom',
+    'UK',
+    'Glasgow Scotland',
+    'United Kingdom UK',
+    ...existingTags,
+    ...DEFAULT_GLOBAL_TAGS
+  ]));
+
+  const existingHashtags = (raw.seo?.hashtags || []).map(h => h.startsWith('#') ? h : `#${h}`);
+  const mergedHashtags = Array.from(new Set([
+    ...DEFAULT_GLOBAL_HASHTAGS,
+    ...existingHashtags
+  ]));
 
   const opt = TEN_SECOND_OPTIMIZATIONS[raw.id];
 
@@ -36,6 +76,22 @@ function enrichScotlandBlueprint(raw: ShortsBlueprint): ShortsBlueprint {
   const line2Fact = sanitizeOverlayText((opt && opt.overlayCoreFact) ? opt.overlayCoreFact : (raw.subtitles?.line2Fact || text));
   const line3Loc = sanitizeOverlayText((opt && opt.overlayLocationBadge) ? opt.overlayLocationBadge : (raw.subtitles?.line3Location || ref));
   const extraContext = sanitizeOverlayText((opt && opt.extraImportantContext) ? opt.extraImportantContext : (raw.comicalElement || ''));
+
+  const rawTeaser = raw.seo?.description || text;
+  const enrichedForDesc: ShortsBlueprint = {
+    ...raw,
+    title,
+    factText: text,
+    location: ref,
+    audioScript: tenSecScript,
+    audioScript10s: tenSecScript,
+    seo: {
+      ...(raw.seo || {}),
+      hashtags: mergedHashtags,
+      tags: mergedTags
+    }
+  };
+  const cookedYouTubeDescription = buildFullYouTubeDescription(enrichedForDesc, rawTeaser);
 
   return {
     ...raw,
@@ -64,15 +120,16 @@ function enrichScotlandBlueprint(raw: ShortsBlueprint): ShortsBlueprint {
     seo: {
       ...raw.seo,
       title: raw.seo?.title || `Fact #${raw.id} | ${title} | ${ref} | Scotland Facts`,
-      description: raw.seo?.description || text,
+      teaserDescription: rawTeaser,
+      description: cookedYouTubeDescription,
       tags: mergedTags,
-      hashtags: raw.seo?.hashtags || ['#Scotland', '#Glasgow', '#Edinburgh', '#Shorts']
+      hashtags: mergedHashtags
     }
   };
 }
 
 export const INITIAL_BLUEPRINTS: ShortsBlueprint[] = ALL_50_SCOTLAND_FACTS.map(enrichScotlandBlueprint);
 
-export const TOTAL_PRAISES_TARGET = 50;
-export const TOTAL_FACTS_TARGET = 50;
+export const TOTAL_PRAISES_TARGET = 100;
+export const TOTAL_FACTS_TARGET = 100;
 export const CURRENT_VERIFIED_COUNT = INITIAL_BLUEPRINTS.length;
