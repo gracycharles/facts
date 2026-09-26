@@ -66,129 +66,129 @@ export const PART_1_TO_50: Record<number, TenSecondScriptOptimization> = {
   },
   8: {
     id: 8,
-    tenSecAudioScript: "Loch Ness holds more freshwater than all the lakes, rivers, and reservoirs in England and Wales combined!",
-    audioPhoneticsGuide: "Loch Ness [LOKH NESS], Inverness [in-ver-NESS], Highland [HY-land]",
-    overlayHook: "LOCH NESS MONSTER VOLUME",
-    overlayCoreFact: "Holds 7.4 billion cubic metres of freshwater - more than all England & Wales lakes combined!",
-    overlayLocationBadge: "Urquhart Castle | Great Glen, Highlands",
-    extraImportantContext: "Deepest point reaches 230 metres (754 ft). The peat particles turn the water completely black below 30 feet."
+    tenSecAudioScript: "Scotland is one of few countries where global cola isn't number one—beaten by our bright orange brew made since 1901!",
+    audioPhoneticsGuide: "Falkirk [FALL-kirk], Cumbernauld [KUM-ber-nald]",
+    overlayHook: "SCOTLAND'S FAMOUS ORANGE NECTAR",
+    overlayCoreFact: "Brewed since 1901 with 32 secret ingredients - famously outselling American cola in Scotland!",
+    overlayLocationBadge: "Falkirk & Cumbernauld | Scotland",
+    extraImportantContext: "First created for Glasgow iron foundry and shipyard workers to sustain heavy industrial labour."
   },
   9: {
     id: 9,
-    tenSecAudioScript: "Haggis is Scotland's delicious national dish of minced oats and spices—cooked in sheep stomach and celebrated with poetry!",
-    audioPhoneticsGuide: "Haggis [HAG-is], Chieftain [CHEEF-tun], Robert Burns [BOORNS]",
-    overlayHook: "HAGGIS: THE TASTY NATIONAL DISH",
-    overlayCoreFact: "Spiced lamb mince & toasted oats - addressed with Robert Burns poetry before carving!",
-    overlayLocationBadge: "The Haggis Box | High Street, Edinburgh",
-    extraImportantContext: "Celebrated annually on Burns Night (January 25). Piped to the table with bagpipes and toasted with single malt whisky."
+    tenSecAudioScript: "Rising above Glasgow Cathedral, the Victorian Necropolis holds fifty thousand souls beneath thirty-five hundred grand stone monuments!",
+    audioPhoneticsGuide: "Necropolis [neh-KROP-oh-lis], Molendinar [MO-len-dye-ner]",
+    overlayHook: "GLASGOW NECROPOLIS: 50,000 SOULS",
+    overlayCoreFact: "Victorian 'City of the Dead' with 3,500 grand stone monuments overlooking the Cathedral!",
+    overlayLocationBadge: "Glasgow Necropolis | Castle Street, Glasgow",
+    extraImportantContext: "Established in 1831 on Fir Park hill. Modeled after Père Lachaise in Paris, honoring Glasgow's industrial pioneers."
   },
   10: {
     id: 10,
-    tenSecAudioScript: "The heart of heart-shaped paving stones in Edinburgh isn't for romance—locals spit on it for good luck!",
-    audioPhoneticsGuide: "Midlothian [mid-LOH-thee-un], Tolbooth [TOLL-booth]",
-    overlayHook: "THE SPITTING HEART OF MIDLOTHIAN",
-    overlayCoreFact: "Marks the brutal 15th-century Old Tolbooth prison - locals spit for good luck & disdain!",
-    overlayLocationBadge: "Outside St Giles' Cathedral | Royal Mile, Edinburgh",
-    extraImportantContext: "Marks the doorway of the despised Old Tolbooth prison demolished in 1817. Spitting began as contempt for executioners."
+    tenSecAudioScript: "Right in central Edinburgh sits Arthur's Seat—a genuine 251-metre extinct volcano that erupted 340 million years ago!",
+    audioPhoneticsGuide: "Arthur's Seat [AR-thurz SEET], Holyrood [HO-lee-rood], Salisbury [SAWLZ-bree]",
+    overlayHook: "AN EXTINCT VOLCANO IN EDINBURGH",
+    overlayCoreFact: "Erupted 340 million years ago - hike an ancient volcanic peak right in the city centre!",
+    overlayLocationBadge: "Arthur's Seat | Holyrood Park, Edinburgh",
+    extraImportantContext: "Carved by retreating ice age glaciers, offering 360-degree vistas across Edinburgh and the Firth of Forth."
   },
   11: {
     id: 11,
-    tenSecAudioScript: "Edinburgh Castle is perched on Castle Rock—the rugged plug of an extinct volcano that erupted 350 million years ago!",
-    audioPhoneticsGuide: "Edinburgh [ED-in-bur-ruh], Basalt [buh-SAWLT]",
-    overlayHook: "EDINBURGH'S VOLCANIC FORTRESS",
-    overlayCoreFact: "Built atop an extinct volcano plug that erupted 350 million years ago!",
-    overlayLocationBadge: "Castle Rock | Old Town, Edinburgh",
-    extraImportantContext: "Castle Rock withstood at least 26 sieges throughout history, making it one of the most besieged places in Great Britain."
+    tenSecAudioScript: "Britain's favorite dish, Chicken Tikka Masala, was invented in Glasgow in 1971 when a chef added tomato soup to mild chicken!",
+    audioPhoneticsGuide: "Shish Mahal [SHEESH mah-HAL], Gibson [GIB-sun]",
+    overlayHook: "CHICKEN TIKKA MASALA: BORN IN GLASGOW",
+    overlayCoreFact: "Invented in 1971 by Ali Ahmed Aslam at Shish Mahal by simmering tikka with creamy spiced tomato sauce!",
+    overlayLocationBadge: "Shish Mahal | Gibson Street, West End, Glasgow",
+    extraImportantContext: "UK Foreign Secretary Robin Cook officially declared Chicken Tikka Masala 'a true British national dish' in 2001."
   },
   12: {
     id: 12,
-    tenSecAudioScript: "Arthur's Seat towering over Edinburgh is another ancient volcano! In 1836, boys discovered seventeen miniature wooden coffins hidden here!",
-    audioPhoneticsGuide: "Holyrood [HOL-ee-rood], Salisbury [SAWLZ-bree]",
-    overlayHook: "ARTHUR'S SEAT VOLCANO AND COFFINS",
-    overlayCoreFact: "Ancient volcano summit with 17 eerie miniature coffins found hidden in 1836!",
-    overlayLocationBadge: "Arthur's Seat | Holyrood Park, Edinburgh",
-    extraImportantContext: "The tiny carved coffins contained dressed dolls; some believe they represented the 17 victims of serial killers Burke and Hare."
+    tenSecAudioScript: "Edinburgh city councillor Deacon Brodie was a respected locksmith by day and burglar by night, inspiring Dr Jekyll and Mr Hyde!",
+    audioPhoneticsGuide: "Brodie [BROH-dee], Deacon [DEE-kun]",
+    overlayHook: "DEACON BRODIE: REAL JEKYLL & HYDE",
+    overlayCoreFact: "Gentleman town councillor by day, daring cat burglar by night - Robert Louis Stevenson's true muse!",
+    overlayLocationBadge: "Brodie's Close | Lawnmarket, Royal Mile, Edinburgh",
+    extraImportantContext: "Copied wealthy clients' keys using wax impressions. Hanged in 1788 on gallows he had previously redesigned."
   },
   13: {
     id: 13,
-    tenSecAudioScript: "Edinburgh gave birth to Harry Potter! J.K. Rowling penned chapters in Old Town cafés overlooking Greyfriars Kirkyard cemetery!",
-    audioPhoneticsGuide: "Greyfriars [GRAY-fry-erz], McGonagall [muh-GON-uh-gull]",
-    overlayHook: "THE BIRTHPLACE OF HARRY POTTER",
-    overlayCoreFact: "J.K. Rowling wrote chapters in Old Town cafes - real gravestones inspired Tom Riddle and McGonagall!",
-    overlayLocationBadge: "The Elephant House | George IV Bridge, Edinburgh",
-    extraImportantContext: "Gravestones for Thomas Riddell and William McGonagall in Greyfriars Kirkyard directly inspired famous character names."
+    tenSecAudioScript: "The world's shortest scheduled commercial flight connects two Orkney islands in just fifty-three seconds—faster than boiling an egg!",
+    audioPhoneticsGuide: "Westray [WEST-ray], Papa Westray [PAH-pah WEST-ray], Orkney [ORK-nee]",
+    overlayHook: "WORLD'S SHORTEST FLIGHT: 53 SECONDS",
+    overlayCoreFact: "1.7-mile hop between Westray and Papa Westray in Orkney - officially holds the Guinness World Record!",
+    overlayLocationBadge: "Westray to Papa Westray | Orkney Islands",
+    extraImportantContext: "Operated by Loganair since 1967. Passengers receive an official commemorative certificate for completing the flight."
   },
   14: {
     id: 14,
-    tenSecAudioScript: "Beneath Edinburgh's Royal Mile lies Mary King's Close—an entire underground world frozen in time since the 1600s!",
-    audioPhoneticsGuide: "Canongate [KAN-un-gate], Close [CLOHSS]",
-    overlayHook: "MARY KING'S BURIED CITY",
-    overlayCoreFact: "Buried 17th-century street beneath the City Chambers - preserved when modern buildings built over it!",
-    overlayLocationBadge: "The Real Mary King's Close | Royal Mile, Edinburgh",
-    extraImportantContext: "Sealed off when the Royal Exchange was constructed overhead in 1753. Rediscovered and opened as an authentic historic attraction."
+    tenSecAudioScript: "Inside Victoria Park in Glasgow lies Fossil Grove: eleven fossilized tree stumps from an ancient tropical rainforest 330 million years old!",
+    audioPhoneticsGuide: "Lepidodendron [lep-ih-doh-DEN-dron], Whiteinch [WHITE-inch]",
+    overlayHook: "GLASGOW'S 330-MILLION-YEAR RAINFOREST",
+    overlayCoreFact: "11 fossilized giant lycopod tree stumps discovered in 1887 - millions of years older than dinosaurs!",
+    overlayLocationBadge: "Fossil Grove | Victoria Park, Whiteinch, Glasgow",
+    extraImportantContext: "Preserved inside a Victorian pavilion. Formed during the Carboniferous period when Scotland lay on the equator."
   },
   15: {
     id: 15,
-    tenSecAudioScript: "The Edinburgh International Festival and Fringe is the world's biggest arts explosion, staging over 50,000 performances every August!",
-    audioPhoneticsGuide: "Princes [PRIN-siz], Fringe [FRINJ]",
-    overlayHook: "THE WORLD'S BIGGEST ARTS FESTIVAL",
-    overlayCoreFact: "Founded 1947 - 50,000+ performances across 300+ venues every single August!",
-    overlayLocationBadge: "Royal Mile & Assembly Halls | Edinburgh",
-    extraImportantContext: "Began when eight uninvited theatre companies staged shows on the fringe of the official 1947 Edinburgh International Festival."
+    tenSecAudioScript: "Edinburgh's famous Royal Mile isn't an English mile—it is an ancient Scots Mile, measuring 1.12 miles from Castle to Palace!",
+    audioPhoneticsGuide: "Canongate [KAN-un-gate], Lawnmarket [LAWN-mar-kit]",
+    overlayHook: "THE SCOTS MILE: 1.12 STATUTE MILES",
+    overlayCoreFact: "Runs from Edinburgh Castle to Holyrood Palace - measured using the ancient 1.12-mile Scots mile!",
+    overlayLocationBadge: "Royal Mile | Old Town, Edinburgh",
+    extraImportantContext: "The Scots mile was abolished by the 1707 Act of Union, but the Royal Mile retains its historic 5,920-foot distance."
   },
   16: {
     id: 16,
-    tenSecAudioScript: "Scotland's Crown Jewels are the oldest in the British Isles—hidden from Oliver Cromwell inside a church during the Civil War!",
-    audioPhoneticsGuide: "Honours [ON-erz], Sceptre [SEP-ter], Dunnottar [dun-NOT-er]",
-    overlayHook: "OLDEST CROWN JEWELS IN BRITAIN",
-    overlayCoreFact: "Dating back to 1540 - smuggled past Oliver Cromwell's army inside creels of seaweed!",
-    overlayLocationBadge: "Crown Room | Edinburgh Castle",
-    extraImportantContext: "First used together for the coronation of nine-month-old Mary, Queen of Scots at Stirling Castle in 1543."
+    tenSecAudioScript: "The world-famous deep-fried Mars bar was invented in 1995 at The Carron fish and chip shop in the fishing town of Stonehaven!",
+    audioPhoneticsGuide: "Stonehaven [stohn-HAY-ven], Aberdeenshire [ab-er-DEEN-sheer]",
+    overlayHook: "THE DEEP-FRIED MARS BAR SENSATION",
+    overlayCoreFact: "First battered and submerged in hot beef dripping in Stonehaven in 1995 - becoming a global culinary legend!",
+    overlayLocationBadge: "The Carron Fish Bar | Stonehaven, Aberdeenshire",
+    extraImportantContext: "Now ordered by tourists worldwide. The crunchy batter seals in the molten caramel and chocolate core."
   },
   17: {
     id: 17,
-    tenSecAudioScript: "Edinburgh was the powerhouse of the Scottish Enlightenment! Adam Smith and David Hume met in Old Town taverns, shaping modern thought!",
-    audioPhoneticsGuide: "Hume [HYOOM], Canongate [KAN-un-gate]",
-    overlayHook: "THE SCOTTISH ENLIGHTENMENT HUB",
-    overlayCoreFact: "Home of Adam Smith and David Hume - Edinburgh intellectuals shaped economics, philosophy and geology!",
-    overlayLocationBadge: "Canongate Kirkyard & High Street | Edinburgh",
-    extraImportantContext: "Voltaire once remarked: 'We look to Scotland for all our ideas of civilization.' James Hutton also founded modern geology here."
+    tenSecAudioScript: "Glasgow's Kelvingrove Museum houses Salvador Dalí's surrealist masterpiece, bought for £8,200 in 1952—and no, the architect didn't jump off the roof!",
+    audioPhoneticsGuide: "Kelvingrove [KEL-vin-grohv], Salvador Dalí [DAH-lee]",
+    overlayHook: "KELVINGROVE: DALÍ MASTERPIECE & MYTH",
+    overlayCoreFact: "Houses Dalí's Christ of Saint John of the Cross - disproving the urban legend that it was built backwards!",
+    overlayLocationBadge: "Kelvingrove Art Gallery | West End, Glasgow",
+    extraImportantContext: "Over 1.5 million visitors visit annually. The Spanish surrealist canvas is insured for tens of millions of pounds."
   },
   18: {
     id: 18,
-    tenSecAudioScript: "Edinburgh's Royal Mile was home to the world's earliest skyscrapers—sixteen-storey wooden tenements built within defensive stone walls!",
-    audioPhoneticsGuide: "Tenement [TEN-uh-munt], Flodden [FLOD-un]",
-    overlayHook: "MEDIEVAL SKYSCRAPERS OF OLD TOWN",
-    overlayCoreFact: "Confined by defensive city walls, Edinburgh built up to 14 storeys high in the 1600s!",
-    overlayLocationBadge: "Gladstone's Land | Royal Mile, Edinburgh",
-    extraImportantContext: "The Flodden Wall kept Edinburgh compact, forcing residents to construct timber-framed high-rises nicknamed 'lands'."
+    tenSecAudioScript: "The heart-shaped granite mosaic outside St Giles' marks Edinburgh's brutal medieval Tolbooth prison—locals spit on it for good luck!",
+    audioPhoneticsGuide: "Midlothian [mid-LOH-thee-un], Tolbooth [TOLL-booth]",
+    overlayHook: "THE SPITTING HEART OF MIDLOTHIAN",
+    overlayCoreFact: "Marks the entrance to the Old Tolbooth prison demolished in 1817 - spat on daily for centuries!",
+    overlayLocationBadge: "Outside St Giles' Cathedral | Royal Mile, Edinburgh",
+    extraImportantContext: "Originally a sign of contempt for the executioners; now a rite of passage for good luck and local pride."
   },
   19: {
     id: 19,
-    tenSecAudioScript: "The Edinburgh City Police was established in 1805, making it the oldest statutory civil police force in the United Kingdom!",
-    audioPhoneticsGuide: "Constable [KON-stuh-bul], High Street [HY street]",
-    overlayHook: "UK'S OLDEST CIVIL POLICE FORCE",
-    overlayCoreFact: "Founded 1805 - established a full 24 years before London's Metropolitan Police!",
-    overlayLocationBadge: "Old High Street Police Chambers | Edinburgh",
-    extraImportantContext: "Pre-dated Robert Peel's famous Metropolitan Police Act of 1829 by nearly a quarter century."
+    tenSecAudioScript: "The 1890 Forth Bridge contains 53,000 tons of Scottish steel! Painting it took so long that workers restarted as soon as they finished!",
+    audioPhoneticsGuide: "Firth of Forth [FERTH of FORTH], Cantilever [KAN-tih-lee-ver]",
+    overlayHook: "THE MIGHTY FORTH BRIDGE",
+    overlayCoreFact: "UNESCO World Heritage cantilever bridge with 6.5 million hand-driven rivets across 1.5 miles!",
+    overlayLocationBadge: "Queensferry | Firth of Forth, Edinburgh",
+    extraImportantContext: "A new glass-flake epoxy paint applied in 2011 ended the 120-year cycle, protecting the bridge for 25+ years."
   },
   20: {
     id: 20,
-    tenSecAudioScript: "Calton Hill's National Monument was planned as Edinburgh's Parthenon, but funding ran out in 1829—leaving twelve majestic stone pillars!",
-    audioPhoneticsGuide: "Calton [KAWL-ton], Parthenon [PARTH-uh-non]",
-    overlayHook: "THE 'SCOTTISH DISGRACE' PARTHENON",
-    overlayCoreFact: "Designed to honour Napoleonic war dead - abandoned in 1829 when construction funds ran dry!",
-    overlayLocationBadge: "Calton Hill | Edinburgh",
-    extraImportantContext: "Locals nicknamed it 'Edinburgh's Disgrace', but it became an iconic part of the city's 'Athens of the North' skyline."
+    tenSecAudioScript: "The 175-foot Finnieston Crane on the River Clyde is one of only eleven left on Earth—the mighty symbol of Clydebuilt shipbuilding!",
+    audioPhoneticsGuide: "Finnieston [FIN-iss-ton], Clydebuilt [KLYDE-bilt]",
+    overlayHook: "THE FINNIESTON CRANE: 175-TON TITAN",
+    overlayCoreFact: "Built in 1931 to hoist steam locomotives into ships - one of only 11 giant cantilever cranes left on Earth!",
+    overlayLocationBadge: "North Bank River Clyde | Glasgow",
+    extraImportantContext: "Constructed to load heavy steam locomotives manufactured at Glasgow's Springburn works onto cargo ships."
   },
   21: {
     id: 21,
-    tenSecAudioScript: "In 1765, James Watt took a walk across Glasgow Green and invented the separate steam condenser—igniting the Industrial Revolution!",
-    audioPhoneticsGuide: "Glasgow Green [GLAZ-go green], Condenser [kun-DEN-ser]",
-    overlayHook: "THE SUNDAY STROLL THAT CHANGED THE WORLD",
-    overlayCoreFact: "James Watt solved steam efficiency walking in Glasgow Green in 1765 - sparking the industrial age!",
-    overlayLocationBadge: "Glasgow Green | East End, Glasgow",
-    extraImportantContext: "Watt was repairing a model Newcomen engine for the University of Glasgow when he had his stroke of genius."
+    tenSecAudioScript: "In 1828, Edinburgh serial killers Burke and Hare murdered sixteen victims to sell fresh corpses to medical anatomy lecturers!",
+    audioPhoneticsGuide: "Burke [BURK], Hare [HAIR], Knox [NOKS]",
+    overlayHook: "BURKE & HARE: EDINBURGH BODY SNATCHERS",
+    overlayCoreFact: "Murdered 16 victims in 1828 to sell corpses to Dr Robert Knox - Burke's skeleton remains on display!",
+    overlayLocationBadge: "West Port & Old Surgeons' Hall | Edinburgh",
+    extraImportantContext: "Led directly to the Anatomy Act of 1832. Burke was dissected and his skeleton is preserved at Edinburgh Medical School."
   },
   22: {
     id: 22,
@@ -201,228 +201,228 @@ export const PART_1_TO_50: Record<number, TenSecondScriptOptimization> = {
   },
   23: {
     id: 23,
-    tenSecAudioScript: "Glasgow built the world! In the Victorian era, one out of every five ships sailing the oceans was built along the River Clyde!",
-    audioPhoneticsGuide: "Clydebuilt [KLYDE-bilt], Govan [GUV-un]",
-    overlayHook: "CLYDEBUILT: 1 IN 5 GLOBAL SHIPS",
-    overlayCoreFact: "Victorian Glasgow shipyards produced 20% of the entire planet's oceangoing vessels!",
-    overlayLocationBadge: "River Clyde Shipyards | Govan & Scotstoun, Glasgow",
-    extraImportantContext: "The phrase 'Clydebuilt' became the international benchmark for marine engineering excellence."
+    tenSecAudioScript: "Standing 100 feet tall beside the canal, The Kelpies are the world's largest equine sculptures, built with 300 tons of structural steel!",
+    audioPhoneticsGuide: "Kelpies [KEL-peez], Falkirk [FALL-kirk]",
+    overlayHook: "THE KELPIES: 100-FOOT STEEL TITANS",
+    overlayCoreFact: "World's largest horse head sculptures by Andy Scott, honoring Scotland's industrial draught horses!",
+    overlayLocationBadge: "The Helix | Falkirk, Scotland",
+    extraImportantContext: "Represent Duke and Baron, real Clydesdale working horses that pulled barges along the Forth and Clyde Canal."
   },
   24: {
     id: 24,
-    tenSecAudioScript: "Glasgow's subway is lovingly nicknamed 'The Clockwork Orange' because of its bright round tunnels and iconic orange trains!",
-    audioPhoneticsGuide: "Strathclyde [strath-KLYDE], Clockwork [KLOK-wurk]",
-    overlayHook: "THE CLOCKWORK ORANGE SUBWAY",
-    overlayCoreFact: "15 stations on twin circular tunnels - the easiest metro system in the world to navigate!",
-    overlayLocationBadge: "Buchanan Street Station | Glasgow Subway",
-    extraImportantContext: "Riders do the famous 'Subcrawl' pub crawl: drinking one half-pint at a pub near all 15 stations along the loop."
+    tenSecAudioScript: "Edinburgh's Victoria Street is a curving, multi-level rainbow terrace of cobblestones that inspired Diagon Alley in Harry Potter!",
+    audioPhoneticsGuide: "Grassmarket [GRASS-mar-kit], Victoria [vik-TOR-ee-uh]",
+    overlayHook: "VICTORIA STREET: THE REAL DIAGON ALLEY",
+    overlayCoreFact: "Curving double-decker 1830s street with colourful shopfronts that inspired Diagon Alley!",
+    overlayLocationBadge: "Victoria Street | Old Town, Edinburgh",
+    extraImportantContext: "Built between 1829 and 1834 by architect Thomas Hamilton to connect George IV Bridge with Grassmarket."
   },
   25: {
     id: 25,
-    tenSecAudioScript: "Architect Charles Rennie Mackintosh transformed Glasgow with gorgeous Art Nouveau designs, floral metalwork, and the iconic Glasgow School of Art!",
-    audioPhoneticsGuide: "Mackintosh [MAK-in-tosh], Renfrew [REN-froo]",
-    overlayHook: "MACKINTOSH AND THE GLASGOW STYLE",
-    overlayCoreFact: "Art Nouveau genius who defined modern Scottish architecture, furniture and decorative art!",
-    overlayLocationBadge: "The Willow Tearooms & Glasgow School of Art | Glasgow",
-    extraImportantContext: "Mackintosh created the famous Glasgow Rose motif with his artist wife Margaret Macdonald Mackintosh."
+    tenSecAudioScript: "In 1926, Scottish engineer John Logie Baird transmitted the world's first true television picture using a biscuit tin and knitting needles!",
+    audioPhoneticsGuide: "Helensburgh [HEL-enz-bur-uh], Baird [BAIRD]",
+    overlayHook: "JOHN LOGIE BAIRD: INVENTOR OF TELEVISION",
+    overlayCoreFact: "Scotsman who demonstrated the world's first working television system in 1926!",
+    overlayLocationBadge: "Helensburgh & Glasgow University | Scotland",
+    extraImportantContext: "Baird also pioneered color television, video recording (Phonovision), and transatlantic television transmissions."
   },
   26: {
     id: 26,
-    tenSecAudioScript: "Glasgow's Kelvingrove Art Gallery houses Salvador Dalí's masterpiece, 'Christ of Saint John of the Cross'—purchased by the city in 1952!",
-    audioPhoneticsGuide: "Kelvingrove [KEL-vin-grohv], Salvador Dalí [DAH-lee]",
-    overlayHook: "SALVADOR DALÍ AT KELVINGROVE",
-    overlayCoreFact: "Glasgow bought Dalí's surrealist masterpiece in 1952 for just £8,200 - now worth tens of millions!",
-    overlayLocationBadge: "Kelvingrove Art Gallery and Museum | West End, Glasgow",
-    extraImportantContext: "Museum director Tom Honeyman bought the painting along with copyright, generating huge ongoing revenue for Glasgow."
+    tenSecAudioScript: "Loch Ness holds more freshwater than all the lakes, rivers, and reservoirs in England and Wales combined!",
+    audioPhoneticsGuide: "Loch Ness [LOKH NESS], Inverness [in-ver-NESS], Highland [HY-land]",
+    overlayHook: "LOCH NESS MONSTER VOLUME",
+    overlayCoreFact: "Holds 7.4 billion cubic metres of freshwater - more than all England & Wales lakes combined!",
+    overlayLocationBadge: "Urquhart Castle | Great Glen, Highlands",
+    extraImportantContext: "Deepest point reaches 230 metres (754 ft). The peat particles turn the water completely black below 30 feet."
   },
   27: {
     id: 27,
-    tenSecAudioScript: "George Square is Glasgow's civic heartbeat, surrounded by grand Victorian architecture and statues of Scottish literary and military legends!",
-    audioPhoneticsGuide: "Chambers [CHAYM-berz], Walter Scott [WAWL-ter skot]",
-    overlayHook: "GEORGE SQUARE: VICTORIAN HEART OF GLASGOW",
-    overlayCoreFact: "Showcasing Glasgow City Chambers with more marble than the Vatican in Rome!",
-    overlayLocationBadge: "George Square | Merchant City, Glasgow",
-    extraImportantContext: "The City Chambers contains Europe's largest marble staircase, quarried from imported Carrara Italian marble."
+    tenSecAudioScript: "Edinburgh Castle is perched on Castle Rock—the rugged plug of an extinct volcano that erupted 350 million years ago!",
+    audioPhoneticsGuide: "Edinburgh [ED-in-bur-ruh], Basalt [buh-SAWLT]",
+    overlayHook: "EDINBURGH'S VOLCANIC FORTRESS",
+    overlayCoreFact: "Built atop an extinct volcano plug that erupted 350 million years ago!",
+    overlayLocationBadge: "Castle Rock | Old Town, Edinburgh",
+    extraImportantContext: "Castle Rock withstood at least 26 sieges throughout history, making it one of the most besieged places in Great Britain."
   },
   28: {
     id: 28,
-    tenSecAudioScript: "Glasgow's vibrant West End and Ashton Lane are famous for bohemian charm, fairy lights, cobblestones, and world-class live music!",
+    tenSecAudioScript: "Architect Charles Rennie Mackintosh transformed Glasgow with gorgeous Art Nouveau designs, floral metalwork, and the iconic Willow Tearooms!",
+    audioPhoneticsGuide: "Mackintosh [MAK-in-tosh], Sauchiehall [SAW-kee-hawl]",
+    overlayHook: "MACKINTOSH & THE WILLOW TEAROOMS",
+    overlayCoreFact: "Art Nouveau master who created the Glasgow Style with high-backed chairs and silver rose motifs!",
+    overlayLocationBadge: "The Willow Tearooms | Sauchiehall Street, Glasgow",
+    extraImportantContext: "Created in collaboration with tearoom patron Miss Catherine Cranston and artist Margaret Macdonald."
+  },
+  29: {
+    id: 29,
+    tenSecAudioScript: "From television, steam power, and radar to penicillin and the pedal bicycle—Scottish pioneers invented the modern technological world!",
+    audioPhoneticsGuide: "Edinburgh [ED-in-bur-ruh], Glasgow [GLAZ-go]",
+    overlayHook: "SCOTTISH INVENTIONS THAT BUILT THE WORLD",
+    overlayCoreFact: "Scotland produced TV, steam condenser, telephone, radar, penicillin, and ATMs!",
+    overlayLocationBadge: "National Museum of Scotland | Edinburgh & Glasgow",
+    extraImportantContext: "Per capita, Scotland has produced more world-altering scientific inventions than virtually any other nation."
+  },
+  30: {
+    id: 30,
+    tenSecAudioScript: "Beneath Edinburgh's Royal Mile lies Mary King's Close—an entire underground world frozen in time since the 1600s!",
+    audioPhoneticsGuide: "Canongate [KAN-un-gate], Close [CLOHSS]",
+    overlayHook: "MARY KING'S BURIED CITY",
+    overlayCoreFact: "Buried 17th-century street beneath the City Chambers - preserved when modern buildings built over it!",
+    overlayLocationBadge: "The Real Mary King's Close | Royal Mile, Edinburgh",
+    extraImportantContext: "Sealed off when the Royal Exchange was constructed overhead in 1753. Rediscovered and opened as an authentic historic attraction."
+  },
+  31: {
+    id: 31,
+    tenSecAudioScript: "Glasgow's Rogano restaurant was fitted out in 1935 by the exact same shipyard joiners who built the luxury liner RMS Queen Mary!",
+    audioPhoneticsGuide: "Rogano [roh-GAH-noh], Vitrolite [VIT-roh-lyte]",
+    overlayHook: "ROGANO: GLASGOW'S ART DECO LINER",
+    overlayCoreFact: "Fitted out by John Brown shipyard carpenters with same walnut panelling as the Queen Mary!",
+    overlayLocationBadge: "Rogano | Royal Exchange Square, Glasgow",
+    extraImportantContext: "Glasgow's oldest restaurant, celebrated for its seafood and quintessential 1930s nautical Art Deco design."
+  },
+  32: {
+    id: 32,
+    tenSecAudioScript: "The 200-foot Scott Monument in Edinburgh is the largest memorial dedicated to a single writer on planet Earth, with 287 spiral steps!",
+    audioPhoneticsGuide: "Princes [PRIN-siz], Scott [SKOT]",
+    overlayHook: "THE SCOTT MONUMENT: WORLD'S LARGEST",
+    overlayCoreFact: "200-foot Victorian Gothic spire with 68 carved book characters honouring Sir Walter Scott!",
+    overlayLocationBadge: "Princes Street Gardens | Edinburgh",
+    extraImportantContext: "Designed by self-taught carpenter George Meikle Kemp. Topped by views across the Firth of Forth."
+  },
+  33: {
+    id: 33,
+    tenSecAudioScript: "The Fortingall Yew in Perthshire is up to 5,000 years old—the oldest living organism in Britain, alive during the building of Stonehenge!",
+    audioPhoneticsGuide: "Fortingall [for-ting-GAWL], Perthshire [PERTH-sheer]",
+    overlayHook: "THE 5,000-YEAR FORTINGALL YEW",
+    overlayCoreFact: "Britain's oldest living tree, flourishing in a Perthshire churchyard for 3,000 to 5,000 years!",
+    overlayLocationBadge: "Fortingall Churchyard | Glen Lyon, Perthshire",
+    extraImportantContext: "Local folklore even links the ancient yew to Roman centurions stationed in the Scottish Highlands."
+  },
+  34: {
+    id: 34,
+    tenSecAudioScript: "Inside a Catholic church in Glasgow's Gorbals lies the authentic forearm bone relic of Saint Valentine, gifted from Rome in 1868!",
+    audioPhoneticsGuide: "Gorbals [GOR-bulz], Duns Scotus [DUNZ SKOH-tus]",
+    overlayHook: "SAINT VALENTINE'S RELIC IN GLASGOW",
+    overlayCoreFact: "Bone relic of the patron saint of love rests in a casket in Blessed John Duns Scotus Church!",
+    overlayLocationBadge: "Blessed John Duns Scotus Church | Gorbals, Glasgow",
+    extraImportantContext: "Couples visit every Valentine's Day on February 14th to have their engagement rings blessed over the casket."
+  },
+  35: {
+    id: 35,
+    tenSecAudioScript: "Outside Edinburgh Castle, the Witches' Well honors over three hundred innocent women executed on Castlehill during brutal 16th-century witch trials!",
+    audioPhoneticsGuide: "Castlehill [KAS-ul-hill], James [JAYMZ]",
+    overlayHook: "THE WITCHES' WELL MEMORIAL",
+    overlayCoreFact: "Bronze fountain honoring 300+ women burned on Castlehill under King James VI's witch hysteria!",
+    overlayLocationBadge: "Castlehill Esplanade | Edinburgh Castle",
+    extraImportantContext: "In 2022, the Scottish Government issued an official posthumous national apology and pardon to all victims."
+  },
+  36: {
+    id: 36,
+    tenSecAudioScript: "Golf was invented in medieval Scotland—and was officially banned by King James II in 1457 because men stopped archery practice!",
+    audioPhoneticsGuide: "St Andrews [saynt AN-drooz], Swilcan [SWIL-kun]",
+    overlayHook: "GOLF INVENTED & BANNED IN 1457",
+    overlayCoreFact: "Scottish kings banned golf in 1457 for distracting archers, before royals became hooked themselves!",
+    overlayLocationBadge: "The Old Course | St Andrews, Fife",
+    extraImportantContext: "The Old Course at St Andrews established the standard 18-hole round in 1764, defining modern golf."
+  },
+  37: {
+    id: 37,
+    tenSecAudioScript: "Glasgow's Ashton Lane is a magical cobbled alleyway covered with fairy lights, home to bustling pubs and Scotland's oldest cinema!",
     audioPhoneticsGuide: "Byres [BY-erz], Ashton [ASH-tun]",
     overlayHook: "ASHTON LANE & WEST END MAGIC",
     overlayCoreFact: "Iconic cobbled lane strung with fairy lights - Glasgow's buzzing student and cultural hotspot!",
     overlayLocationBadge: "Ashton Lane | Hillhead, West End, Glasgow",
-    extraImportantContext: "Home to the Grosvenor Cinema, Scotland's first cinema to serve beer directly to plush theatre seats."
-  },
-  29: {
-    id: 29,
-    tenSecAudioScript: "Founded in 1451, the University of Glasgow features magnificent neo-Gothic cloisters that look straight out of a fantasy film!",
-    audioPhoneticsGuide: "Cloisters [KLOY-sterz], Gilmorehill [GIL-mor-hill]",
-    overlayHook: "SCOTLAND'S REAL HOGWARTS CLOISTERS",
-    overlayCoreFact: "Fourth-oldest English-speaking university - neo-Gothic masterpiece by Sir George Gilbert Scott!",
-    overlayLocationBadge: "University of Glasgow | Gilmorehill, Glasgow",
-    extraImportantContext: "Alumni include James Watt, Adam Smith, Lord Kelvin, and two British Prime Ministers."
-  },
-  30: {
-    id: 30,
-    tenSecAudioScript: "The Glasgow Necropolis is a Victorian 'City of the Dead' where 50,000 souls rest beneath 3,500 elaborate monuments and mausoleums!",
-    audioPhoneticsGuide: "Necropolis [nuh-KROP-uh-liss], Molendinar [mol-en-DEE-nar]",
-    overlayHook: "GLASGOW NECROPOLIS: CITY OF THE DEAD",
-    overlayCoreFact: "Victorian garden cemetery on a hill overlooking Glasgow Cathedral - 50,000 burials!",
-    overlayLocationBadge: "The Necropolis | Castle Street, Glasgow",
-    extraImportantContext: "Inspired by Père Lachaise Cemetery in Paris. Topped by a towering statue of Protestant reformer John Knox."
-  },
-  31: {
-    id: 31,
-    tenSecAudioScript: "The Isle of Skye's Old Man of Storr is a colossal fifty-metre pinnacle of basalt rock left behind by ancient landslides!",
-    audioPhoneticsGuide: "Storr [STOR], Trotternish [TROT-er-nish], Skye [SKY]",
-    overlayHook: "THE OLD MAN OF STORR PINNACLE",
-    overlayCoreFact: "Massive 50-metre volcanic rock spike formed by the prehistoric Trotternish landslide!",
-    overlayLocationBadge: "Trotternish Ridge | Isle of Skye, Highlands",
-    extraImportantContext: "Featured in films like Ridley Scott's Prometheus; one of the most recognized landscapes in the British Isles."
-  },
-  32: {
-    id: 32,
-    tenSecAudioScript: "Glencoe is breathtakingly dramatic, but carries dark history: the 1692 Massacre where thirty-eight MacDonalds were killed by Campbell soldiers!",
-    audioPhoneticsGuide: "Glencoe [GLEN-koh], MacDonald [mak-DON-uld]",
-    overlayHook: "THE DRAMA AND TRAGEDY OF GLENCOE",
-    overlayCoreFact: "Formed by volcanic super-eruption & ice age glaciers - site of the infamous 1692 clan massacre!",
-    overlayLocationBadge: "Three Sisters of Glencoe | Highland, Scotland",
-    extraImportantContext: "Campbell soldiers had lived as guests in MacDonald homes for 12 days before turning on their hosts under royal orders."
-  },
-  33: {
-    id: 33,
-    tenSecAudioScript: "The Glenfinnan Viaduct carried steam engines across twenty-one sweeping concrete arches long before the Hogwarts Express became world famous!",
-    audioPhoneticsGuide: "Glenfinnan [glen-FIN-un], Viaduct [VY-uh-dukt]",
-    overlayHook: "THE GLENFINNAN HOGWARTS VIADUCT",
-    overlayCoreFact: "Built 1901 by Robert McAlpine using mass concrete - famous Hogwarts Express filming route!",
-    overlayLocationBadge: "Glenfinnan Viaduct | Lochaber, Highlands",
-    extraImportantContext: "Sir Robert McAlpine was nicknamed 'Concrete Bob' for pioneering mass unreinforced concrete construction on this railway."
-  },
-  34: {
-    id: 34,
-    tenSecAudioScript: "Eilean Donan Castle is Scotland's most photographed fortress, positioned where three dramatic sea lochs meet in the Western Highlands!",
-    audioPhoneticsGuide: "Eilean Donan [AY-lan DOH-nun], Loch Duich [lokh DOO-ikh]",
-    overlayHook: "EILEAN DONAN: ICONIC SEA FORTRESS",
-    overlayCoreFact: "Reconstructed in 1919 after being blown up by Royal Navy ships in the 1719 Jacobite uprising!",
-    overlayLocationBadge: "Dornie | Kyle of Lochalsh, Highlands",
-    extraImportantContext: "Lieutenant Colonel John Macrae-Gilstrap spent 20 years and a fortune restoring the ruined fortress based on ancient surviving floor plans."
-  },
-  35: {
-    id: 35,
-    tenSecAudioScript: "Ben Nevis is the highest summit in the British Isles at 1,345 metres—once a ferocious super-volcano that collapsed into itself!",
-    audioPhoneticsGuide: "Nevis [NEE-viss], Fort William [fort WIL-yum]",
-    overlayHook: "BEN NEVIS: HIGHEST PEAK IN BRITAIN",
-    overlayCoreFact: "1,345m summit was an active supervolcano 400 million years ago that collapsed inwards!",
-    overlayLocationBadge: "Grampian Mountains | Fort William, Highlands",
-    extraImportantContext: "An observatory operated on the summit from 1883 to 1904, recording continuous meteorological data in harsh Highland conditions."
-  },
-  36: {
-    id: 36,
-    tenSecAudioScript: "The Jacobite Steam Train running through the Scottish Highlands is voted one of the world's greatest scenic railway journeys!",
-    audioPhoneticsGuide: "Jacobite [JAK-uh-byte], Mallaig [MAL-ag]",
-    overlayHook: "THE SCENIC JACOBITE STEAM TRAIN",
-    overlayCoreFact: "84-mile return journey between Fort William and Mallaig - real-life steam engine of Harry Potter!",
-    overlayLocationBadge: "West Highland Line | Fort William to Mallaig",
-    extraImportantContext: "Crosses the 21 arches of the Glenfinnan Viaduct and passes the deepest freshwater loch (Loch Morar) in Britain."
-  },
-  37: {
-    id: 37,
-    tenSecAudioScript: "Highland Coos are beloved for their ginger shaggy fringes! Their double coats protect them from the harshest Scottish winter storms!",
-    audioPhoneticsGuide: "Coo [KOO], Kyloe [KY-loh]",
-    overlayHook: "HIGHLAND COOS: SCOTLAND'S FLUFFY ICONS",
-    overlayCoreFact: "Oldest registered cattle breed in the world (1885) - double-layer fleece resists freezing gales!",
-    overlayLocationBadge: "Highland Pastures | Trossachs & Isle of Skye",
-    extraImportantContext: "Their long fringe (called a 'dossan') protects their eyes from wind, driving rain, and Highland biting insects."
+    extraImportantContext: "Home to the Grosvenor Cinema (1921), celebrated for plush couch seating and independent cinema culture."
   },
   38: {
     id: 38,
-    tenSecAudioScript: "Fingal's Cave on the Isle of Staffa features geometric hexagonal basalt pillars and acoustic echoes that inspired Felix Mendelssohn's overture!",
-    audioPhoneticsGuide: "Fingal [FIN-gull], Staffa [STAF-uh], Mendelssohn [MEN-dul-sohn]",
-    overlayHook: "FINGAL'S CAVE: NATURE'S BASALT CATHEDRAL",
-    overlayCoreFact: "Formed by cooling lava flows 60 million years ago - hexagonal columns with natural concert acoustic reverb!",
-    overlayLocationBadge: "Isle of Staffa | Inner Hebrides",
-    extraImportantContext: "Connected geologically to the Giant's Causeway in Northern Ireland from the same prehistoric volcanic event."
+    tenSecAudioScript: "Calton Hill's National Monument was planned as Edinburgh's Parthenon, but funding ran out in 1829—leaving twelve majestic stone pillars!",
+    audioPhoneticsGuide: "Calton [KAWL-ton], Parthenon [PARTH-uh-non]",
+    overlayHook: "THE 'SCOTTISH DISGRACE' PARTHENON",
+    overlayCoreFact: "Designed to honour Napoleonic war dead - abandoned in 1829 when construction funds ran dry!",
+    overlayLocationBadge: "Calton Hill | Edinburgh",
+    extraImportantContext: "Locals nicknamed it 'Edinburgh's Disgrace', but it became an iconic part of the city's 'Athens of the North' skyline."
   },
   39: {
     id: 39,
-    tenSecAudioScript: "The fairy pools of Skye boast crystal-clear turquoise waters fed by the Black Cuillin mountains—pure Highland magic!",
-    audioPhoneticsGuide: "Cuillin [KOO-lin], Glenbrittle [glen-BRIT-ul]",
-    overlayHook: "CRYSTAL WATERS OF SKYE FAIRY POOLS",
-    overlayCoreFact: "Vibrant sapphire and emerald mountain pools fed by cascading waterfalls of the Black Cuillin!",
-    overlayLocationBadge: "Glen Brittle | Isle of Skye",
-    extraImportantContext: "Popular for wild swimming; according to clan legends, the pools were guarded by water kelpies and fairy folk."
+    tenSecAudioScript: "Highland Coos are beloved for their ginger shaggy fringes! Their double coats protect them from the harshest Scottish winter storms!",
+    audioPhoneticsGuide: "Coo [KOO], Dossan [DOS-un]",
+    overlayHook: "HIGHLAND COOS: SCOTLAND'S GINGER ICONS",
+    overlayCoreFact: "Oldest registered cattle breed (1885) - the dossan fringe protects their eyes from mountain gales!",
+    overlayLocationBadge: "Pollok Country Park & Highlands | Scotland",
+    extraImportantContext: "Famous for their remarkably gentle and placid temperament despite massive outward-curving horns."
   },
   40: {
     id: 40,
-    tenSecAudioScript: "Culloden Battlefield in 1746 saw the tragic defeat of Bonnie Prince Charlie's Jacobite army in under an hour, ending the clan system!",
-    audioPhoneticsGuide: "Culloden [kuh-LOD-un], Jacobite [JAK-uh-byte]",
-    overlayHook: "CULLODEN MOOR: CLAN CULTURE COLLAPSE",
-    overlayCoreFact: "April 16, 1746 - final pitched battle fought on British soil, crushed in just 60 minutes!",
-    overlayLocationBadge: "Culloden Battlefield | Inverness, Highlands",
-    extraImportantContext: "Following the battle, the British government passed the Act of Proscription banning tartan, Highland dress, and bagpipes."
+    tenSecAudioScript: "Glasgow's Britannia Panopticon is the oldest surviving music hall on Earth, where legendary comedian Stan Laurel made his 1906 stage debut!",
+    audioPhoneticsGuide: "Panopticon [pan-OP-tih-kun], Trongate [TRON-gate]",
+    overlayHook: "BRITANNIA PANOPTICON: WORLD'S OLDEST",
+    overlayCoreFact: "Built in 1857 - 16-year-old Stan Laurel debuted here before rowdy shipyard crowds!",
+    overlayLocationBadge: "The Britannia Panopticon | Trongate, Glasgow",
+    extraImportantContext: "Audiences were notorious for throwing shipyard rivets and ship debris at acts they disliked."
   },
   41: {
     id: 41,
-    tenSecAudioScript: "Scotch whisky must be matured in oak casks for at least three full years—and Scotland ships forty bottles globally every single second!",
-    audioPhoneticsGuide: "Uisge Beatha [OOSH-kuh BAH-huh], Speyside [SPAY-side]",
-    overlayHook: "SCOTCH WHISKY: WATER OF LIFE",
-    overlayCoreFact: "Over 140 operational distilleries - 40 bottles of single malt and blended Scotch exported every second!",
-    overlayLocationBadge: "Speyside & Islay Distilleries | Scotland",
-    extraImportantContext: "Whisky comes from Gaelic 'Uisge Beatha', meaning 'Water of Life'. It contributes billions annually to the Scottish economy."
+    tenSecAudioScript: "Beneath Edinburgh's South Bridge lie 120 stone chambers built in 1788, sealed away and forgotten for a century as dark underground slums!",
+    audioPhoneticsGuide: "Cowgate [KOW-gate], Vaults [VAWLTS]",
+    overlayHook: "EDINBURGH'S FORBIDDEN UNDERGROUND VAULTS",
+    overlayCoreFact: "120 subterranean stone chambers built inside bridge arches, used by tradesmen and secret speakeasies!",
+    overlayLocationBadge: "South Bridge Vaults | Old Town, Edinburgh",
+    extraImportantContext: "Abandoned due to damp in the 1800s and sealed up until rediscovery by Scottish adventurers in the 1980s."
   },
   42: {
     id: 42,
-    tenSecAudioScript: "Scottish Great Highland Bagpipes were historically classified as weapons of war, carried into battle to rally clan warriors!",
-    audioPhoneticsGuide: "Pìob Mhòr [PEEB VOR], Chanter [CHAN-ter]",
-    overlayHook: "BAGPIPES: WEAPONS OF HIGHLAND WAR",
-    overlayCoreFact: "Carried unarmed into battle at Waterloo and the Somme - legally declared an instrument of war in 1746!",
-    overlayLocationBadge: "Highland Gatherings | Braemar & Edinburgh Castle",
-    extraImportantContext: "Highland pipers led regiments over the top during World War I armed only with pipes and a ceremonial dagger."
+    tenSecAudioScript: "The Barrowland Ballroom in Glasgow has a world-famous sprung horsehair floor that bounces like a trampoline when crowds jump!",
+    audioPhoneticsGuide: "Barrowlands [BAR-oh-landz], Gallowgate [GAL-oh-gate]",
+    overlayHook: "BARROWLAND'S SPRUNG HORSEHAIR FLOOR",
+    overlayCoreFact: "Sprung Canadian maple dancefloor on horsehair - David Bowie rated it his favorite UK venue!",
+    overlayLocationBadge: "Barrowland Ballroom | Gallowgate, Glasgow",
+    extraImportantContext: "Founded in 1934 by Maggie McIver so East End market traders had a palace to dance every weekend."
   },
   43: {
     id: 43,
-    tenSecAudioScript: "The Traditional Kilt requires eight yards of pure woven wool tartan—every distinct check pattern representing a proud Scottish clan!",
-    audioPhoneticsGuide: "Tartan [TAR-tun], Sporran [SPOR-un], Sgian Dubh [skee-an DOO]",
-    overlayHook: "THE TRADITIONAL 8-YARD HIGHLAND KILT",
-    overlayCoreFact: "Woven wool tartan tailored with deep pleats - paired with horsehair sporran and sock dagger!",
-    overlayLocationBadge: "Royal Mile Tartan Weavers | Edinburgh",
-    extraImportantContext: "Modern small kilts evolved from the ancient 'feileadh mòr' (great kilt), a single 16-foot length of wool wrapped around the body."
+    tenSecAudioScript: "Following the 1746 Battle of Culloden, the British government banned kilts and tartan for thirty-six years under pain of overseas exile!",
+    audioPhoneticsGuide: "Culloden [kuh-LOD-un], Tartan [TAR-tun]",
+    overlayHook: "TARTAN: THE BANNED REBEL FABRIC",
+    overlayCoreFact: "The Act of Proscription 1746 made wearing tartan illegal across Scotland for 36 years!",
+    overlayLocationBadge: "Culloden Battlefield | Inverness, Highlands",
+    extraImportantContext: "Highland clans wore plain wool until the ban was repealed in 1782, leading to a massive Victorian revival."
   },
   44: {
     id: 44,
-    tenSecAudioScript: "The Highland Games feature heavy athletics like the Caber Toss, where competitors flip a twenty-foot pine tree end over end!",
-    audioPhoneticsGuide: "Caber [KAY-ber], Braemar [bray-MAR]",
-    overlayHook: "TOSSING THE 175-POUND HIGHLAND CABER",
-    overlayCoreFact: "Centuries-old clan strength trials - flipping a 20-foot larch trunk end-over-end to land at 12 o'clock!",
-    overlayLocationBadge: "Braemar Highland Gathering | Aberdeenshire",
-    extraImportantContext: "The toss is judged on accuracy and straightness (aiming for a 12 o'clock landing), not on distance thrown."
+    tenSecAudioScript: "Greyfriars Kirkyard held 1,200 Covenanter prisoners in 1679 under 'Bluidy' George Mackenzie, whose tomb is famous for chilling poltergeist reports!",
+    audioPhoneticsGuide: "Greyfriars [GRAY-fry-erz], Mackenzie [muh-KEN-zee]",
+    overlayHook: "GREYFRIARS: PRISON & POLTERGEISTS",
+    overlayCoreFact: "Site of Britain's first concentration camp in 1679 - haunted by the infamous Mackenzie Poltergeist!",
+    overlayLocationBadge: "Greyfriars Kirkyard | Candlemaker Row, Edinburgh",
+    extraImportantContext: "Hundreds of visitors have reported sudden scratches and bruises around the Black Mausoleum since 1999."
   },
   45: {
     id: 45,
-    tenSecAudioScript: "Shortbread was Queen Mary's favorite luxury treat—baked with just pure butter, sugar, and flour into a melt-in-your-mouth delight!",
-    audioPhoneticsGuide: "Petticoat Tails [PET-ee-koht taylz], Caraway [KAIR-uh-way]",
-    overlayHook: "SCOTTISH SHORTBREAD: BUTTERY PERFECTION",
-    overlayCoreFact: "Refined by Mary, Queen of Scots into 'petticoat tails' shaped like triangular dress petticoats!",
-    overlayLocationBadge: "Walkers Bakery | Aberlour, Highlands",
-    extraImportantContext: "Traditionally baked on Christmas, Hogmanay, and weddings with a 1-part sugar, 2-parts butter, 3-parts flour ratio."
+    tenSecAudioScript: "The majestic 1451 University of Glasgow cloisters feature soaring Gothic undercrofts that look straight out of a Hollywood fantasy film!",
+    audioPhoneticsGuide: "Cloisters [KLOY-sterz], Gilmorehill [GIL-mor-hill]",
+    overlayHook: "GLASGOW UNIVERSITY GOTHIC CLOISTERS",
+    overlayCoreFact: "Fluted stone arches connecting quads at Scotland's 4th oldest university, built in the 1870s!",
+    overlayLocationBadge: "University of Glasgow | Gilmorehill, Glasgow",
+    extraImportantContext: "Designed by Sir George Gilbert Scott; filmed as Harvard and magical academies in major movies."
   },
   46: {
     id: 46,
-    tenSecAudioScript: "Stirling Castle guards the crossing between Highlands and Lowlands, where William Wallace and Robert the Bruce won historic victories!",
-    audioPhoneticsGuide: "Stirling [STIR-ling], Bannockburn [BAN-uk-burn]",
-    overlayHook: "STIRLING CASTLE: GATEWAY TO HIGHLANDS",
-    overlayCoreFact: "Whoever controlled Stirling controlled all of Scotland - site of William Wallace's Stirling Bridge victory!",
-    overlayLocationBadge: "Castle Esplanade | Stirling",
-    extraImportantContext: "Mary, Queen of Scots was crowned in Stirling Castle chapel in 1543 at just nine months old."
+    tenSecAudioScript: "Scotland's national animal is the mythical Unicorn! It appears chained on the Royal Arms because wild unicorns were too powerful to roam!",
+    audioPhoneticsGuide: "Celtic [KEL-tik], Unicorn [YOO-nih-korn]",
+    overlayHook: "SCOTLAND'S CHAINED ROYAL UNICORN",
+    overlayCoreFact: "Adopted in 12th-century heraldry - chained because an unchained unicorn was an untamable beast!",
+    overlayLocationBadge: "Stirling Castle & Edinburgh Castle | Scotland",
+    extraImportantContext: "In Scottish mythology, the unicorn was proud, untamable, and the natural arch-enemy of the English lion."
   },
   47: {
     id: 47,
-    tenSecAudioScript: "The Forth Railway Bridge opened in 1890—a massive cantilever engineering marvel built with 53,000 tons of Scottish steel!",
-    audioPhoneticsGuide: "Firth of Forth [FERTH of FORTH], Cantilever [KAN-tih-lee-ver]",
-    overlayHook: "THE FORTH BRIDGE: STEEL ICON",
-    overlayCoreFact: "UNESCO World Heritage cantilever bridge - spanning 1.5 miles with 6.5 million hand-driven rivets!",
-    overlayLocationBadge: "Queensferry | Firth of Forth, Edinburgh",
-    extraImportantContext: "The phrase 'Painting the Forth Bridge' became British shorthand for an endless task until modern durable paints were applied in 2011."
+    tenSecAudioScript: "Deacon Brodie was a respected Edinburgh city councilman and master cabinetmaker by day, and a lock-picking burglar by night!",
+    audioPhoneticsGuide: "Brodie [BROH-dee], Lawnmarket [LAWN-mar-kit]",
+    overlayHook: "DEACON BRODIE: MASTER DOUBLE LIFE",
+    overlayCoreFact: "Prestigious councilman by day, master burglar by night - Robert Louis Stevenson's inspiration!",
+    overlayLocationBadge: "Deacon Brodie's Close | Royal Mile, Edinburgh",
+    extraImportantContext: "Brodie used wax impressions from clients' keyholes to copy keys, robbing their homes at night."
   },
   48: {
     id: 48,
