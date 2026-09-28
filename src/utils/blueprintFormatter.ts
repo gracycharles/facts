@@ -3,6 +3,7 @@ import { computeOverlayTypography } from './overlayTypographyEngine';
 import { buildCharacterVoiceDirection, getRecommendedVoiceForFact, VoiceArchetypeId } from './narrationEngine';
 import { sanitizeOverlayText } from './overlaySanitizer';
 import { buildFullYouTubeDescription } from './descriptionFormatter';
+import { expandNumbersToWords } from './numberToWords';
 
 /**
  * Formats a ShortsBlueprint into the exact full production blueprint
@@ -37,7 +38,8 @@ export function formatVideoGenerationOnlyText(b: ShortsBlueprint, voiceId: Voice
   const line3Location = sanitizeOverlayText(b.subtitles?.line3Location || b.location);
   const extraContext = b.overlayExtraContext ? sanitizeOverlayText(b.overlayExtraContext) : '';
   const voiceDir = buildCharacterVoiceDirection(b, voiceId);
-  const audioScript = b.audioScript10s || b.audioScript || voiceDir.audioNarrationScript;
+  const rawAudioScript = b.audioScript10s || b.audioScript || voiceDir.audioNarrationScript;
+  const audioScript = expandNumbersToWords(rawAudioScript);
   const sync = voiceDir.characterSync;
   const gender = sync.gender;
 
@@ -186,7 +188,8 @@ export function formatBroadcastSafeMasterPrompt(b: ShortsBlueprint, voiceId: Voi
   const line2Fact = sanitizeOverlayText(b.subtitles?.line2Fact || b.factText);
   const line3Location = sanitizeOverlayText(b.subtitles?.line3Location || b.location);
   const voiceDir = buildCharacterVoiceDirection(b, voiceId);
-  const audioScript = b.audioScript10s || b.audioScript || voiceDir.audioNarrationScript;
+  const rawAudioScript = b.audioScript10s || b.audioScript || voiceDir.audioNarrationScript;
+  const audioScript = expandNumbersToWords(rawAudioScript);
   const sync = voiceDir.characterSync;
   const gender = sync.gender;
 

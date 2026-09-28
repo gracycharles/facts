@@ -3,6 +3,7 @@ import { ALL_50_SCOTLAND_FACTS } from './scotlandFacts';
 import { TEN_SECOND_OPTIMIZATIONS } from '../utils/tenSecondScriptOptimizer';
 import { sanitizeOverlayText } from '../utils/overlaySanitizer';
 import { buildFullYouTubeDescription } from '../utils/descriptionFormatter';
+import { expandNumbersToWords } from '../utils/numberToWords';
 
 const DEFAULT_GLOBAL_TAGS = [
   'Glasgow',
@@ -67,9 +68,11 @@ function enrichScotlandBlueprint(raw: ShortsBlueprint): ShortsBlueprint {
   const verse = raw.verification?.verdict || raw.scriptureVerse || '100% HISTORICALLY VERIFIED';
   const ref = raw.location || raw.scriptureRef || `${raw.city}, Scotland`;
 
-  // 10s strictly calibrated audio script vs extended story script
-  const originalAudioScript = raw.audioScript || text;
-  const tenSecScript = (opt && opt.tenSecAudioScript) ? opt.tenSecAudioScript : originalAudioScript;
+  // 10s strictly calibrated audio script vs extended story script with numbers expanded to words
+  const rawOriginalAudioScript = raw.audioScript || text;
+  const rawTenSecScript = (opt && opt.tenSecAudioScript) ? opt.tenSecAudioScript : rawOriginalAudioScript;
+  const tenSecScript = expandNumbersToWords(rawTenSecScript);
+  const originalAudioScript = expandNumbersToWords(rawOriginalAudioScript);
 
   // Optimized 3-line overlay safe-zone text (100% sanitized plain text)
   const line1Hook = sanitizeOverlayText((opt && opt.overlayHook) ? opt.overlayHook : (raw.subtitles?.line1Hook || title));

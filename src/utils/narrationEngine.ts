@@ -1,5 +1,6 @@
 import { ShortsBlueprint } from '../types';
 import { calculateAudioTiming, AudioTimingMetric } from './tenSecondScriptOptimizer';
+import { expandNumbersToWords } from './numberToWords';
 
 export type VoiceArchetypeId = 
   | 'auto' 
@@ -294,7 +295,8 @@ export function buildCharacterVoiceDirection(
   const narrationStyle = `Voice spoken directly by the on-screen ${gender} character; ${syncInfo.emotionalTone}.`;
   const wittyComedicNuance = `Local comedic nuance: ${comical}`;
 
-  const audioNarrationScript = b.audioScript10s || b.audioScript || `${b.title}! Did you know: ${b.factText}`;
+  const rawScript = b.audioScript10s || b.audioScript || `${b.title}! Did you know: ${b.factText}`;
+  const audioNarrationScript = expandNumbersToWords(rawScript);
   const timing = calculateAudioTiming(audioNarrationScript);
 
   const voiceProfileDirective = `[CHARACTER-NATIVE ${gender.toUpperCase()} AUDIO DIRECTIVE (EXACT 10.0s CONFINED)]: Spoken in the authentic voice of the on-screen character (${charName} - ${gender.toUpperCase()}, ${activeArchetype.accent}). Spoken Timing: ${timing.wordCount} words (~${timing.estimatedDurationSec}s). Lip-sync matches spoken audio verbatim.`;
@@ -349,7 +351,8 @@ export function playAdaptiveVoice(
 
   stopSpeech();
 
-  const utterance = new SpeechSynthesisUtterance(script);
+  const expandedScript = expandNumbersToWords(script);
+  const utterance = new SpeechSynthesisUtterance(expandedScript);
   currentUtterance = utterance;
 
   const voices = window.speechSynthesis.getVoices();
