@@ -518,25 +518,33 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
                 <div className="p-1.5 rounded-md bg-amber-500/10 text-amber-400">
                   <Video className="w-4 h-4" />
                 </div>
-                <h3 className="text-xs sm:text-sm font-bold text-stone-200 tracking-wide uppercase font-mono">
-                  🎥 Master External AI Video Generator Prompt (9:16 Vertical)
-                </h3>
+                <div className="flex flex-col">
+                  <h3 className="text-xs sm:text-sm font-bold text-stone-200 tracking-wide uppercase font-mono flex items-center gap-2">
+                    🎥 Broadcast-Safe 1080x1920 / 10.0s Master Video Prompt
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-bold">
+                      ✓ Zero Filter Restrictions
+                    </span>
+                  </h3>
+                  <span className="text-[10px] text-stone-400 font-mono">
+                    Unbranded Props • Era-Inspired Archetypes • Safe-Zone Plain Overlays • British Young Female Voice
+                  </span>
+                </div>
               </div>
               <div className="flex flex-wrap items-center gap-2">
                 <button
                   onClick={() => copyToClipboard(formatVideoPromptOnlyText(blueprint), 'video')}
                   className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-300 hover:bg-amber-500/30 transition-all flex items-center gap-1.5 shadow-sm"
-                  title="Copy Prompt for Runway Gen-3 / Kling / Sora / Luma / Hailuo"
+                  title="Copy Broadcast-Safe Master Prompt for Runway Gen-3 / Kling / Sora / Luma / Hailuo / Veo"
                 >
-                  {copiedSection === 'video' ? 'Copied Video Prompt!' : 'Copy Master Video Prompt'}
+                  {copiedSection === 'video' ? 'Copied Broadcast-Safe Master!' : 'Copy Broadcast-Safe Video Prompt'}
                 </button>
               </div>
             </div>
 
             <div className="bg-stone-950 p-4 sm:p-5 rounded-xl border border-stone-800 space-y-3">
               <div className="text-[10px] font-mono text-stone-400 uppercase tracking-wider mb-1 flex items-center justify-between">
-                <span>9:16 Video Generation Prompt (Hollywood 35mm Live Action / Cinematic Comical):</span>
-                <span className="text-amber-400 font-semibold font-mono text-[10px]">Runway Gen-3 • Kling • Sora • Luma • Hailuo</span>
+                <span>9:16 Video Generation Prompt (Hollywood 35mm Live Action / Unbranded Broadcast-Safe):</span>
+                <span className="text-amber-400 font-semibold font-mono text-[10px]">Runway Gen-3 • Kling • Sora • Luma • Hailuo • Veo</span>
               </div>
               <p className="font-mono text-xs sm:text-sm text-stone-200 select-all leading-relaxed bg-stone-900/90 p-3.5 rounded-lg border border-stone-800">
                 {blueprint.videoPrompt}
@@ -644,24 +652,31 @@ const BlueprintCardComponent: React.FC<BlueprintCardProps> = ({
                   </div>
                 </div>
 
-                {/* Active Voice Info Strip */}
+                {/* Active Voice & Character Sync Strip */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div className="bg-stone-900/90 p-3 rounded-lg border border-stone-800 space-y-1">
-                    <span className="text-stone-400 font-mono uppercase text-[10px] block font-bold">
-                      Voice Profile & Acting Nuance:
+                  <div className="bg-stone-900/90 p-3 rounded-lg border border-emerald-500/40 space-y-1">
+                    <span className="text-emerald-400 font-mono uppercase text-[10px] block font-bold flex items-center gap-1.5">
+                      <Sparkles className="w-3 h-3 text-emerald-400" />
+                      Character-Synced Voice & Acting:
                     </span>
                     <p className="text-emerald-300 font-medium text-xs leading-relaxed">
                       {voiceDir.voiceProfile}
+                    </p>
+                    <p className="text-[11px] text-stone-300 leading-normal pt-1">
+                      <strong className="text-stone-400 font-normal">Acting Nuance:</strong> {voiceDir.characterSync.actingInflection}
                     </p>
                   </div>
 
                   <div className="bg-stone-900/90 p-3 rounded-lg border border-stone-800 space-y-1">
                     <span className="text-amber-400 font-mono uppercase text-[10px] block font-bold">
-                      Scottish Local Phonetics:
+                      Character Lip-Sync & Motion Directive:
                     </span>
-                    <p className="text-stone-200 font-mono text-xs leading-relaxed">
-                      {blueprint.audioPhonetics || 'Native Scottish & British place names'}
+                    <p className="text-stone-200 text-[11px] leading-relaxed">
+                      {voiceDir.characterSync.lipSyncDirective}
                     </p>
+                    <div className="text-[10px] text-stone-400 font-mono pt-1">
+                      <strong className="text-amber-300">Phonetics:</strong> {blueprint.audioPhonetics || 'Native Scottish & British place names'}
+                    </div>
                   </div>
                 </div>
 

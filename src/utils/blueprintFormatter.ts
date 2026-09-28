@@ -28,8 +28,8 @@ export function formatMidjourneyPrompt(b: ShortsBlueprint): string {
 
 /**
  * 1) Master AI Video & Motion Generation Prompt
- * Formats video prompt specifically for external video generators (Runway Gen-3, Kling, Sora, Hailuo, Luma)
- * with video visuals, content-tailored voice audio, and safe-zone burned-in text overlays.
+ * Formats video prompt specifically for external video generators (Runway Gen-3, Kling, Sora, Hailuo, Luma, Veo)
+ * with video visuals, character-native voice audio (strictly matching character gender & role), and safe-zone burned-in text overlays.
  */
 export function formatVideoGenerationOnlyText(b: ShortsBlueprint, voiceId: VoiceArchetypeId = 'auto'): string {
   const line1Hook = sanitizeOverlayText(b.subtitles?.line1Hook || b.title);
@@ -38,6 +38,8 @@ export function formatVideoGenerationOnlyText(b: ShortsBlueprint, voiceId: Voice
   const extraContext = b.overlayExtraContext ? sanitizeOverlayText(b.overlayExtraContext) : '';
   const voiceDir = buildCharacterVoiceDirection(b, voiceId);
   const audioScript = b.audioScript10s || b.audioScript || voiceDir.audioNarrationScript;
+  const sync = voiceDir.characterSync;
+  const gender = sync.gender;
 
   return `🎬 HOLLYWOOD CREATION RANGE MASTER PROMPT (FACT #${b.id}: ${sanitizeOverlayText(b.title)})
 City: ${b.city}, Scotland | Category: ${b.category} | Era: ${b.historicalEra}
@@ -57,11 +59,14 @@ CRITICAL STYLING RULES:
 ${extraContext ? `• Extra Context Line: "${extraContext}"\n` : ''}Safe Zone: Y=450px to Y=850px | Left/Right Clearance: 160px | Bottom Clearance: 400px (100% clear of native UI)
 
 ================================================================================
-🔴 COMPULSORY MANDATE 2: INTEGRATED AUDIO & CONTEXTUAL VOICE (BY VIDEO GENERATOR)
+🔴 COMPULSORY MANDATE 2: CHARACTER-NATIVE AUDIO & VOICE (SPOKEN BY ON-SCREEN CHARACTER)
 ================================================================================
-Mandate: Audio and voice narration are generated natively by the video generation tool based on the content context, visual scene, character archetype, and era.
-• Contextual Voice Casting: Selected according to content context and visual scene (${voiceDir.voiceProfile})
+Mandate: Audio and voice narration must be generated in the authentic voice, gender, and era of the primary on-screen character involved in the video scene.
+• Character Voice Casting: Spoken directly by primary on-screen character: ${sync.characterName} (${gender.toUpperCase()} CHARACTER — ${sync.matchedArchetype.accent}, ${sync.matchedArchetype.ageRange})
+• Character Acting Nuance: ${sync.actingInflection}
+• STRICT GENDER & PERSONA MANDATE: The voice MUST match the character on screen (${gender.toUpperCase()}). The character is a ${gender}, so the video generator MUST cast an authentic Scottish ${gender} voice. DO NOT use a mismatched voice gender (e.g. a male quarryman, soldier, or councillor must speak in an authentic Scottish male voice; a female fishwife or matriarch in a Scottish female voice).
 • Spoken Timing: Strictly calibrated at ${voiceDir.timing.wordCount} words (~${voiceDir.timing.estimatedDurationSec}s) — Spoken audio must finish cleanly before the 10.0s video limit with a 0.5–1.0s ambient acoustic tail.
+• Lip-Sync Directive: ${sync.lipSyncDirective}
 • Phonetics & Dialect Guide: ${b.audioPhonetics || 'Native Scottish & British place names'}
 • EXACT SPOKEN SCRIPT (Read Every Word Verbatim):
 "${audioScript}"
@@ -86,8 +91,9 @@ Mandate: Audio and voice narration are generated natively by the video generatio
 ${b.videoPrompt}
 
 [CHARACTER & CINEMATIC CASTING]:
-- Primary Character: ${b.character}
+- Primary Character: ${b.character || sync.characterName} (${gender.toUpperCase()})
 - Style: ${b.characterStyle || 'Cinematic 35mm Hollywood Comical Live Action'}
+- Character Speaking Role: Spoken directly by ${sync.characterName} in authentic ${gender} Scottish voice (${sync.matchedArchetype.accent})
 ${b.supportingCharacters && b.supportingCharacters.length > 0 ? `- Supporting Cast:\n  ${b.supportingCharacters.map(sc => `* ${sc.name} (${sc.role}): ${sc.appearance} | Comedic Gag: ${sc.comedicInteraction}`).join('\n  ')}\n` : ''}- Iconic Objects & Scenes: ${b.objectsScenes}
 - Comical & Nostalgic Local Element: ${b.comicalElement}
 - Grounded Authentic Location: ${b.location}
@@ -171,32 +177,57 @@ ${extraContext ? `• Extra Context: "${extraContext}"\n` : ''}• Styling: Pure
 }
 
 /**
- * 2) Video Prompt Only - With Embedded Burned-In Text & Audio Mandates
+ * Formats a clean, broadcast-safe 1080x1920 / 10.0s master video generation prompt
+ * guaranteed to pass external AI video generation filters (Runway Gen-3, Sora, Luma, Kling, Pika, Hailuo, Veo)
+ * with zero real-person likenesses, zero brand logos, safe overlays, and character-native authentic voice narration.
  */
-export function formatVideoPromptOnlyText(b: ShortsBlueprint): string {
+export function formatBroadcastSafeMasterPrompt(b: ShortsBlueprint, voiceId: VoiceArchetypeId = 'auto'): string {
   const line1Hook = sanitizeOverlayText(b.subtitles?.line1Hook || b.title);
   const line2Fact = sanitizeOverlayText(b.subtitles?.line2Fact || b.factText);
   const line3Location = sanitizeOverlayText(b.subtitles?.line3Location || b.location);
-  const audioScript = b.audioScript10s || b.audioScript || b.factText;
+  const voiceDir = buildCharacterVoiceDirection(b, voiceId);
+  const audioScript = b.audioScript10s || b.audioScript || voiceDir.audioNarrationScript;
+  const sync = voiceDir.characterSync;
+  const gender = sync.gender;
 
-  return `[VIDEO GENERATION PROMPT - 9:16 VERTICAL (1080x1920 FHD UPSCALED MASTER) | DURATION: EXACT 10.0s CONFINED]:
+  return `🎬 BROADCAST-SAFE 1080x1920 / 10.0s MASTER VIDEO GENERATION PROMPT (FACT #${b.id}: ${sanitizeOverlayText(b.title)})
+Format: 1080x1920 (9:16 Vertical Portrait) | Exact Duration: 10.0 Seconds | Standard: Broadcast-Safe & Unbranded
+
+[STORY BEAT & VISUAL PROMPT]:
 ${b.videoPrompt}
 
-[BURNED-IN TEXT OVERLAY MANDATE - CLEAN PLAIN TEXT ONLY - NO EMOJIS, NO BULLET DOTS, NO BLACK BOX]:
-Burned-in floating text in safe zone (Y: 450-850px at 1080x1920):
-Line 1: "${line1Hook}" (Golden Amber)
-Line 2: "${line2Fact}" (White)
-Line 3: "${line3Location}" (Cyan)
-(Render as clean floating text with subtle drop-shadow over the live action, no black rectangle, no emoji glyphs)
+[CHARACTER & CASTING SPECIFICATION]:
+- Primary Character: ${b.character || sync.characterName} (${gender.toUpperCase()})
+- Character Casting: Fictional era-inspired character (100% free of real-person likeness restrictions).
+- Unbranded Props: Logo-free props, vessels, packaging, and period signage.
 
-[INTEGRATED AUDIO & NARRATION - BY VIDEO GENERATOR - EXACT 10.0s PACING]:
-Native voice audio and soundscape generated by the video tool matching the visual scene and era. Spoken script must finish cleanly before the 10.0s limit:
-"${audioScript}"
+[CHARACTER LIP-SYNC & AUDIO SYNCHRONIZATION DIRECTIVE]:
+- Speaker: Spoken directly by on-screen character: ${sync.characterName} (${gender.toUpperCase()} — ${sync.matchedArchetype.accent}, ${sync.matchedArchetype.ageRange})
+- Acting Inflection: ${sync.actingInflection}
+- Strict Gender Mandate: The voice MUST match the on-screen character (${gender.toUpperCase()}). The character on screen is ${gender}, so they MUST speak in an authentic Scottish ${gender} voice. NO mismatched voice genders.
+- Lip-Sync & Facial Performance: ${sync.lipSyncDirective}
 
-[BROADCAST-SAFE & ZERO TRADEMARK MANDATE]:
-Do not render commercial brand logos or trademarked labels (use generic unbranded vintage items and period signage) to prevent AI safety filter blocks.
+[BURNED-IN ON-SCREEN TEXT OVERLAY (UPPER-CENTER SAFE ZONE)]:
+- Upper-Center Safe Band (Y: 450-850px at 1080x1920, with subtle drop-shadow only, zero black background box, zero emoji glyphs):
+  • Line 1 (Hook Header - Golden Amber): "${line1Hook}"
+  • Line 2 (Core Fact - Crisp White): "${line2Fact}"
+  • Line 3 (Location Badge - Cyan): "${line3Location}"
 
-[EXPORT SPECIFICATION]: Always export in 1080x1920 Full HD (≥25 Mbps H.264 / ProRes) for direct upload to YouTube Shorts and TikTok.`;
+[AUDIO & NARRATION SPECIFICATION (10.0s PACING)]:
+- Character Speaker: ${sync.characterName} (${gender.toUpperCase()} Scottish voice, ${sync.matchedArchetype.accent}, ~145 WPM cadence, strictly ≤10.0s limit).
+- Spoken Script (Verbatim - ${voiceDir.timing.wordCount} words / ~${voiceDir.timing.estimatedDurationSec}s):
+  "${audioScript}"
+- Soundscape: ${b.backgroundAudio}
+
+[EXPORT QUALITY MANDATE]:
+1080x1920 Full HD high-bitrate MP4/ProRes, strictly confined to 10.0 seconds with zero audio or visual truncation.`;
+}
+
+/**
+ * 2) Video Prompt Only - With Embedded Burned-In Text & Audio Mandates
+ */
+export function formatVideoPromptOnlyText(b: ShortsBlueprint, voiceId: VoiceArchetypeId = 'auto'): string {
+  return formatBroadcastSafeMasterPrompt(b, voiceId);
 }
 
 /**

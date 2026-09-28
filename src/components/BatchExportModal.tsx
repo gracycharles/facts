@@ -133,7 +133,7 @@ export const BatchExportModal: React.FC<BatchExportModalProps> = ({
               }`}
             >
               <Video className="w-3.5 h-3.5" />
-              <span>{blueprints.length} Video Prompts Only</span>
+              <span>{blueprints.length} Broadcast-Safe Video Prompts</span>
             </button>
 
             <button
